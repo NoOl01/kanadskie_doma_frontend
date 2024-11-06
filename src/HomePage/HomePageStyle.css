@@ -93,6 +93,9 @@
     height: 70vh;
     align-items: center;
 }
+.service_img img{
+    border-radius: 10px;
+}
 .service_text{
     display: flex;
     flex-direction: column;
