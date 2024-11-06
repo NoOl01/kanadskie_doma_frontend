@@ -1,4 +1,30 @@
 header{
   display: flex;
-  gap: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-header-box{
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.left-header-box img {
+  width: 90%;
+  height: 90%;
+  margin-top: 5px;
+}
+.right-header-box{
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+  font-size: clamp(0.8em, 1.6em, 2em);
+
+}
+.right-header-box a{
+    text-decoration: none;
+    color: black;
 }

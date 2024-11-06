@@ -1,0 +1,110 @@
+.subheader{
+    width:100%;
+    height:73vh;
+    background-image: url("./homeimages/Slider.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subheader-title{
+    width: 25%;
+    height: 20%;
+    margin: 0 auto 0 23%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: clamp(0.5em, 1.4em, 2em);
+    background:rgba(191, 191, 191, 0.58);
+    border-radius: 30px;
+}
+.about_us_main_div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    font-size: clamp(0.3em, 1em, 2em);
+    height: 74vh;
+}
+.about_us{
+    padding: 0 2em;
+    width: 30%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4AB185;
+    color: white;
+    border-radius: 50px;
+
+}
+.about_us_pic{
+    width: 35%;
+    padding: 2em;
+    height: 74vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about_us_pic img{
+    border-radius: 50px;
+    width: 100%;
+    height: 60vh;
+}
+.pluses_main_div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    height: 45vh;
+    margin-top:15vh ;
+}
+.plus_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+.plus_container img{
+    width: 20vw;
+    height:20vh;
+}
+.plus_container_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+.Name_text{
+    color: #4AB185;
+    font-size: clamp(0.8em, 1.5em, 2em);
+}
+.main_text{
+    font-size: clamp(0.8em, 1.2em, 2em);
+    width: 60%;
+    text-align: center;
+}
+.our_service{
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    background: #DDDDDD;
+    height: 70vh;
+    align-items: center;
+}
+.service_text{
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+}
+.our_text{
+    font-size: clamp(1em, 2em, 2em);
+    color: #4AB185;
+}
+.service_point{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    font-size: clamp(0.8em, 1.4em, 2em);
+}

@@ -15,7 +15,7 @@ import './App.css';
 //Импорт роутера из либы
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 //Импорт JS компонентов для роутера
-import Home from './Home/Home';
+import HomePage from './HomePage/HomePage';
 import About from './Test/Test';
 import Test2 from './TestPage2/TesePage2';
 
@@ -33,7 +33,7 @@ function App() {
 
         //Подключение самих роутеров [путь][компонент который открывается при этом пути]
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/test2" element={<Test2 />} />
         </Routes>
