@@ -1,0 +1,75 @@
+.what_sip_div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+.what_sip_div h1{
+    margin-top: 1em;
+    color: #4AB185;
+    font-size: clamp(1em, 2.5em, 2.5em);
+}
+.first_sip_div {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    margin-top: 1em;
+}
+
+.first_sip_content {
+    display: flex;
+    width: 30%;
+    background-color: #4AB185;
+    justify-content: center;
+    padding: 2em 1em 0 1em;
+    font-size: clamp(1em, 2em, 1.2em);
+    color: white;
+    border-radius: 40px;
+}
+.first_sip_img {
+    width: 30%;
+}
+.first_sip_img img{
+    width: 100%;
+    height: 100%;
+}
+.technology_div{
+    width: 72%;
+    margin: 7em auto;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    background: #4AB185;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+.technology_div img{
+    width: 100%;
+
+}
+.technology_div h3{
+    font-size: clamp(1em, 2em, 2em);
+    color: white;
+    margin-top: 2vh;
+}
+.technology_div p{
+    width: 90%;
+    font-size: clamp(1em, 2em, 2em);
+    color: white;
+}
+.swiper-container {
+    height: 400px; /* Высота контейнера слайдера */
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* Цвет фона слайда */
+}
+.swiper-slide img {
+    width: 100px;
+    height: 100px;
+}
