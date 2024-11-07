@@ -1,8 +1,8 @@
 import React from 'react';
 import './HomePageStyle.css'
 import TopImg from './homeimages/imagetophome.png'
-import date from './homeimages/2033.svg'
-import humans from './homeimages/hemans.svg'
+import date from './homeimages/calendar.svg'
+import humans from './homeimages/people.svg'
 import house from './homeimages/house.svg'
 import realhouse from './homeimages/image 26.png'
 import wallet from './homeimages/wallet.svg'
