@@ -5,6 +5,16 @@ import date from './homeimages/2033.svg'
 import humans from './homeimages/hemans.svg'
 import house from './homeimages/house.svg'
 import realhouse from './homeimages/image 26.png'
+import wallet from './homeimages/wallet.svg'
+import clock from './homeimages/clock.svg'
+import earth from './homeimages/earth.svg'
+import houseim from './homeimages/houseimgg.png'
+import {Link} from "react-router-dom";
+import arrow from './homeimages/Fra2аme копия 1.png'
+import anastasa from './homeimages/izobrazhenie_viber_2020-08-17_10-30-55_cr_cr-210x210 1.png'
+import ilya from './homeimages/ilya-sip-konstruktor-kanadskiedoma39_cr-210x210 1.png'
+import alan from './homeimages/alan-kanadskie-doma-ooo_cr-210x210 1.png'
+
 
 function HomePage() {
     return (<div className="HomePage">
@@ -79,6 +89,131 @@ function HomePage() {
                     </div>
                 </div>
             </div>
+
+            <div className="pluses_main_div">
+                <div className="plus_container">
+                    <img src={wallet} alt=""/>
+                    <div className="plus_container_text">
+                        <p className="Name_text">Экономия</p>
+                        <p className="main_text">
+                            Дешево в постройке
+                        </p>
+                    </div>
+                </div>
+                <div className="plus_container">
+                    <img src={clock} alt=""/>
+                    <div className="plus_container_text">
+                        <p className="Name_text">Кратчайшие сроки</p>
+                        <p className="main_text">
+                            Здание будет построено в самые короткие сроки
+                        </p>
+                    </div>
+                </div>
+                <div className="plus_container">
+                    <img src={earth} alt=""/>
+                    <div className="plus_container_text">
+                        <p className="Name_text">Экологично</p>
+                        <p className="main_text">
+                            Натуральные материалы строительства
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div className="consultation">
+                <div className="content_consul">
+                    <div className="cons_text">
+                        <p>Хотите заказать консультацию?</p>
+                    </div>
+                    <div className="cons_button">
+                        <button>Оставить заявку</button>
+                    </div>
+                </div>
+            </div>
+            <div className="best_project_div">
+                <div className="best_project_name">
+                    <h1>Самые популярные проекты</h1>
+                </div>
+                <div className="four_project">
+                    <div className="project">
+                        <img src={houseim} alt=""/>
+                        <div className="project_name">
+                            <h1>KD0017 «Светлый», 64,2 кв.м.</h1>
+                        </div>
+                    </div>
+
+
+                    <div className="project">
+                        <img src={houseim} alt=""/>
+                        <div className="project_name">
+                            <h1>KD0017 «Светлый», 64,2 кв.м.</h1>
+                        </div>
+                    </div>
+
+                    <div className="project">
+                        <img src={houseim} alt=""/>
+                        <div className="project_name">
+                            <h1>KD0017 «Светлый», 64,2 кв.м.</h1>
+                        </div>
+                    </div>
+
+                    <div className="project">
+                        <img src={houseim} alt=""/>
+                        <div className="project_name">
+                            <h1>KD0017 «Светлый», 64,2 кв.м.</h1>
+                        </div>
+                    </div>
+
+                </div>
+                <div className="best_project_footer">
+                    <Link to="/projects">
+
+                        <p>Смотреть все проекты</p>
+                        <img src={arrow} alt=""/>
+
+                    </Link>
+                </div>
+            </div>
+
+            <div className="our_team">
+                <div className="our_team_name">
+                    <p>Наша команда</p>
+                </div>
+                <div className="team_members">
+                    <div className="member">
+                        <img src={anastasa} alt=""/>
+                        <div className="member_content">
+                            <p>Менеджер-проектировщик</p>
+                            <p>Анастасия Дягилова</p>
+                            <p>89217113333</p>
+                            <p>kanadskiedoma39@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div className="member">
+                        <img src={ilya} alt=""/>
+                        <div className="member_content">
+                            <p>Главный конструктор</p>
+                            <p>Илья Петров</p>
+                            <p>89217113333</p>
+                            <p>kanadskiedoma39@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div className="member">
+                        <img src={alan} alt=""/>
+                        <div className="member_content">
+                            <p>Генеральный директор</p>
+                            <p>Алан А. Алборов</p>
+                            <p>89217113333</p>
+                            <p>kanadskiedoma39@gmail.com</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
 
         </div>
     )

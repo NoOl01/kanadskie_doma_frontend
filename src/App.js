@@ -9,6 +9,13 @@ import ContactsPage from './ContactsPage/ContactsPage';
 import AboutPage from './AboutPage/AboutPage';
 import QuestionsPage from './QuestionsPage/QuestionsPage';
 import headerLogo from './Images/HeaderLogo.png';
+import footerlogo from './Images/whitelogo.png';
+import rutube from "./HomePage/homeimages/rutube.png"
+import odn from "./HomePage/homeimages/odn.png"
+import vk from "./HomePage/homeimages/vk.png"
+import tg from "./HomePage/homeimages/tg.png"
+import whatsapp from "./HomePage/homeimages/whatsap.png"
+
 
 function App() {
     return (
@@ -38,7 +45,22 @@ function App() {
                     <Route path="/questions" element={<QuestionsPage/>}/>
                 </Routes>
                 <footer>
-
+                    <div className="left_piece">
+                        <img src={footerlogo} alt=""/>
+                        <h1>+7 (921) 711 33 33</h1>
+                        <h1>kanadskiedoma39@gmail.com</h1>
+                        <h1>Адрес:238324, Калининградская обл.,
+                            г. Гурьевск, пос. Констаниновка, ул. Западная,5</h1>
+                    </div>
+                    <div className="right_piece">
+                        <div className="social">
+                            <a href=""><img src={rutube} alt=""/></a>
+                            <a href=""><img src={vk} alt=""/></a>
+                            <a href=""><img src={odn} alt=""/></a>
+                            <a href=""><img src={tg} alt=""/></a>
+                            <a href=""><img src={whatsapp} alt=""/></a>
+                        </div>
+                    </div>
                 </footer>
             </div>
         </Router>
