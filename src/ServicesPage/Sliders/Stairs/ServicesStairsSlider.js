@@ -18,7 +18,7 @@ const StairsSlider = () => {
             slidesPerView={1}
             loop={true} // Включение бесконечного скролла
             modules={[Autoplay]} // Подключение модуля пагинации
-            className="mySwiper" // Класс для стилизации
+            className="Stairs-slider" // Класс для стилизации
             autoplay={{
                 delay: 2000, // Задержка между переключениями (в миллисекундах)
                 disableOnInteraction: false // Не останавливать автопрокрутку при взаимодействии
@@ -26,13 +26,13 @@ const StairsSlider = () => {
 
         >
 
-            <SwiperSlide><img src={stairs1} alt=""/></SwiperSlide>
-            <SwiperSlide><img src={stairs2} alt=""/></SwiperSlide>
-            <SwiperSlide><img src={stairs3} alt=""/></SwiperSlide>
-            <SwiperSlide><img src={stairs4} alt=""/></SwiperSlide>
-            <SwiperSlide><img src={stairs5} alt=""/></SwiperSlide>
-            <SwiperSlide><img src={stairs6} alt=""/></SwiperSlide>
-            <SwiperSlide><img src={stairs7} alt=""/></SwiperSlide>
+            <SwiperSlide className="stairs_sl"><img src={stairs1} alt=""/></SwiperSlide>
+            <SwiperSlide className="stairs_sl"><img src={stairs2} alt=""/></SwiperSlide>
+            <SwiperSlide className="stairs_sl"><img src={stairs3} alt=""/></SwiperSlide>
+            <SwiperSlide className="stairs_sl"><img src={stairs4} alt=""/></SwiperSlide>
+            <SwiperSlide className="stairs_sl"><img src={stairs5} alt=""/></SwiperSlide>
+            <SwiperSlide className="stairs_sl"><img src={stairs6} alt=""/></SwiperSlide>
+            <SwiperSlide className="stairs_sl"><img src={stairs7} alt=""/></SwiperSlide>
         </Swiper>
     );
 };

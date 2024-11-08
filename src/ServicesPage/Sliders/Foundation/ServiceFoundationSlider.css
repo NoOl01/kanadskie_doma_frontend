@@ -1,4 +1,4 @@
-.mySwiper {
+.fund {
     width: 60%;
     display: flex;
     justify-content: center; /* Центрирование по горизонтали */
@@ -6,7 +6,7 @@
     margin-top: 5vh;
 }
 
-.swiper-slide {
+.fund_sl {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -14,7 +14,7 @@
     background-color: rgba(0, 0, 0, 0) !important;
 }
 
-.swiper-slide img {
+.fund_sl img {
     width: 100%;
     height: 70% !important;
     border-radius: 20px !important;

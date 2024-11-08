@@ -111,14 +111,15 @@ button{
     align-items: center;
 }
 .services_aer_title{
-    text-align: center;
     display: flex;
     flex-direction: column;
     gap: 1em;
     font-size: clamp(1em, 3em, 1.4em);
 }
 .services_aer_title p{
-    width: 85%; margin: 0 auto;
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
 }
 .services_aer_title h2{
     font-size: clamp(1em, 3em, 2em);

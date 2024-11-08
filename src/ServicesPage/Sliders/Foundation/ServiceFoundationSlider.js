@@ -13,14 +13,14 @@ const FoundationSlider = () => {
             slidesPerView={1}
             loop={true} // Включение бесконечного скролла
             modules={[Autoplay]} // Подключение модуля пагинации
-            className="mySwiper" // Класс для стилизации
+            className="fund" // Класс для стилизации
             autoplay={{
                 delay: 2000, // Задержка между переключениями (в миллисекундах)
                 disableOnInteraction: false // Не останавливать автопрокрутку при взаимодействии
             }}>
 
-            <SwiperSlide><img src={foundation1} alt=""/></SwiperSlide>
-            <SwiperSlide><img src={foundation2} alt=""/></SwiperSlide>
+            <SwiperSlide className="fund_sl"><img src={foundation1} alt=""/></SwiperSlide>
+            <SwiperSlide className="fund_sl"><img src={foundation2} alt=""/></SwiperSlide>
         </Swiper>
     );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import './ServicesPage.css'
 import StairsSlider from './Sliders/Stairs/ServicesStairsSlider';
 import FoundationSlider from './Sliders/Foundation/ServiceFoundationSlider';
-import AeratedСoncreteSlider from './Sliders/AeratedСoncrete/AeratedСoncreteSlider';
+import AeratedconcreteSlider from './Sliders/AeratedСoncrete/AeratedСoncreteSlider';
 import ServicesProject from './Images/ServicesProject.png';
 import WhatsApp from './Images/whatsap.svg';
 import SmartPhone from './Images/SmartPhone.svg';
@@ -53,7 +53,7 @@ function ServicesPage() {
                     <p>Наша компания производит дома не только из SIP-панелей, но и из газобетона собственного
                         производства</p>
                 </div>
-                <AeratedСoncreteSlider/>
+                <AeratedconcreteSlider/>
                 <button id="project">Заказать дом из газобетона</button>
             </div>
             <div className="services_project_main_div">

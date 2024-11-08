@@ -1,34 +1,36 @@
 /* styles.css */
-.mySwiper {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Центрирование по горизонтали */
-    align-items: center; /* Центрирование по вертикали */
+.mySwiper1 {
+    width: 100% !important;
+    height: 30em!important;
+    display: flex !important;
+    justify-content: center !important; /* Центрирование по горизонтали */
+    align-items: center !important; /* Центрирование по вертикали */
+    margin-top: 40px;
+
 }
 
-.swiper-slide {
+.slide1 {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    height: 30% !important;
+
 }
 
-.swiper-slide img {
-    width: 30%;
-    height: 30% !important;
+.slide1  img {
+    width: 40% !important;
+    height: 100% !important;
 }
 
-.swiper-pagination {
-    position: relative !important;
-}
+.custom-pagination{
+    display: flex !important;
+    justify-content: center !important;
+    position: absolute;
 
-.swiper-pagination-bullet {
-    width: 10px !important;
-    height: 10px !important;
+    gap: 2em !important;
 }
-
-.swiper-pagination-bullet-active {
-    background-color: rgba(74, 177, 133, 1) !important;
-    width: 10px !important;
-    height: 10px !important;
+.custom-bullet{
+    background-color: #5E5694;
+}
+.custom-bullet.swiper-pagination-bullet-active{
+    background-color: #4AB185;
 }

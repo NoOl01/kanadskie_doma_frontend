@@ -1,0 +1,95 @@
+.Ymap {
+    position: relative;
+    top: 1em;
+
+    width: 90%;
+    margin: 0 auto;
+}
+
+.contacts_root {
+    padding-top: 90px;
+}
+
+.our_contacts_div {
+    width: 90%;
+    margin: 0 auto;
+    color: #4AB185;
+    display: flex;
+    height: 5em;
+    align-items: center;
+}
+
+.contacts_main_container {
+    display: flex;
+    width: 90%;
+    margin: 5em auto;
+}
+
+.info{
+    display: flex;
+    justify-content: start;
+    gap: 1em;
+    align-items: center;
+    font-size: clamp(0.7em, 2em, 0.7em);
+}
+.info img {
+    width: 50px;
+    height: 50px;
+}
+.contacts_main_container{
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+}
+.contacts_left{
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    gap: 2em;
+}
+.contacts_left h2 {
+    font-size: clamp(0.7em, 2.5em, 2.5em);
+}
+.contacts_info{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+
+}
+.contacts_right{
+    width: 50%;
+    height: 100%;
+
+
+}
+.contacts_right img {
+    width: 100%;
+    height: 100%;
+}
+.chart_div{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+}
+.chart_div h4{
+    font-size: clamp(0.7em, 2.5em, 2em);
+
+}
+.chart_div p{
+    font-size: clamp(0.7em, 2.5em, 1.4em);
+    width: 95%;
+    margin: 0 auto;
+    color: rgba(138,132,132,1);
+}
+.chart_main_div{
+    position: relative;
+    bottom: 20em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
