@@ -3,18 +3,12 @@ import './TechnologiesPage.css'
 import sip from './TechnologyImg/SIP.png'
 import house_info_img from './TechnologyImg/house_info_img.png'
 import SimpleSlider from "./SliderTechnology";
-
-
-
+import Header from '../Components/Other/HeaderComponent/HeaderComponent'
 
 function TechnologiesPage() {
     return (
         <div className='technologies_root'>
-            <div className="subheader">
-                <div className="subheader-title">
-                    <p>Построим дом вашей мечты</p>
-                </div>
-            </div>
+            <Header/>
             <div className="what_sip_div">
                 <h1>Что такое СИП-панели?</h1>
                 <div className="first_sip_div">

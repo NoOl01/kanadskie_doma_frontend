@@ -1,29 +1,3 @@
-.subheader {
-    width: 100%;
-    height: 73vh;
-    background: url("./homeimages/Slider.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.subheader-title {
-    width: 25%;
-    height: 20%;
-    margin: 0 auto 0 23%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: clamp(0.5em, 1.4em, 2em);
-    background: rgba(191, 191, 191, 0.58);
-    border-radius: 30px;
-}
-
 .about_us_main_div {
     width: 100%;
     display: flex;

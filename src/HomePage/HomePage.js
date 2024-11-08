@@ -1,5 +1,6 @@
 import React from 'react';
 import './HomePageStyle.css'
+import Header from '../Components/Other/HeaderComponent/HeaderComponent'
 import TopImg from './homeimages/imagetophome.png'
 import date from './homeimages/calendar.svg'
 import humans from './homeimages/people.svg'
@@ -18,11 +19,7 @@ import alan from './homeimages/alan-kanadskie-doma-ooo_cr-210x210 1.png'
 
 function HomePage() {
     return (<div className="HomePage">
-            <div className="subheader">
-                <div className="subheader-title">
-                    <p>Построим дом вашей мечты</p>
-                </div>
-            </div>
+            <Header/>
             <div className="about_us_main_div">
                 <div className="about_us">
                     <h1>Мы компания “Канадские дома”, мы работает в сегменте малоэтажного строительства в

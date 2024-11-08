@@ -1,3 +1,135 @@
 .about_root{
     padding-top: 90px;
+    color: white;
+}
+.about_root h1, .about_us_title{
+    font-size: clamp(1em, 3em, 3em);
+    font-weight: bolder;
+    width: 100%;
+    text-align: center;
+    color: #4AB185;
+    margin-top: 5vh;
+}
+.about_us_title{
+    margin-top: 10vh;
+}
+.about_container_main_info_div{
+    display: flex;
+    justify-content: center;
+    gap: 10em;
+    margin-top: 5vh;
+}
+.about_us_main_info_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3em;
+    width: 30%;
+    background-color: #4AB185;
+    padding: 20px;
+    border-radius: 20px;
+}
+.about_us_main_info_text h3{
+    font-size: clamp(1em, 3em, 1.5em);
+}
+.about_us_main_info_text p{
+    font-size: clamp(1em, 3em, 1.3em);
+}
+.about_us_main_info_image{
+    border-radius: 20px;
+    height: 65vh;
+}
+.about_us_principles_main_div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6em;
+    width: 78%;
+    margin: 5vh auto 0;
+}
+.about_us_principles{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 35%;
+    padding-left: 1.5em;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 5px 5px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 5px 5px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 5px 4px rgba(0, 0, 0, 0.3);
+}
+.about_us_principles p{
+    width: 18em;
+    font-size: clamp(1em, 3em, 1.3em);
+    color: black;
+}
+.about_us_principles img{
+    height: 20vh;
+    border-radius: 0 20px 20px 0;
+}
+.about_us_principles_spec_img{
+    margin: 0 4em 0 2em;
+}
+.about_us_building_info_main_div{
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    gap: 10em;
+}
+.about_us_building_info_main_div img{
+    height: 60vh;
+    border-radius: 20px;
+}
+.about_us_building_info_text_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3em;
+    width: 30%;
+    background-color: #4AB185;
+    padding: 20px;
+    border-radius: 20px;
+}
+.about_us_building_title{
+    font-size: clamp(1em, 3em, 2em) !important;
+    font-weight: bolder;
+}
+.about_us_building_info_text_div p{
+    font-size: clamp(1em, 2em, 1.3em);
+}
+.about_us_building_info_text_div ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.about_us_building_info_text_div ul li{
+    font-size: clamp(1em, 2em, 1.3em);
+    margin-left: 3em;
+}
+.about_us_pluses_info_main_div{
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    gap: 10em;
+}
+.about_us_pluses_info_main_div img{
+    height: 60vh;
+    border-radius: 20px;
+}
+.about_us_pluses_info_text_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    width: 30%;
+    background-color: #4AB185;
+    padding: 20px;
+    border-radius: 20px;
+}
+.about_us_pluses_title{
+    font-size: clamp(1em, 3em, 2em) !important;
+    font-weight: bolder;
+}
+.about_us_pluses_info_text_div p{
+    font-size: clamp(1em, 2em, 1.3em);
 }

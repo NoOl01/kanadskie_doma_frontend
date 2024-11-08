@@ -1,0 +1,290 @@
+a{
+    text-decoration: none;
+}
+button{
+    cursor: pointer;
+}
+.services_root{
+    padding-top: 90px;
+}
+.service_content_title{
+    font-size: clamp(1em, 3em, 3em);
+    color: #4AB185;
+    text-align: center;
+    margin-top: 5vh;
+}
+.service_content_list{
+    width: 60%;
+    margin: 5vh auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: clamp(1em, 3em, 1.3em);
+    color: #4AB185;
+}
+.service_content_list a{
+    color: #4AB185;
+}
+.service_content_list li{
+    list-style-type: disclosure-closed;
+}
+.services_foundation_main_div{
+    width: 60%;
+    margin: 5vh auto 0;
+    background: #4AB185;
+    color: white;
+    padding: 2em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services_foundation_title{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: clamp(1em, 3em, 1.4em);
+}
+.services_foundation_title h2{
+    text-align: center;
+    font-size: clamp(1em, 3em, 2em);
+}
+.services_foundation_description{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.services_foundation_description p{
+    font-size: clamp(1em, 3em, 1.4em);
+    text-align: center;
+}
+.services_foundation_description ul{
+    margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+.services_foundation_description li{
+    font-size: clamp(1em, 3em, 1.2em);
+}
+.services_foundation_main_div button{
+    font-size: clamp(1em, 3em, 1.3em);
+    background-color: white;
+    border: none;
+    padding: 0.6em;
+    border-radius: 40px;
+    margin-top: 5vh;
+}
+.services_stairs_main_div{
+    width: 60%;
+    margin: 5vh auto 0;
+    background: #4AB185;
+    color: white;
+    padding: 2em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services_foundation_title p{
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+}
+.services_stairs_main_div button{
+    font-size: clamp(1em, 3em, 1.3em);
+    background-color: white;
+    border: none;
+    padding: 0.6em;
+    border-radius: 40px;
+    margin-top: 5vh;
+}
+.services_aer_main_div{
+    width: 60%;
+    margin: 5vh auto 0;
+    background: #4AB185;
+    color: white;
+    padding: 2em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services_aer_title{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: clamp(1em, 3em, 1.4em);
+}
+.services_aer_title p{
+    width: 85%; margin: 0 auto;
+}
+.services_aer_title h2{
+    font-size: clamp(1em, 3em, 2em);
+}
+.services_aer_main_div button{
+    font-size: clamp(1em, 3em, 1.3em);
+    background-color: white;
+    border: none;
+    padding: 0.6em;
+    border-radius: 40px;
+    margin-top: 5vh;
+}
+.services_project_main_div{
+    width: 60%;
+    margin: 5vh auto 0;
+    background: #4AB185;
+    color: white;
+    padding: 2em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services_project_title{
+    font-size: clamp(1em, 3em, 1.4em);
+}
+.services_project_main_div p{
+    text-align: center;
+    font-size: clamp(1em, 3em, 2em);
+    font-weight: bolder;
+}
+.services_project_description{
+    display: flex;
+    font-size: clamp(1em, 3em, 1.5em);
+    margin-top: 5vh;
+}
+.services_project_description img{
+    height: 50vh;
+    border-radius: 20px;
+}
+.services_project_description ul{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    gap: 1em;
+    justify-content: center;
+}
+.services_project_main_div button{
+    font-size: clamp(1em, 3em, 1.3em);
+    background-color: white;
+    border: none;
+    padding: 0.6em;
+    border-radius: 40px;
+    margin-top: 5vh;
+}
+.services_excursion_main_div{
+    width: 60%;
+    margin: 5vh auto 0;
+    background: #4AB185;
+    color: white;
+    padding: 2em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services_excursion_title{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: clamp(1em, 3em, 1.4em);
+}
+.services_excursion_title p{
+    width: 70%; margin: 0 auto;
+    font-size: clamp(1em, 3em, 2em);
+    font-weight: bolder;
+}
+.services_excursion_main_div ul{
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(1em, 3em, 1.5em);
+    gap: 1em;
+    margin-top: 4vh;
+    margin-left: 40px;
+}
+.services_excursion_p{
+    font-size: clamp(1em, 3em, 1.5em);
+    margin-top: 5vh;
+}
+.services_excursion_description{
+    display: flex;
+    align-items: center;
+    font-size: clamp(1em, 3em, 1.3em);
+    gap: 1em;
+    margin-top: 3vh;
+}
+.services_excursion_description img{
+    height: 50px;
+}
+.services_excursion_main_div button{
+    font-size: clamp(1em, 3em, 1.3em);
+    background-color: white;
+    border: none;
+    padding: 0.6em;
+    border-radius: 40px;
+    margin-top: 3vh;
+}
+.services_main_div{
+    width: 60%;
+    margin: 5vh auto 0;
+    background: #4AB185;
+    color: white;
+    padding: 2em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services_title{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: clamp(1em, 3em, 1.4em);
+}
+.services_title p{
+    width: 100%; margin: 0 auto;
+    font-size: clamp(1em, 3em, 2em);
+    font-weight: bolder;
+}
+.services_p{
+    margin-top: 3vh;
+    font-size: clamp(1em, 3em, 1.4em);
+}
+.services_main_div ul{
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(1em, 3em, 1.5em);
+    gap: 1em;
+    margin-top: 4vh;
+    margin-left: 40px;
+}
+.services_main_div button{
+    font-size: clamp(1em, 3em, 1.3em);
+    background-color: white;
+    border: none;
+    padding: 0.6em;
+    border-radius: 40px;
+    margin-top: 5vh;
+}
+.services_ndfl_description{
+    width: 70%;
+    font-size: clamp(1em, 3em, 1.2em);
+    margin-top: 2vh;
+}
+.services_ndfl_contacts_div{
+    display: flex;
+    gap: 5em;
+}
+.services_ndfl_contacts{
+    display: flex;
+    align-items: center;
+    margin-top: 3vh;
+    font-size: clamp(1em, 3em, 1.2em);
+}
+.services_ndfl_contacts img{
+    height: 40px;
+}

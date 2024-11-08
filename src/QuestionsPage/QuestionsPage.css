@@ -1,0 +1,143 @@
+.questions_root{
+    padding-top: 90px;
+}
+.questions_title{
+    color: #4AB185;
+    font-size: clamp(1em, 3em, 3em);
+    text-align: center;
+    margin-top: 5vh;
+}
+.questions_main_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: 5vh auto 0;
+}
+.questions_question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #4AB185;
+    padding: 2%;
+    border-radius: 10px;
+    width: 96%;
+}
+.questions_question.opened{
+    border-radius: 10px 10px 0 0;
+    border-bottom: none;
+}
+.questions_question p{
+    font-size: clamp(1em, 3em, 1.5em);
+}
+
+.questions_btn{
+    height: 8vh;
+    width: 8vh;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#plus1, #plus2{
+    height: 5px;
+    width: 80%;
+    background: #4AB185;
+    transition: transform 0.3s ease;
+}
+#plus1{
+    position: relative;
+    top: 5px;
+    transform: rotate(90deg);
+}
+#plus1.opened{
+    transform: rotate(0deg);
+}
+
+#questions_answer{
+    font-size: clamp(1em, 3em, 1.5em);
+    border-radius: 0 0 10px 10px;
+    border-top: none;
+    width: 96%;
+    height: 0;
+    overflow: hidden;
+    padding: 0 2%;
+    transition: height 0.5s ease, padding 0.3s ease;
+}
+#questions_answer ul{
+    margin-left: 1em;
+}
+#questions_answer.opened {
+    height: 30vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened1 {
+    height: 47vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened2 {
+    height: 20vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened3 {
+    height: 8vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened4 {
+    height: 14vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened5 {
+    height: 5vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened6 {
+    height: 26vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened7 {
+    height: 32vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened8 {
+    height: 38vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened9 {
+    height: 14vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened10 {
+    height: 8vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened11 {
+    height: 2vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened12 {
+    height: 5vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened13 {
+    height: 8vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
+#questions_answer.opened14 {
+    height: 5vh;
+    padding: 2%;
+    border: 2px solid #4AB185;
+}
