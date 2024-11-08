@@ -32,7 +32,6 @@ function App() {
                         <Link to="/contacts">Контакты</Link>
                         <Link to="/about">О нас</Link>
                         <Link to="/questions">Вопросы</Link>
-
                     </div>
                 </header>
                 <Routes>
