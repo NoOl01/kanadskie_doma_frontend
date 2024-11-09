@@ -1,0 +1,35 @@
+.Project_main_block {
+    position: relative;
+    width: 40%;
+    height: 28em;
+    overflow: hidden; /* Скрыть элементы, выходящие за пределы блока */
+}
+
+.Project_main_block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.Project_main_content {
+    display: flex;
+}
+
+.hover_info {
+    position: absolute;
+    bottom: 0; /* Позиционирование внизу карточки */
+    left: 0;
+    width: 100%;
+    height: 20%; /* Занимает 40% высоты изображения */
+    background-color: rgba(74, 177, 133, 0.8); /* Цвет фона с прозрачностью */
+    color: white; /* Цвет текста */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем текст по вертикали */
+    align-items: center; /* Центрируем текст по горизонтали */
+    transition: opacity 0.3s ease; /* Плавный переход */
+}
+.Project_main_block:hover img {
+    transform: scale(1.1); /* Увеличиваем изображение на 10% */
+}

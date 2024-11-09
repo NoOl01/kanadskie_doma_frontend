@@ -1,10 +1,17 @@
+import './projectStyle.css'
+
 function Project({house}) {
     return (
-        <div>
-            <p>{house.name}</p>
-            <p>{house.house_code}</p>
-            <p>{house.area}</p>
-            <img src={house.images} alt=""/>
+        <div className="Project_main_block">
+            <a href="">
+
+                <img src={house.image} alt=""/>
+                <div className="hover_info">
+                    <p>Название: {house.name}</p>
+                    <p>Код: {house.house_code}</p>
+                    <p>Площадь: {house.area}м²</p>
+                </div>
+            </a>
         </div>
     )
 }
