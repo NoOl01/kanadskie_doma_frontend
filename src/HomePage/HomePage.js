@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './HomePageStyle.css'
 import Header from '../Components/Other/HeaderComponent/HeaderComponent'
 import TopImg from './homeimages/imagetophome.png'
@@ -9,15 +9,30 @@ import realhouse from './homeimages/image 26.png'
 import wallet from './homeimages/WALLET.svg'
 import clock from './homeimages/CLOCK.svg'
 import earth from './homeimages/EARTH.svg'
-import houseim from './homeimages/houseimgg.png'
 import {Link} from "react-router-dom";
 import arrow from './homeimages/Fra2аme копия 1.png'
 import anastasa from './homeimages/izobrazhenie_viber_2020-08-17_10-30-55_cr_cr-210x210 1.png'
 import ilya from './homeimages/ilya-sip-konstruktor-kanadskiedoma39_cr-210x210 1.png'
 import alan from './homeimages/alan-kanadskie-doma-ooo_cr-210x210 1.png'
+import Project from "../ProjectsPage/Project";
 
 
 function HomePage() {
+
+    const [allProjects, setAllProjects] = useState(null);
+
+    useEffect(() => {
+        fetch(`http://localhost:8000/getHouses/`, {
+            method: "GET"
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setAllProjects(data)
+                console.log(data)
+            })
+            .catch((error) => console.log(error));
+    }, []);
+
     return (<div className="HomePage">
             <Header/>
             <div className="about_us_main_div">
@@ -132,34 +147,14 @@ function HomePage() {
                     <h1>Самые популярные проекты</h1>
                 </div>
                 <div className="four_project">
-                    <div className="project">
-                        <img src={houseim} alt=""/>
-                        <div className="project_name">
-                            <h1>KD0017 «Светлый», 64,2 кв.м.</h1>
-                        </div>
-                    </div>
-
-
-                    <div className="project">
-                        <img src={houseim} alt=""/>
-                        <div className="project_name">
-                            <h1>KD0017 «Светлый», 64,2 кв.м.</h1>
-                        </div>
-                    </div>
-
-                    <div className="project">
-                        <img src={houseim} alt=""/>
-                        <div className="project_name">
-                            <h1>KD0017 «Светлый», 64,2 кв.м.</h1>
-                        </div>
-                    </div>
-
-                    <div className="project">
-                        <img src={houseim} alt=""/>
-                        <div className="project_name">
-                            <h1>KD0017 «Светлый», 64,2 кв.м.</h1>
-                        </div>
-                    </div>
+                    {
+                        allProjects !== null &&
+                        <>
+                            {allProjects.data.houses.slice(-4).map(item => (
+                                <Project key={item.id} house={item} />
+                            ))}
+                        </>
+                    }
 
                 </div>
                 <div className="best_project_footer">

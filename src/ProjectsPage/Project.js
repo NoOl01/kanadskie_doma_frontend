@@ -1,5 +1,6 @@
 import './projectStyle.css'
 
+
 function Project({house}) {
     return (
         <div className="Project_main_block">
