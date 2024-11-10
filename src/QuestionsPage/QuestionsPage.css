@@ -141,3 +141,23 @@
     padding: 2%;
     border: 2px solid #4AB185;
 }
+.questions_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.questions_form p{
+    font-size: 3em;
+    font-weight: bolder;
+    color: #4AB185;
+    margin-top: 5vh;
+}
+.questions_form button{
+    margin-top: 3vh;
+    padding: 20px;
+    background: #4AB185;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.3em;
+    color: white;
+}

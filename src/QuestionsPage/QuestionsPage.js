@@ -1,9 +1,14 @@
 import React, {useState} from 'react';
 import './QuestionsPage.css'
 import Header from '../Components/Other/HeaderComponent/HeaderComponent'
+import MainFormModal from "../Components/Modal/ModalWindow";
 
 function QuestionsPage() {
+
     const [openQuestions, setOpenQuestions] = useState([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]);
+
+    const [isMainModalOpen, setIsMainModalOpen] = useState(false);
+    const [modalId, setModalId] = useState(null);
 
     const toggleAnswer = (index) => {
         setOpenQuestions((prevOpenQuestions) => {
@@ -319,6 +324,17 @@ function QuestionsPage() {
                     <p>Мы работаем круглогодично. У нас есть отработанных технологии и все необходимое оборудование для строительства в летний и зимний период, в самые злючие морозы будем отдыхать 😊</p>
                 </div>
             </div>
+            <div className="questions_form">
+                <p>Остались еще вопросы?</p>
+                <button onClick={() => {setIsMainModalOpen(true); setModalId(9)}}>Напишите нам!</button>
+            </div>
+            <MainFormModal isOpen={isMainModalOpen} onClose={() => setIsMainModalOpen(false)}>
+                <input type="text" placeholder="Ваше имя"/>
+                <input type="email" placeholder="Email"/>
+                <input type="tel" placeholder="Телефон"/>
+                <textarea name="message" placeholder="Ваше сообщение"/>
+                <button className="send_button">Отправить</button>
+            </MainFormModal>
         </div>
     );
 }

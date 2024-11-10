@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ServicesPage.css'
 import StairsSlider from './Sliders/Stairs/ServicesStairsSlider';
 import FoundationSlider from './Sliders/Foundation/ServiceFoundationSlider';
 import AeratedconcreteSlider from './Sliders/AeratedСoncrete/AeratedСoncreteSlider';
+import MainFormModal from "../Components/Modal/ModalWindow";
 import ServicesProject from './Images/ServicesProject.png';
 import WhatsApp from './Images/whatsap.svg';
 import SmartPhone from './Images/SmartPhone.svg';
 import Phone from './Images/Phone.svg';
 
 function ServicesPage() {
+    const [isFoundationModalOpen, setIsFoundationModalOpen] = useState(false);
+    const [isMainModalOpen, setIsMainModalOpen] = useState(false);
+    const [modalId, setModalId] = useState(null);
+
     return (
         <div className='services_root'>
             <p className="service_content_title">Наша компания готова предоставить вам следующие услуги</p>
@@ -37,7 +42,7 @@ function ServicesPage() {
                         <li>Ленточный. Заглубленная в грунт «лента» из железобетона по периметру и с перегородками для опоры перекрытий и внутренних стен.</li>
                     </ul>
                 </div>
-                <button id="stairs">Заказать фундамент</button>
+                <button id="stairs" onClick={() => {setIsFoundationModalOpen(true); setModalId(1)}}>Заказать фундамент</button>
             </div>
             <div className="services_stairs_main_div">
                 <div className="services_foundation_title">
@@ -45,7 +50,7 @@ function ServicesPage() {
                     <p>Наша компания поможет подобрать подходящую форму лестници и гарантировать безопасность и комфорт</p>
                 </div>
                 <StairsSlider/>
-                <button id="aer">Заказать лестницу</button>
+                <button id="aer" onClick={() => {setIsMainModalOpen(true); setModalId(2)}}>Заказать лестницу</button>
             </div>
             <div className="services_aer_main_div">
                 <div className="services_aer_title">
@@ -54,7 +59,7 @@ function ServicesPage() {
                         производства</p>
                 </div>
                 <AeratedconcreteSlider/>
-                <button id="project">Заказать дом из газобетона</button>
+                <button id="project" onClick={() => {setIsMainModalOpen(true); setModalId(3)}}>Заказать дом из газобетона</button>
             </div>
             <div className="services_project_main_div">
                 <div className="services_project_title">
@@ -70,7 +75,7 @@ function ServicesPage() {
                         <li>Поддержим вас на каждом этапе создания проекта вашего дома.</li>
                     </ul>
                 </div>
-                <button id="excursion">Помощь с проектом</button>
+                <button id="excursion" onClick={() => {setIsMainModalOpen(true); setModalId(4)}}>Помощь с проектом</button>
             </div>
             <div className="services_excursion_main_div">
                 <div className="services_excursion_title">
@@ -85,7 +90,7 @@ function ServicesPage() {
                     <img src={WhatsApp} alt=""/>
                     <p>+7-921-711-33-33</p>
                 </div>
-                <button id="mortgage">Записаться на экскурсию</button>
+                <button id="mortgage" onClick={() => {setIsMainModalOpen(true); setModalId(5)}}>Записаться на экскурсию</button>
             </div>
             <div className="services_main_div">
                 <div className="services_title">
@@ -97,7 +102,7 @@ function ServicesPage() {
                     <li>Кредит на строительство дома</li>
                     <li>Сельская ипотека под 3%</li>
                 </ul>
-                <button id="ndfl">Помощь с ипотекой</button>
+                <button id="ndfl" onClick={() => {setIsMainModalOpen(true); setModalId(6)}}>Помощь с ипотекой</button>
             </div>
             <div className="services_main_div">
                 <div className="services_title">
@@ -118,8 +123,30 @@ function ServicesPage() {
                         <p>+7-9814-77-11-81</p>
                     </div>
                 </div>
-                <button>Помощь с НДФЛ</button>
+                <button onClick={() => {setIsMainModalOpen(true); setModalId(7)}}>Помощь с НДФЛ</button>
             </div>
+            <MainFormModal isOpen={isFoundationModalOpen} onClose={() => setIsFoundationModalOpen(false)}>
+                <select name="foundation_type">
+                    <option value="monolithic_plate">Монолитная плита</option>
+                    <option value="monolithic_ribbon_foundation">Монолитно-ленточный фундамент</option>
+                </select>
+                <input type="text" placeholder="Ширина фундамента"/>
+                <input type="text" placeholder="Длина фундамента"/>
+                <input type="text" placeholder="Толщина фундамента"/>
+                <input type="text" placeholder="Ваше имя"/>
+                <input type="email" placeholder="Email"/>
+                <input type="tel" placeholder="Телефон"/>
+                <input type="text" placeholder="Адрес объекта"/>
+                <textarea name="message" placeholder="Ваше сообщение" rows="6"></textarea>
+                <button className="send_button">Отправить</button>
+            </MainFormModal>
+            <MainFormModal isOpen={isMainModalOpen} onClose={() => setIsMainModalOpen(false)}>
+                <input type="text" placeholder="Ваше имя"/>
+                <input type="email" placeholder="Email"/>
+                <input type="tel" placeholder="Телефон"/>
+                <textarea name="message" placeholder="Ваше сообщение" rows="6"></textarea>
+                <button className="send_button">Отправить</button>
+            </MainFormModal>
         </div>
     );
 }

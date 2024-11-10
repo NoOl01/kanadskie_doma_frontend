@@ -8,6 +8,7 @@ import ServicesPage from './ServicesPage/ServicesPage';
 import ContactsPage from './ContactsPage/ContactsPage';
 import AboutPage from './AboutPage/AboutPage';
 import QuestionsPage from './QuestionsPage/QuestionsPage';
+import HousePage from './HousePage/HousePage';
 import headerLogo from './Images/HeaderLogo.png';
 import footerlogo from './Images/whitelogo.png';
 import rutube from "./HomePage/homeimages/rutube.png"
@@ -42,6 +43,7 @@ function App() {
                     <Route path="/contacts" element={<ContactsPage/>}/>
                     <Route path="/about" element={<AboutPage/>}/>
                     <Route path="/questions" element={<QuestionsPage/>}/>
+                    <Route path="/house/:id" element={<HousePage/>}/>
                 </Routes>
                 <footer>
                     <div className="left_piece">

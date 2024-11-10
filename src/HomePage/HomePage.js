@@ -15,11 +15,14 @@ import anastasa from './homeimages/izobrazhenie_viber_2020-08-17_10-30-55_cr_cr-
 import ilya from './homeimages/ilya-sip-konstruktor-kanadskiedoma39_cr-210x210 1.png'
 import alan from './homeimages/alan-kanadskie-doma-ooo_cr-210x210 1.png'
 import Project from "../ProjectsPage/Project";
+import MainFormModal from "../Components/Modal/ModalWindow";
 
 
 function HomePage() {
 
     const [allProjects, setAllProjects] = useState(null);
+    const [isMainModalOpen, setIsMainModalOpen] = useState(false);
+    const [modalId, setModalId] = useState(null);
 
     useEffect(() => {
         fetch(`http://localhost:8000/getHouses/`, {
@@ -138,7 +141,7 @@ function HomePage() {
                         <p>Хотите заказать консультацию?</p>
                     </div>
                     <div className="cons_button">
-                        <button>Оставить заявку</button>
+                        <button onClick={() => {setIsMainModalOpen(true); setModalId(8)}}>Оставить заявку</button>
                     </div>
                 </div>
             </div>
@@ -206,7 +209,13 @@ function HomePage() {
 
             </div>
 
-
+            <MainFormModal isOpen={isMainModalOpen} onClose={() => setIsMainModalOpen(false)}>
+                <input type="text" placeholder="Ваше имя"/>
+                <input type="email" placeholder="Email"/>
+                <input type="tel" placeholder="Телефон"/>
+                <textarea name="message" placeholder="Ваше сообщение"></textarea>
+                <button className="send_button">Отправить</button>
+            </MainFormModal>
         </div>
     )
 }
