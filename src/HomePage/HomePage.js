@@ -16,6 +16,7 @@ import ilya from './homeimages/ilya-sip-konstruktor-kanadskiedoma39_cr-210x210 1
 import alan from './homeimages/alan-kanadskie-doma-ooo_cr-210x210 1.png'
 import Project from "../ProjectsPage/Project";
 import MainFormModal from "../Components/Modal/ModalWindow";
+import CSRFTOKEN from "../CSRFComponent";
 
 
 function HomePage() {
@@ -141,7 +142,7 @@ function HomePage() {
                         <p>Хотите заказать консультацию?</p>
                     </div>
                     <div className="cons_button">
-                        <button onClick={() => {setIsMainModalOpen(true); setModalId(8)}}>Оставить заявку</button>
+                        <button onClick={() => {setIsMainModalOpen(true); setModalId("Заявка на консультацию")}}>Оставить заявку</button>
                     </div>
                 </div>
             </div>
@@ -210,11 +211,15 @@ function HomePage() {
             </div>
 
             <MainFormModal isOpen={isMainModalOpen} onClose={() => setIsMainModalOpen(false)}>
-                <input type="text" placeholder="Ваше имя"/>
-                <input type="email" placeholder="Email"/>
-                <input type="tel" placeholder="Телефон"/>
-                <textarea name="message" placeholder="Ваше сообщение"></textarea>
-                <button className="send_button">Отправить</button>
+                <form action="/createRequest/" method="POST">
+                    <CSRFTOKEN/>
+                    <input name="Тип запроса" value={modalId} type="hidden"/>
+                    <input name='Имя' type="text" placeholder="Ваше имя"/>
+                    <input name='Email' type="email" placeholder="Email"/>
+                    <input name='Телефон' type="tel" placeholder="Телефон"/>
+                    <textarea name="Сообщение" placeholder="Ваше сообщение" rows="6"></textarea>
+                    <button className="send_button" type="submit">Отправить</button>
+                </form>
             </MainFormModal>
         </div>
     )
