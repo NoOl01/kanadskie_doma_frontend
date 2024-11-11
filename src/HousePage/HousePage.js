@@ -9,7 +9,7 @@ function HousePage() {
     const [project, setProject] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/getHouseInfo?id=${id}/`, {
+        fetch(`http://localhost:8000/getHouseInfo?id=${id}`, {
             method: "GET"
         })
             .then((response) => response.json())
