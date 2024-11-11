@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './ServicesPage.css'
 import StairsSlider from './Sliders/Stairs/ServicesStairsSlider';
 import FoundationSlider from './Sliders/Foundation/ServiceFoundationSlider';
-import AeratedconcreteSlider from './Sliders/AeratedСoncrete/AeratedСoncreteSlider';
+import AeratedConcreteSlider from './Sliders/AeratedСoncrete/AeratedСoncreteSlider';
 import MainFormModal from "../Components/Modal/ModalWindow";
 import ServicesProject from './Images/ServicesProject.png';
 import WhatsApp from './Images/whatsap.svg';
@@ -55,7 +55,7 @@ function ServicesPage() {
                 </div>
                 <button id="stairs" onClick={() => {
                     setIsFoundationModalOpen(true);
-                    setModalId(1)
+                    setModalId("Заказать фундамент")
                 }}>Заказать фундамент
                 </button>
             </div>
@@ -68,7 +68,7 @@ function ServicesPage() {
                 <StairsSlider/>
                 <button id="aer" onClick={() => {
                     setIsMainModalOpen(true);
-                    setModalId(2)
+                    setModalId("Заказать лестницу")
                 }}>Заказать лестницу
                 </button>
             </div>
@@ -78,10 +78,10 @@ function ServicesPage() {
                     <p>Наша компания производит дома не только из SIP-панелей, но и из газобетона собственного
                         производства</p>
                 </div>
-                <AeratedconcreteSlider/>
+                <AeratedConcreteSlider/>
                 <button id="project" onClick={() => {
                     setIsMainModalOpen(true);
-                    setModalId(3)
+                    setModalId("Заказать дом из газобетона")
                 }}>Заказать дом из газобетона
                 </button>
             </div>
@@ -101,7 +101,7 @@ function ServicesPage() {
                 </div>
                 <button id="excursion" onClick={() => {
                     setIsMainModalOpen(true);
-                    setModalId(4)
+                    setModalId("Помощь с проектом")
                 }}>Помощь с проектом
                 </button>
             </div>
@@ -125,7 +125,7 @@ function ServicesPage() {
                 </div>
                 <button id="mortgage" onClick={() => {
                     setIsMainModalOpen(true);
-                    setModalId(5)
+                    setModalId("Записаться на экскурсию")
                 }}>Записаться на экскурсию
                 </button>
             </div>
@@ -141,7 +141,7 @@ function ServicesPage() {
                 </ul>
                 <button id="ndfl" onClick={() => {
                     setIsMainModalOpen(true);
-                    setModalId(6)
+                    setModalId("Помощь с ипотекой")
                 }}>Помощь с ипотекой
                 </button>
             </div>
@@ -168,12 +168,12 @@ function ServicesPage() {
                 </div>
                 <button onClick={() => {
                     setIsMainModalOpen(true);
-                    setModalId(7)
+                    setModalId("Помощь с НДФЛ")
                 }}>Помощь с НДФЛ
                 </button>
             </div>
             <MainFormModal isOpen={isFoundationModalOpen} onClose={() => setIsFoundationModalOpen(false)}>
-                <form action="/createRequestFoundation/"  method="POST">
+                <form action="/createRequest/" method="POST">
                     <CSRFTOKEN/>
                     <select name="Тип основания">
                         <option value="Монолитная плита">Монолитная плита</option>
@@ -191,11 +191,15 @@ function ServicesPage() {
                 </form>
             </MainFormModal>
             <MainFormModal isOpen={isMainModalOpen} onClose={() => setIsMainModalOpen(false)}>
-                <input type="text" placeholder="Ваше имя"/>
-                <input type="email" placeholder="Email"/>
-                <input type="tel" placeholder="Телефон"/>
-                <textarea name="message" placeholder="Ваше сообщение" rows="6"></textarea>
-                <button className="send_button">Отправить</button>
+                <form action="/createRequest/" method="POST">
+                    <CSRFTOKEN/>
+                    <input name="Тип запроса" value={modalId} type="hidden"/>
+                    <input name='Имя' type="text" placeholder="Ваше имя"/>
+                    <input name='Email' type="email" placeholder="Email"/>
+                    <input name='Телефон' type="tel" placeholder="Телефон"/>
+                    <textarea name="Сообщение" placeholder="Ваше сообщение" rows="6"></textarea>
+                    <button className="send_button" type="submit">Отправить</button>
+                </form>
             </MainFormModal>
         </div>
     );
