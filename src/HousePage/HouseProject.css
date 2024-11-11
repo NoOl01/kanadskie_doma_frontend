@@ -5,13 +5,15 @@
     align-items: center;
     flex-direction: column;
 }
-.house_title{
+
+.house_title {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.house_title a{
-    background:#4AB185 url("./HousePageImg/Fra2аme копия 2.svg") no-repeat center;
+
+.house_title a {
+    background: #4AB185 url("./HousePageImg/Fra2аme копия 2.svg") no-repeat center;
     background-size: 60%;
     border-radius: 50%;
     padding: 5px;
@@ -20,5 +22,105 @@
     left: 0;
     width: 50px;
     height: 50px;
+}
 
+.HouseSwiper {
+    width: 70%;
+    height: 31em;
+    margin-top: 2em;
+}
+
+.House_slide {
+    height: 31em !important;
+}
+
+.House_slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mini_sl {
+    margin: 1em;
+    width: 60%;
+    height: 10em;
+}
+
+.mini_slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.info_title {
+    width: 100%;
+    color: #4AB185;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    margin-top: 1em;
+}
+
+.top_info_div {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 1em;
+    background: #cccccc;
+    border-radius: 15px;
+}
+
+.inf_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    width: 20%;
+    font-size: 0.6em;
+}
+
+.inf_div img {
+    width: 50%;
+    height: 50%;
+}
+
+.text_description {
+    width: 70%;
+    margin-top: 1em;
+    font-size: 0.7em;
+    line-height: 4em;
+
+}
+.main_specifications{
+    margin-top: 1em;
+    display: flex;
+    width: 80%;
+
+    flex-direction: column;
+}
+.p31{
+    color: #4AB185;
+    font-size: 1.6em;
+}
+.cell{
+    display: flex;
+    width: 70%;
+    height: 4em;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+}
+.main_specifications_table{
+    margin-top: 2em;
+    width: 100%;
+    background: #4AB185;
+    color: white;
+    border-radius: 5em;
+}
+.partition{
+    width: 100%;
+    height: 2px;
+    background: white;
 }
