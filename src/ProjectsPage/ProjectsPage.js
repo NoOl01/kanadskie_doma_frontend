@@ -3,10 +3,12 @@ import './ProjectsPage.css'
 import Project from "./Project";
 import Header from "../Components/Other/HeaderComponent/HeaderComponent";
 import Arrow from "./projetsImage/Arrow.svg";
+
 function ProjectsPage() {
     const [allProjects, setAllProjects] = useState(null);
     const [openSearch, setOpenSearch] = useState(false);
     const [openFilter, setOpenFilter] = useState([false, false]);
+    const [searchText, setSearchText] = useState('');
 
     const toggleFilter = (index) => {
         setOpenFilter((prevOpenFilter) => {
@@ -15,7 +17,6 @@ function ProjectsPage() {
             return newOpenFilter;
         });
     };
-
 
     useEffect(() => {
         fetch(`http://localhost:8000/getHouses/`, {
@@ -37,24 +38,43 @@ function ProjectsPage() {
                 <div className="search_header">
                     <p>Наши проекты</p>
                     <div className="search_header_div">
-                        <input id="search_input" className={`search_header_input ${openSearch ? 'opened' : ''}`} type="search" placeholder="Название проекта"/>
-                        <button className={`search_btn ${openSearch ? 'opened' : ''}`}
-                                onClick={() => {
-                                    if(openSearch && document.getElementById('search_input').value !== ""
-                                        || document.getElementById('search_input_filter1').value !== ""
-                                        || document.getElementById('search_input_filter1').value !== ""){
-                                        alert('//TODO')
-                                    }else{
-                                        setOpenSearch(!openSearch)
-                                    }}}/>
+                        <input id="search_input" className={`search_header_input ${openSearch ? 'opened' : ''}`}
+                               type="search" placeholder="Название проекта"  onChange={(e) => setSearchText(e.target.value)} />
+                        <div className="search_btn_div">
+                            <button className={`search_btn ${openSearch ? 'opened' : ''}`}
+                                    onClick={() => {
+                                        if (openSearch && document.getElementById('search_input').value !== ""
+                                            || document.getElementById('search_input_filter1').value !== ""
+                                            || document.getElementById('search_input_filter2').value !== "") {
+                                            alert("TODO")
+                                        } else {
+                                            setOpenSearch(!openSearch)
+                                        }
+                                    }}/>
+                            {searchText && (
+                                <button className="search_clear_button"
+                                        onClick={() => {
+                                            document.getElementById('search_input').value = '';
+                                            document.getElementById('search_input_filter1').value = '';
+                                            document.getElementById('search_input_filter2').value = '';
+                                            setSearchText('');
+                                        }}
+                                />
+                            )}
+                        </div>
                     </div>
                 </div>
-                <div className={`search_div ${openSearch ? 'opened' : ''}`}>
+                <div className={`search_div ${
+                    openFilter[1] ? 'openFilter2'
+                        : openFilter[0] ? 'openFilter1'
+                            : openSearch ? 'opened'
+                                : ''
+                }`}>
                     <div className="search_filters">
                         <div className="search_d">
                             <div className="search_filters_div">
                                 <input id="search_input_filter1" className={openFilter[0] ? 'opened' : ''} type="number"
-                                       placeholder="Кол-во этажей"/>
+                                       placeholder="Кол-во этажей" onChange={(e) => setSearchText(e.target.value)}/>
                                 <button className={`search_filters_button ${openFilter[0] ? 'opened' : ''}`}
                                         onClick={() => toggleFilter(0)}>
                                     <img className={`search_filters_img ${openFilter[0] ? 'opened' : ''}`} src={Arrow}
@@ -80,8 +100,8 @@ function ProjectsPage() {
                         </div>
                         <div className="search_d">
                             <div className="search_filters_div">
-                                <input id="search_input_filter2" className={openFilter[1] ? 'opened' : ''} type="number"
-                                       placeholder="Кол-во этажей"/>
+                                <input id="search_input_filter2" className={openFilter[1] ? 'opened' : ''} type="text"
+                                       placeholder="Кол-во этажей" onChange={(e) => setSearchText(e.target.value)}/>
                                 <button className={`search_filters_button ${openFilter[1] ? 'opened' : ''}`}
                                         onClick={() => toggleFilter(1)}>
                                     <img className={`search_filters_img ${openFilter[1] ? 'opened' : ''}`} src={Arrow}
@@ -89,19 +109,29 @@ function ProjectsPage() {
                             </div>
                             <div className={`floors_select_div ${openFilter[1] ? 'opened' : ''}`}>
                                 <button onClick={() => {
-                                    document.getElementById('search_input_filter2').value = '40';
+                                    document.getElementById('search_input_filter2').value = '18-50';
                                     toggleFilter(1);
-                                }}>40 кв.м
+                                }}>18-50 кв.м
                                 </button>
                                 <button onClick={() => {
-                                    document.getElementById('search_input_filter2').value = '80';
+                                    document.getElementById('search_input_filter2').value = '50-100';
                                     toggleFilter(1);
-                                }}>80 кв.м
+                                }}>50-100 кв.м
                                 </button>
                                 <button onClick={() => {
-                                    document.getElementById('search_input_filter2').value = '120';
+                                    document.getElementById('search_input_filter2').value = '100-170';
                                     toggleFilter(1);
-                                }}>120 кв.м
+                                }}>100-170 кв.м
+                                </button>
+                                <button onClick={() => {
+                                    document.getElementById('search_input_filter2').value = '170-250';
+                                    toggleFilter(1);
+                                }}>170-250 кв.м
+                                </button>
+                                <button onClick={() => {
+                                    document.getElementById('search_input_filter2').value = '250-300';
+                                    toggleFilter(1);
+                                }}>250-300 кв.м
                                 </button>
                             </div>
                         </div>
