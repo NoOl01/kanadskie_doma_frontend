@@ -41,6 +41,7 @@ function ProjectsPage() {
                         <button className={`search_btn ${openSearch ? 'opened' : ''}`}
                                 onClick={() => {
                                     if(openSearch && document.getElementById('search_input').value !== ""
+                                        || document.getElementById('search_input_filter1').value !== ""
                                         || document.getElementById('search_input_filter1').value !== ""){
                                         alert('//TODO')
                                     }else{
