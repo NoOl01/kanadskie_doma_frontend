@@ -1,17 +1,25 @@
 import React from "react";
 import './HouseProject.css'
-import HouseSlider from "./Slider/HouseSlider";
+
+import arow from  './HousePageImg/Fra2аme копия 2.svg'
+
 import {Autoplay, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
+import {Link} from "react-router-dom";
 
 function HousePage({houseInfo}) {
     console.log(houseInfo);
     return (
-        <div>
-            <p>test</p>
-            <p>{houseInfo.name}</p>
-            <p>{houseInfo.house_code}</p>
-            <p>{houseInfo.area}</p>
+        <div className="house_main_div">
+            <div className="house_title">
+                <Link to="/projects"></Link>
+                <h1>{houseInfo.name}</h1>
+            </div>
+
+
+            {/*<p>{houseInfo.house_code}</p>*/}
+            {/*<p>{houseInfo.area}</p>*/}
+
             <Swiper
                 spaceBetween={50}
                 slidesPerView={1}
@@ -24,7 +32,7 @@ function HousePage({houseInfo}) {
                 }}
                 loop={true}
                 modules={[Pagination, Autoplay]}
-                className="mySwiper1"
+                className="HouseSwiper"
                 autoplay={{
                     delay: 2000,
                     disableOnInteraction: false,
@@ -32,15 +40,13 @@ function HousePage({houseInfo}) {
 
                 {
                     <>
-                        {houseInfo.images.map(image => <SwiperSlide>
+                        {houseInfo.images.map(image => <SwiperSlide className="House_slide">
                             <img src={image} alt=""/>
                         </SwiperSlide>)}
                     </>
                 }
 
-
-                {/* Элемент для пагинации */}
-                <div className="custom-pagination"></div>
+                <div className="House_pagination"></div>
             </Swiper>
 
         </div>

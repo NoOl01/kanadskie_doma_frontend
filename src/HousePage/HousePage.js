@@ -23,6 +23,7 @@ function HousePage() {
     return(
         <div className="house_page_root">
             {
+
                 project !== null &&
                 <>
                     <div>
