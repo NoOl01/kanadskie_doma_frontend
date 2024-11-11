@@ -8,6 +8,7 @@ import ServicesProject from './Images/ServicesProject.png';
 import WhatsApp from './Images/whatsap.svg';
 import SmartPhone from './Images/SmartPhone.svg';
 import Phone from './Images/Phone.svg';
+import CSRFTOKEN from "../CSRFComponent";
 
 function ServicesPage() {
     const [isFoundationModalOpen, setIsFoundationModalOpen] = useState(false);
@@ -29,28 +30,47 @@ function ServicesPage() {
             <div className="services_foundation_main_div">
                 <div className="services_foundation_title">
                     <h2>Фундамент</h2>
-                    <p>Это основа здания. От качества его проектирования и возведения зависят такие важные характеристики всего сооружения, как устойчивость, долговечность, надежность и, в конечном итоге, комфорт проживания.</p>
+                    <p>Это основа здания. От качества его проектирования и возведения зависят такие важные
+                        характеристики всего сооружения, как устойчивость, долговечность, надежность и, в конечном
+                        итоге, комфорт проживания.</p>
                 </div>
                 <FoundationSlider/>
                 <div className="services_foundation_description">
                     <p>В компании «Канадские дома» доступны следующие виды фундаментов</p>
                     <ul>
-                        <li>Свайный. Вкрученные металлические сваи подходят для сложного рельефа участка, для слабых грунтов.</li>
-                        <li>Свайно-ростверковый (или ленточно-столбчатый). Из бетона заливаются заглубленные в землю опорные столбы, соединенные бетонной лентой. Подходит для небольших одноэтажных зданий.</li>
+                        <li>Свайный. Вкрученные металлические сваи подходят для сложного рельефа участка, для слабых
+                            грунтов.
+                        </li>
+                        <li>Свайно-ростверковый (или ленточно-столбчатый). Из бетона заливаются заглубленные в землю
+                            опорные столбы, соединенные бетонной лентой. Подходит для небольших одноэтажных зданий.
+                        </li>
                         <li>Плитный. Монолитная бетонная плита. Для строительства на болотистых, плавающих грунтах.</li>
-                        <li>Утепленная «шведская плита». Многослойная непромерзающая конструкция, с готовыми коммуникациями внутри. Подходит для системы «теплый пол».</li>
-                        <li>Ленточный. Заглубленная в грунт «лента» из железобетона по периметру и с перегородками для опоры перекрытий и внутренних стен.</li>
+                        <li>Утепленная «шведская плита». Многослойная непромерзающая конструкция, с готовыми
+                            коммуникациями внутри. Подходит для системы «теплый пол».
+                        </li>
+                        <li>Ленточный. Заглубленная в грунт «лента» из железобетона по периметру и с перегородками для
+                            опоры перекрытий и внутренних стен.
+                        </li>
                     </ul>
                 </div>
-                <button id="stairs" onClick={() => {setIsFoundationModalOpen(true); setModalId(1)}}>Заказать фундамент</button>
+                <button id="stairs" onClick={() => {
+                    setIsFoundationModalOpen(true);
+                    setModalId(1)
+                }}>Заказать фундамент
+                </button>
             </div>
             <div className="services_stairs_main_div">
                 <div className="services_foundation_title">
                     <h2>Хотите заказать лестницу из СИП-панелей?</h2>
-                    <p>Наша компания поможет подобрать подходящую форму лестници и гарантировать безопасность и комфорт</p>
+                    <p>Наша компания поможет подобрать подходящую форму лестници и гарантировать безопасность и
+                        комфорт</p>
                 </div>
                 <StairsSlider/>
-                <button id="aer" onClick={() => {setIsMainModalOpen(true); setModalId(2)}}>Заказать лестницу</button>
+                <button id="aer" onClick={() => {
+                    setIsMainModalOpen(true);
+                    setModalId(2)
+                }}>Заказать лестницу
+                </button>
             </div>
             <div className="services_aer_main_div">
                 <div className="services_aer_title">
@@ -59,7 +79,11 @@ function ServicesPage() {
                         производства</p>
                 </div>
                 <AeratedconcreteSlider/>
-                <button id="project" onClick={() => {setIsMainModalOpen(true); setModalId(3)}}>Заказать дом из газобетона</button>
+                <button id="project" onClick={() => {
+                    setIsMainModalOpen(true);
+                    setModalId(3)
+                }}>Заказать дом из газобетона
+                </button>
             </div>
             <div className="services_project_main_div">
                 <div className="services_project_title">
@@ -75,22 +99,35 @@ function ServicesPage() {
                         <li>Поддержим вас на каждом этапе создания проекта вашего дома.</li>
                     </ul>
                 </div>
-                <button id="excursion" onClick={() => {setIsMainModalOpen(true); setModalId(4)}}>Помощь с проектом</button>
+                <button id="excursion" onClick={() => {
+                    setIsMainModalOpen(true);
+                    setModalId(4)
+                }}>Помощь с проектом
+                </button>
             </div>
             <div className="services_excursion_main_div">
                 <div className="services_excursion_title">
                     <p>Наша компания может провести для вас экскурсию</p>
                 </div>
                 <ul>
-                    <li>Мы подробно рассказываем о технологии строительства домов из СИП-панелей, поясняем, почему применяются те или иные материалы и технологии для строительства и отделки.</li>
-                    <li>Мы даем возможность посетить наши объекты, как в процессе строительства, так и уже завершенные строительством</li>
+                    <li>Мы подробно рассказываем о технологии строительства домов из СИП-панелей, поясняем, почему
+                        применяются те или иные материалы и технологии для строительства и отделки.
+                    </li>
+                    <li>Мы даем возможность посетить наши объекты, как в процессе строительства, так и уже завершенные
+                        строительством
+                    </li>
                 </ul>
-                <p className="services_excursion_p">Чтобы записаться на экскурсию можете написать нам или записаться по кнопке ниже</p>
+                <p className="services_excursion_p">Чтобы записаться на экскурсию можете написать нам или записаться по
+                    кнопке ниже</p>
                 <div className="services_excursion_description">
                     <img src={WhatsApp} alt=""/>
                     <p>+7-921-711-33-33</p>
                 </div>
-                <button id="mortgage" onClick={() => {setIsMainModalOpen(true); setModalId(5)}}>Записаться на экскурсию</button>
+                <button id="mortgage" onClick={() => {
+                    setIsMainModalOpen(true);
+                    setModalId(5)
+                }}>Записаться на экскурсию
+                </button>
             </div>
             <div className="services_main_div">
                 <div className="services_title">
@@ -102,7 +139,11 @@ function ServicesPage() {
                     <li>Кредит на строительство дома</li>
                     <li>Сельская ипотека под 3%</li>
                 </ul>
-                <button id="ndfl" onClick={() => {setIsMainModalOpen(true); setModalId(6)}}>Помощь с ипотекой</button>
+                <button id="ndfl" onClick={() => {
+                    setIsMainModalOpen(true);
+                    setModalId(6)
+                }}>Помощь с ипотекой
+                </button>
             </div>
             <div className="services_main_div">
                 <div className="services_title">
@@ -112,7 +153,9 @@ function ServicesPage() {
                 <a href="">Заявление о возврате 13%</a>
                 <a href="">Заявление в налоговую</a>
                 <p className="services_p">Финансовый консультант Екатерина Бородкова</p>
-                <p className="services_ndfl_description">Для консультаций по вопросам ипотеки, оформлению налогового вычета, работе с материнским капиталом, программой молодая семья, сертификатами на приобретение недвижимости, по оформлению платежей по договорам строительства.</p>
+                <p className="services_ndfl_description">Для консультаций по вопросам ипотеки, оформлению налогового
+                    вычета, работе с материнским капиталом, программой молодая семья, сертификатами на приобретение
+                    недвижимости, по оформлению платежей по договорам строительства.</p>
                 <div className="services_ndfl_contacts_div">
                     <div className="services_ndfl_contacts">
                         <img src={SmartPhone} alt=""/>
@@ -123,22 +166,29 @@ function ServicesPage() {
                         <p>+7-9814-77-11-81</p>
                     </div>
                 </div>
-                <button onClick={() => {setIsMainModalOpen(true); setModalId(7)}}>Помощь с НДФЛ</button>
+                <button onClick={() => {
+                    setIsMainModalOpen(true);
+                    setModalId(7)
+                }}>Помощь с НДФЛ
+                </button>
             </div>
             <MainFormModal isOpen={isFoundationModalOpen} onClose={() => setIsFoundationModalOpen(false)}>
-                <select name="foundation_type">
-                    <option value="monolithic_plate">Монолитная плита</option>
-                    <option value="monolithic_ribbon_foundation">Монолитно-ленточный фундамент</option>
-                </select>
-                <input type="text" placeholder="Ширина фундамента"/>
-                <input type="text" placeholder="Длина фундамента"/>
-                <input type="text" placeholder="Толщина фундамента"/>
-                <input type="text" placeholder="Ваше имя"/>
-                <input type="email" placeholder="Email"/>
-                <input type="tel" placeholder="Телефон"/>
-                <input type="text" placeholder="Адрес объекта"/>
-                <textarea name="message" placeholder="Ваше сообщение" rows="6"></textarea>
-                <button className="send_button">Отправить</button>
+                <form action="/createRequestFoundation/"  method="POST">
+                    <CSRFTOKEN/>
+                    <select name="Тип основания">
+                        <option value="Монолитная плита">Монолитная плита</option>
+                        <option value="Монолитно-ленточный фундамент">Монолитно-ленточный фундамент</option>
+                    </select>
+                    <input name="Ширина" type="text" placeholder="Ширина фундамента"/>
+                    <input name="Длина" type="text" placeholder="Длина фундамента"/>
+                    <input name="Толщина" type="text" placeholder="Толщина фундамента"/>
+                    <input name="Имя" type="text" placeholder="Ваше имя"/>
+                    <input name="Email" type="email" placeholder="Email"/>
+                    <input name="Телефон" type="tel" placeholder="Телефон"/>
+                    <input name="Адрес" type="text" placeholder="Адрес объекта"/>
+                    <textarea name="Сообщение" placeholder="Ваше сообщение" rows="6"></textarea>
+                    <button className="send_button" type="submit">Отправить</button>
+                </form>
             </MainFormModal>
             <MainFormModal isOpen={isMainModalOpen} onClose={() => setIsMainModalOpen(false)}>
                 <input type="text" placeholder="Ваше имя"/>
