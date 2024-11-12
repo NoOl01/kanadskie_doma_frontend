@@ -4,7 +4,7 @@
     justify-content: center;
     gap: 10%;
     align-items: center;
-    font-size: clamp(0.3em, 0.9em, 1em);
+    font-size: 1.2em;
     height: 74vh;
 }
 
@@ -41,9 +41,10 @@
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    gap: 10%;
+    gap: 1em;
     height: 60vh;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .plus_container {
@@ -51,6 +52,7 @@
     flex-direction: column;
     align-items: center;
     gap: 1em;
+    width: 30%;
 }
 
 .plus_container img {
@@ -63,15 +65,16 @@
     flex-direction: column;
     align-items: center;
     gap: 1em;
+
 }
 
 .Name_text {
     color: #4AB185;
-    font-size: clamp(0.8em, 1.5em, 2em);
+    font-size: 1.5em;
 }
 
 .main_text {
-    font-size: clamp(0.8em, 1.2em, 2em);
+    font-size: 1.1em;
     width: 60%;
     text-align: center;
 }
@@ -106,7 +109,7 @@
 }
 
 .our_text {
-    font-size: clamp(1em, 2em, 2em);
+    font-size: 2.4em;
     color: #4AB185;
 }
 
@@ -114,7 +117,7 @@
     display: flex;
     flex-direction: column;
     gap: 1vh;
-    font-size: clamp(0.8em, 1.4em, 1em);
+    font-size: 1.3em;
 }
 
 .service_point p {
@@ -148,7 +151,7 @@
     padding: 10% 13% 10% 13%;
     border-radius: 30px;
     color: white;
-    font-size: clamp(1em, 2em, 2em);
+    font-size: 2em;
 }
 
 .cons_button button {
@@ -158,7 +161,7 @@
     border: inherit;
     background: #4AB185;
     color: white;
-    font-size: clamp(1em, 2em, 1.3em);
+    font-size: 1.5em;
 }
 
 .best_project_div {
@@ -169,7 +172,7 @@
 }
 
 .best_project_name {
-    font-size: clamp(1em, 2em, 2em);
+    font-size: 2em;
     color: white;
     background: #4AB185;
     width: 100%;
@@ -187,10 +190,12 @@
     width: 100%;
     justify-content: center;
 }
-.project img{
+
+.project img {
     width: 100%;
     height: 100%;
 }
+
 .project {
     width: 50em;
     height: 30em;
@@ -201,14 +206,14 @@
 .project_name {
     position: relative;
     bottom: 101%;
-    background:rgba(74,177,133,0.72);
+    background: rgba(74, 177, 133, 0.72);
     color: white;
     margin: 0;
 
     width: 70%;
     display: flex;
     justify-content: center;
-    border-radius: 0 0 30px  0;
+    border-radius: 0 0 30px 0;
     padding: 1em;
 }
 
@@ -220,14 +225,14 @@
 }
 
 .best_project_footer a {
-    width: 20%;
+    width: 26%;
     height: auto;
     background: #4AB185;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 90px;
-    font-size: clamp(1em, 2em, 1.3em);
+    font-size: 1.5em;
     text-decoration: none;
     color: white;
     padding: 0 20px 0 20px;
@@ -238,6 +243,7 @@
 .our_team {
     margin-top: 10vh;
     width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -247,7 +253,7 @@
 .our_team_name {
     width: 70%;
     color: #4AB185;
-    font-size: clamp(1em, 2.5em, 2.5em);
+    font-size: 3em;
 }
 
 .team_members {
@@ -255,6 +261,7 @@
     width: 70%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .member {
@@ -281,5 +288,230 @@
     text-align: center;
     gap: 1vh;
     border-radius: 0 0 20px 20px;
+}
+
+@media (max-width: 1620px) {
+    .about_us_main_div {
+        height: 50vh;
+        margin-top: 3vh;
+    }
+
+    .about_us {
+        height: 100%;
+        font-size: 0.85em;
+
+    }
+
+    .about_us_pic {
+        height: 100%;
+    }
+
+    .about_us_pic img {
+        width: 100%;
+        height: 100%;
+    }
+    .our_service {
+        height: 40em;
+    }
+
+    .our_service img {
+        width: 100%;
+        height: 80%;
+    }
+
+    .service_img {
+        height: 100%;
+    }
+
+    .service_text {
+        gap: 3em;
+    }
+
+}
+
+@media (max-width: 1550px) {
+    .about_us_main_div {
+        height: 50vh;
+        margin-top: 3vh;
+    }
+
+    .about_us {
+        height: 100%;
+        font-size: 0.85em;
+
+    }
+
+    .about_us_pic {
+        height: 100%;
+    }
+
+    .about_us_pic img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .pluses_main_div {
+        height: 30vh;
+    }
+
+    .plus_container img {
+        height: 200px;
+        width: 200px;
+
+    }
+
+    .plus_container {
+
+    }
+
+    .our_service {
+        height: 40em;
+    }
+
+    .our_service img {
+        width: 100%;
+        height: 80%;
+    }
+
+    .service_img {
+        height: 100%;
+    }
+
+    .service_text {
+        gap: 3em;
+    }
+
+    .consultation {
+        height: 40vh;
+    }
+
+    .cons_button button {
+        height: 4em;
+    }
+
+    .best_project_name {
+        font-size: 1.7em;
+        height: 5em;
+    }
+
+    .best_project_footer {
+        width: 90%;
+        margin: 8em auto;
+    }
+
+    .best_project_footer a {
+        width: 30%;
+        font-size: 1.5em;
+    }
+
+    .our_team {
+        height: 32em;
+        margin-top: 1vh;
+    }
+
+    .team_members {
+        width: 80%;
+        gap: 2em;
+        justify-content: center;
+
+    }
+}
+
+@media (max-width: 1470px) {
+    .about_us_main_div {
+        height: 30em;
+        font-size: 1em;
+        margin-top: 3vh;
+    }
+
+    .about_us {
+        height: 100%;
+        font-size: 0.85em;
+
+    }
+
+    .about_us_pic {
+        height: 100%;
+    }
+
+    .about_us_pic img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .about_us_main_div {
+        height: 40em;
+        margin-top: 3vh;
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+
+    .about_us {
+        width: 70%;
+        height: 100%;
+        font-size: 0.85em;
+        padding: 0 2%;
+        border-radius: 0 0  2em 2em;
+    }
+
+    .about_us_pic {
+        border-radius: 0;
+        height: 20em;
+        object-fit: cover;
+        padding: 0;
+        margin: 0;
+
+        width: 100%;
+    }
+
+    .about_us_pic img {
+
+        width: 74%;
+        border-radius: 2em 2em 0 0;
+        height: 100%;
+        object-fit: cover;
+    }
+    .our_service {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        justify-content: start;
+        align-items: center;
+        height: 60em;
+    }
+    .service_img{
+        border-radius: 2em;
+        width: 70%;
+        height: 30em;
+    }
+    .service_img img{
+        width: 100%;
+        height: 100%;
+        border-radius: 2em;
+    }
+    .service_text{
+        gap: 1.4em;
+        display: flex;
+        text-align: center;
+    }
+    .our_team{
+        margin-top: -6em;
+    }
+    .member{
+
+        width: 30%;
+        font-size: 1.2em;
+    }
+    .best_project_footer a{
+        width: 30%;
+        font-size: 1.4em;
+    }
+    .pluses_main_div{
+        height: 23em;
+    }
+
+
 }
 

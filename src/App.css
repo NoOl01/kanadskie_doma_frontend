@@ -268,9 +268,3 @@ a:focus {
         display: block;
     }
 }
-@media (max-width: 750px) {
-    .burger-button {
-        right: 40px;
-    }
-
-}

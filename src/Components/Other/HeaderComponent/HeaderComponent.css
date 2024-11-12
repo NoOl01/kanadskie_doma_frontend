@@ -9,6 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+
 }
 
 .subHeader-title {
@@ -22,4 +24,14 @@
     font-size: clamp(0.5em, 1.4em, 2em);
     background: rgba(191, 191, 191, 0.58);
     border-radius: 30px;
+}
+@media (max-width: 1550px) {
+    .subHeader {
+        height: 65vh;
+    }
+}
+@media (max-width: 1350px) {
+    .subHeader {
+        height: 50vh;
+    }
 }

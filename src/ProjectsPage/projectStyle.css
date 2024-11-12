@@ -1,7 +1,7 @@
 .Project_main_block {
     position: relative;
     width: 40%;
-    height: 28em;
+    height: 38em;
     overflow: hidden; /* Скрыть элементы, выходящие за пределы блока */
 }
 
@@ -21,6 +21,7 @@
     bottom: 0; /* Позиционирование внизу карточки */
     left: 0;
     width: 100%;
+    font-size:1.6em ;
     height: 20%; /* Занимает 40% высоты изображения */
     background-color: rgba(74, 177, 133, 0.8); /* Цвет фона с прозрачностью */
     color: white; /* Цвет текста */
@@ -32,4 +33,29 @@
 }
 .Project_main_block:hover img {
     transform: scale(1.1); /* Увеличиваем изображение на 10% */
+}
+@media (max-width: 1800px) {
+    .Project_main_block {
+        height: 30em;
+    }
+}
+@media (max-width: 1550px) {
+    .Project_main_block {
+        height: 25em;
+        font-size: 1em;
+    }
+    .hover_info{
+        height: 30%;
+    }
+}
+@media (max-width: 1300px) {
+    .Project_main_block {
+        height: 23em;
+        font-size: 1em;
+        width: 34em;
+    }
+    .hover_info{
+        height: 30%;
+    }
+
 }
