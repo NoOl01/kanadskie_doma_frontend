@@ -10,8 +10,7 @@ import finalS from "./HousePageImg/finnalySsvg.svg"
 import startS from "./HousePageImg/startS.svg"
 import bedrooms from "./HousePageImg/bedroom.svg"
 import bathrooms from "./HousePageImg/bathroom.svg"
-
-
+import CSRFTOKEN from "../CSRFComponent";
 
 
 function HousePage({houseInfo}) {
@@ -33,7 +32,7 @@ function HousePage({houseInfo}) {
             <Swiper
 
                 loop={true}
-                modules={[Pagination, Autoplay,  Thumbs]}
+                modules={[Pagination, Autoplay, Thumbs]}
                 thumbs={{swiper: thumbs && !thumbs.destroyed ? thumbs : null}}
                 className="HouseSwiper"
                 autoplay={{
@@ -101,8 +100,6 @@ function HousePage({houseInfo}) {
             <div className="main_specifications">
                 <p className="p31">Основные характеристики:</p>
                 <div className="main_specifications_table">
-
-
                     <div className="cell">
                         <p>Код</p>
                         <p>{houseInfo.house_code}</p>
@@ -164,17 +161,26 @@ function HousePage({houseInfo}) {
                         <p>{houseInfo.upper_floor}</p>
                     </div>
 
-                    <div className="partition"></div>
+                    <div className="partition"/>
 
                     <div className="cell">
                         <p>Тип крыши</p>
                         <p>{houseInfo.roof}</p>
                     </div>
-
-
                 </div>
             </div>
-
+            <p className="house_request_title">Заинтересовались?</p>
+            <div className="house_request_form">
+                <p>Напишите нам!</p>
+                <form action="/createRequestFoundation/" method="POST">
+                    <CSRFTOKEN/>
+                    <input type="text" placeholder="Ваше имя"/>
+                    <input type="email" placeholder="Email"/>
+                    <input type="tel" placeholder="Телефон"/>
+                    <textarea name="message" placeholder="Ваше сообщение" rows="6"></textarea>
+                    <button className="send_button">Отправить</button>
+                </form>
+            </div>
         </div>
     )
 }

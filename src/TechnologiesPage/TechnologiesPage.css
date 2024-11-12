@@ -39,7 +39,7 @@
 }
 .technology_div{
     width: 72%;
-    margin: 7em auto;
+    margin: 7em auto 0;
     display: flex;
     gap: 1em;
     flex-direction: column;
@@ -51,7 +51,6 @@
 .technology_div img{
     width: 100%;
     height: 50%;
-
 }
 
 .technology_div h3{

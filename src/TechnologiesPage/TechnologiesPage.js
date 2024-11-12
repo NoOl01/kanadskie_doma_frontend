@@ -25,10 +25,6 @@ function TechnologiesPage() {
                 </div>
             </div>
 
-            <div className="what_we_build">
-                <p>Из чего мы строим?</p>
-            </div>
-            <SimpleSlider/>
             <div className="technology_div">
                 <h3>Технология строительства</h3>
                 <p>Сначала создается проект дома, где учитываются все ваши пожелания.
@@ -45,7 +41,10 @@ function TechnologiesPage() {
                 <img src={house_info_img} alt=""/>
             </div>
 
-
+            <div className="what_we_build">
+                <p>Из чего мы строим?</p>
+            </div>
+            <SimpleSlider/>
         </div>
     );
 }

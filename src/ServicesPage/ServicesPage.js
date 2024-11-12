@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './ServicesPage.css'
 import StairsSlider from './Sliders/Stairs/ServicesStairsSlider';
 import FoundationSlider from './Sliders/Foundation/ServiceFoundationSlider';
-import AeratedconcreteSlider from './Sliders/AeratedСoncrete/AeratedСoncreteSlider';
+import AeratedConcreteHouse from './Images/image-27.5a4e2346775d1e37f8bc.webp';
 import MainFormModal from "../Components/Modal/ModalWindow";
 import ServicesProject from './Images/ServicesProject.png';
 import WhatsApp from './Images/whatsap.svg';
@@ -78,7 +78,7 @@ function ServicesPage() {
                     <p>Наша компания производит дома не только из SIP-панелей, но и из газобетона собственного
                         производства</p>
                 </div>
-                <AeratedconcreteSlider/>
+                <img src={AeratedConcreteHouse} alt=""/>
                 <button id="project" onClick={() => {
                     setIsMainModalOpen(true);
                     setModalId(3)

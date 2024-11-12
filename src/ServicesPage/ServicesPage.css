@@ -50,6 +50,7 @@ button{
     font-size: clamp(1em, 3em, 2em);
 }
 .services_foundation_description{
+    margin-top: 4vh;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -131,6 +132,10 @@ button{
     padding: 0.6em;
     border-radius: 40px;
     margin-top: 5vh;
+}
+.services_aer_main_div img{
+    border-radius: 20px;
+    margin-top: 3vh;
 }
 .services_project_main_div{
     width: 60%;
