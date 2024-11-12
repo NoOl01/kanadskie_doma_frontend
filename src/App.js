@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import HomePage from './HomePage/HomePage';
@@ -19,9 +19,33 @@ import odn from "./HomePage/homeimages/odn.png"
 import vk from "./HomePage/homeimages/vk.png"
 import tg from "./HomePage/homeimages/tg.png"
 import whatsapp from "./HomePage/homeimages/whatsap.png"
-
+import youtube from "./HomePage/homeimages/yuotube.svg"
 
 function App() {
+    const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef(null); // Ссылка на меню
+    const menuButtonRef = useRef(null); // Ссылка на кнопку
+
+    // Функция для открытия/закрытия меню
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    // Закрытие меню, если кликнули вне его
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            // Если клик был вне меню или кнопки бургер-меню
+            if (menuRef.current && !menuRef.current.contains(event.target) &&
+                menuButtonRef.current && !menuButtonRef.current.contains(event.target)) {
+                setIsOpen(false); // Закрыть меню
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside); // Отслеживание кликов
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside); // Очистка
+        };
+    }, []);
     return (
         <Router>
             <div className="App">
@@ -30,6 +54,7 @@ function App() {
                         <Link to="/"><img src={headerLogo} alt=""/></Link>
                     </div>
                     <div className="right-header-box">
+
                         <Link to="/projects">Проекты</Link>
                         <Link to="/technologies">Технологии</Link>
                         <Link to="/services">Услуги</Link>
@@ -38,9 +63,34 @@ function App() {
                         <Link to="/about">О нас</Link>
                         <Link to="/questions">Вопросы</Link>
                     </div>
+
+                    <div className="burger-container">
+                        <button
+                            className="burger-button"
+                            ref={menuButtonRef}
+                            onClick={toggleMenu}
+                        >
+                            ☰ {/* Это иконка бургера */}
+                        </button>
+
+                        <div className={`burger-menu ${isOpen ? 'open' : ''}`} ref={menuRef}>
+                            <ul>
+                                <li><Link to="/">На главную</Link></li>
+                                <li><Link to="/projects">Проекты</Link></li>
+                                <li><Link to="/technologies">Технологии</Link></li>
+                                <li><Link to="/services">Услуги</Link></li>
+                                <li><Link to="/ready-houses">Готовые дома</Link></li>
+                                <li><Link to="/contacts">Контакты</Link></li>
+                                <li><Link to="/about">О нас</Link></li>
+                                <li><Link to="/questions">Вопросы</Link></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
                 </header>
                 <Routes>
-                    <Route path="/" element={<HomePage/>}/>
+                <Route path="/" element={<HomePage/>}/>
                     <Route path="/projects" element={<ProjectsPage/>}/>
                     <Route path="/technologies" element={<TechnologiesPage/>}/>
                     <Route path="/services" element={<ServicesPage/>}/>
@@ -62,6 +112,7 @@ function App() {
                     </div>
                     <div className="right_piece">
                         <div className="social">
+                            <a href=""><img src={youtube} alt=""/></a>
                             <a href=""><img src={rutube} alt=""/></a>
                             <a href=""><img src={vk} alt=""/></a>
                             <a href=""><img src={odn} alt=""/></a>

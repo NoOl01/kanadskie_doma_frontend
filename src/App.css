@@ -35,7 +35,7 @@ header {
     display: flex;
     justify-content: center;
     gap: 4em;
-    font-size: clamp(0.8em, 2em, 1em);
+    font-size: 1.2em;
 
 }
 
@@ -43,6 +43,27 @@ header {
     text-decoration: none;
     color: black;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 footer {
     background-color: #4AB185;
@@ -53,7 +74,7 @@ footer {
     margin-top:9vh;
     padding: 0;
     color: white;
-    font-size: clamp(0.5em, 1em, 0.7em);
+    font-size: 1em;
 }
 .left_piece{
     display: flex;
@@ -74,4 +95,182 @@ footer {
     align-items: center;
     display: flex;
     justify-content: center;
+}
+
+/* Основные стили для контейнера */
+.burger-container {
+    position: relative;
+}
+
+/* Стили кнопки бургера */
+.burger-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+
+
+.burger-container {
+    position: relative;
+}
+
+/* Стили кнопки бургера */
+.burger-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Стили самого меню */
+.burger-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Меню скрыто за пределами экрана */
+    width: 250px;
+    height: 110em;
+    background-color: white;
+
+    transition: right 0.3s ease; /* Плавное появление/скрытие */
+    z-index: 999;
+    padding-top: 100px;
+}
+
+.burger-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: none;
+    /* Отключение выделения текста */
+    user-select: none;
+}
+
+.burger-menu.open {
+    right: 0; /* Меню становится видимым */
+}
+
+.burger-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.burger-menu li {
+    padding: 15px;
+    text-align: center;
+
+}
+.burger-menu li a{
+    color: #4AB185;
+    background-color: white;
+}
+.burger-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.burger-menu a:hover {
+    background-color: inherit;
+}
+a:active {
+    background-color: transparent;  /* Убираем фон при активном состоянии */
+    outline: none; /* Убираем обводку при фокусе */
+}
+
+/* Убираем фон при фокусе (например, при переходе с клавиатуры) */
+a:focus {
+    outline: none; /* Убираем стандартную обводку */
+    background-color: transparent; /* Убираем фон при фокусе */
+}
+
+
+
+/*адаптив*/
+
+@media (max-width: 1500px) {
+    .right-header-box{
+        font-size: 1em !important;
+    }
+    footer{
+        height: 30vh;
+    }
+    .social img{
+    width:100%;
+    }
+    .social{
+        gap: 1em;
+    }
+}
+@media (max-width: 1280px) {
+    .burger-button {
+        display: block;
+    }
+    .right-header-box {
+        display: none;
+    }
+    .left-header-box{
+        width: 100%;
+        display: flex;
+        justify-content: start;
+    }
+    footer{
+        font-size: 0.8em;
+    }
+    .social a{
+        width:50px ;
+    }
+}
+@media (max-width: 900px) {
+    .left-header-box img{
+        width: 30%;
+
+    }
+    footer{
+        flex-direction: column;
+        font-size: 0.6em;
+        height: 37vh;
+    }
+    .left_piece{
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .left-header-box{
+        width: 100%;
+    }
+    .left-header-box a{
+        display: flex;
+        justify-content: start;
+        margin-left: 10px;
+    }
+    .burger-button {
+        top: 10px;
+        display: block;
+    }
+}
+@media (max-width: 750px) {
+    .burger-button {
+        right: 40px;
+    }
+
 }

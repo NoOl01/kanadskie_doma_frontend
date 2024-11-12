@@ -94,9 +94,7 @@ function HousePage({houseInfo}) {
                 </div>
 
             </div>
-            <div className="text_description">
-                <h1>{houseInfo.description}</h1>
-            </div>
+
 
             <div className="main_specifications">
                 <p className="p31">Основные характеристики:</p>
@@ -157,12 +155,8 @@ function HousePage({houseInfo}) {
 
                     <div className="partition"></div>
 
-                    <div className="cell">
-                        <p>Тип верхнего этажа</p>
-                        <p>{houseInfo.upper_floor}</p>
-                    </div>
 
-                    <div className="partition"/>
+
 
                     <div className="cell">
                         <p>Тип крыши</p>
