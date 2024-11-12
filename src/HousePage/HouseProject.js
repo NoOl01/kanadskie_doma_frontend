@@ -49,6 +49,7 @@ function HousePage({houseInfo}) {
                 }
             </Swiper>
             <Swiper
+                spaceBetween={10}
                 onSwiper={setThumbs}
                 slidesPerView={3}
                 className="mini_sl"
@@ -172,13 +173,14 @@ function HousePage({houseInfo}) {
             <p className="house_request_title">Заинтересовались?</p>
             <div className="house_request_form">
                 <p>Напишите нам!</p>
-                <form action="/createRequestFoundation/" method="POST">
+                <form action="/createRequest/" method="POST">
                     <CSRFTOKEN/>
-                    <input type="text" placeholder="Ваше имя"/>
-                    <input type="email" placeholder="Email"/>
-                    <input type="tel" placeholder="Телефон"/>
-                    <textarea name="message" placeholder="Ваше сообщение" rows="6"></textarea>
-                    <button className="send_button">Отправить</button>
+                    <input name="Тип запроса" value={`Интересен дом, ${houseInfo.house_code}, ${houseInfo.name}`} type="hidden"/>
+                    <input name='Имя' type="text" placeholder="Ваше имя"/>
+                    <input name='Email' type="email" placeholder="Email"/>
+                    <input name='Телефон' type="tel" placeholder="Телефон"/>
+                    <textarea name="Сообщение" placeholder="Ваше сообщение" rows="6"></textarea>
+                    <button className="send_button" type="submit">Отправить</button>
                 </form>
             </div>
         </div>

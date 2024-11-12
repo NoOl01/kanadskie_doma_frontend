@@ -9,6 +9,9 @@ import ContactsPage from './ContactsPage/ContactsPage';
 import AboutPage from './AboutPage/AboutPage';
 import QuestionsPage from './QuestionsPage/QuestionsPage';
 import HousePage from './HousePage/HousePage';
+import ReadyHousesListPage from "./ReadyHousesListPage/ReadyHousesListPage";
+import ReadyHousePage from "./ReadyHousePage/ReadyHousePage";
+import Error404 from "./Errors/Error404/Error404";
 import headerLogo from './Images/HeaderLogo.png';
 import footerlogo from './Images/whitelogo.png';
 import rutube from "./HomePage/homeimages/rutube.png"
@@ -30,6 +33,7 @@ function App() {
                         <Link to="/projects">Проекты</Link>
                         <Link to="/technologies">Технологии</Link>
                         <Link to="/services">Услуги</Link>
+                        <Link to="/ready-houses">Готовые дома</Link>
                         <Link to="/contacts">Контакты</Link>
                         <Link to="/about">О нас</Link>
                         <Link to="/questions">Вопросы</Link>
@@ -44,6 +48,9 @@ function App() {
                     <Route path="/about" element={<AboutPage/>}/>
                     <Route path="/questions" element={<QuestionsPage/>}/>
                     <Route path="/house/:id" element={<HousePage/>}/>
+                    <Route path="/ready-houses" element={<ReadyHousesListPage/>}/>
+                    <Route path="/ready-house/:id" element={<ReadyHousePage/>}/>
+                    <Route path="*" element={<Error404/>}/>
                 </Routes>
                 <footer>
                     <div className="left_piece">

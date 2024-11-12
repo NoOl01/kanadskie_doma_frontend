@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './QuestionsPage.css'
 import Header from '../Components/Other/HeaderComponent/HeaderComponent'
 import MainFormModal from "../Components/Modal/ModalWindow";
+import CSRFTOKEN from "../CSRFComponent";
 
 function QuestionsPage() {
 
@@ -326,14 +327,18 @@ function QuestionsPage() {
             </div>
             <div className="questions_form">
                 <p>Остались еще вопросы?</p>
-                <button onClick={() => {setIsMainModalOpen(true); setModalId(9)}}>Напишите нам!</button>
+                <button onClick={() => {setIsMainModalOpen(true); setModalId("Вопрос")}}>Напишите нам!</button>
             </div>
             <MainFormModal isOpen={isMainModalOpen} onClose={() => setIsMainModalOpen(false)}>
-                <input type="text" placeholder="Ваше имя"/>
-                <input type="email" placeholder="Email"/>
-                <input type="tel" placeholder="Телефон"/>
-                <textarea name="message" placeholder="Ваше сообщение"/>
-                <button className="send_button">Отправить</button>
+                <form action="/createRequest/" method="POST">
+                    <CSRFTOKEN/>
+                    <input name="Тип запроса" value={modalId} type="hidden"/>
+                    <input name='Имя' type="text" placeholder="Ваше имя"/>
+                    <input name='Email' type="email" placeholder="Email"/>
+                    <input name='Телефон' type="tel" placeholder="Телефон"/>
+                    <textarea name="Сообщение" placeholder="Ваше сообщение" rows="6"></textarea>
+                    <button className="send_button" type="submit">Отправить</button>
+                </form>
             </MainFormModal>
         </div>
     );
