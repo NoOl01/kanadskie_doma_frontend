@@ -4,7 +4,7 @@
     justify-content: center;
     gap: 10%;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
     height: 74vh;
 }
 
@@ -485,6 +485,7 @@
     }
 
     .service_img {
+        margin-top: 1em;
         border-radius: 2em;
         width: 70%;
         height: 30em;
@@ -685,6 +686,7 @@
         width: 80px;
     }
     .about_us{
+        height: 20em;
         font-size: 0.4em;
         line-height: 2.8em;
     }
@@ -763,7 +765,7 @@
         height: 10em;
     }
     .about_us{
-        height:20em ;
+        height:23em ;
         font-size: 0.3em;
     line-height: 4em;
     }
@@ -793,5 +795,10 @@
     }
     .about_us{
         height: 25em;
+    }
+    @media (max-width: 370px){
+        .about_us{
+            height: 30em;
+        }
     }
 }

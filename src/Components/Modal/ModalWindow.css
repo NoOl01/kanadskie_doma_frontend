@@ -18,6 +18,8 @@
     width: 80%;
     max-width: 400px;
     position: relative;
+}
+.modal-content form{
     display: flex;
     flex-direction: column;
     align-items: center;
