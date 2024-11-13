@@ -24,14 +24,30 @@ function ProjectsPage() {
         });
     };
 
-    const projectFilter = () =>{
-        allProjects.data.houses.filter(function (item) {
-            if (filter.filterName !== null && item.name.contain(filter.filterName)){
-                setFilteredProjects(item)
-
+    const projectFilter = () => {
+        if (allProjects && allProjects.data && allProjects.data.houses) {
+            let areaValues = [0, 10000]
+            if(filters.filterArea !== null){
+                areaValues = filters.filterArea.split('-')
             }
-        })
-    }
+            const filtered = allProjects.data.houses.filter((item) => {
+                const matchName = filters.filterName
+                    ? item.name.toLowerCase().includes(filters.filterName.toLowerCase())
+                    : true;
+                const matchFloors = filters.filterFloors
+                    ? item.floors === Number(filters.filterFloors)
+                    : true;
+                const matchArea = filters.filterArea
+                    ? item.area >= Number(areaValues[0]) && item.area <= Number(areaValues[1])
+                    : true;
+
+                return matchName && matchFloors && matchArea;
+            });
+
+            setFilteredProjects(filtered);
+            console.log(filtered);
+        }
+    };
 
     useEffect(() => {
         fetch(`http://localhost:8000/getHouses/`, {
@@ -69,22 +85,21 @@ function ProjectsPage() {
                         <div className="search_btn_div">
                             <button className={`search_btn ${openSearch ? 'opened' : ''}`}
                                     onClick={() => {
-                                        if (openSearch && (filters.filterName !== null || filters.filterFloors !== null || filters.filterArea !== null)
-                                        ) {
-                                            console.log(filters)
+                                        if (openSearch && (filters.filterName !== '' || filters.filterFloors !== '' || filters.filterArea !== '')) {
+                                            projectFilter()
                                         } else {
                                             setOpenSearch(!openSearch)
                                         }
                                     }}/>
-                            {(filters.filterFloors !== '' || filters.filterArea !== '' || filters.filterName !== '') && (
-                                <button className="search_clear_button"
-                                        onClick={() => {
-                                            setFilters({
-                                                filterName: null,
-                                                filterFloors: null,
-                                                filterArea: null
-                                            });
-                                        }}
+                            {((filters.filterFloors !== '' || filters.filterArea !== '' || filters.filterName !== '') || filteredProjects !== null) && (
+                                <button className="search_clear_button" onClick={() => {
+                                    setFilters({
+                                        filterName: '',
+                                        filterFloors: '',
+                                        filterArea: ''
+                                    });
+                                    setFilteredProjects(null)
+                                }}
                                 />
                             )}
                         </div>
@@ -150,7 +165,7 @@ function ProjectsPage() {
                                        onChange={(e) => {
                                            setFilters({
                                                ...filters,
-                                               filterFloors: e.target.value
+                                               filterArea: e.target.value
                                            });
                                        }}/>
                                 <button className={`search_filters_button ${openFilter[1] ? 'opened' : ''}`}
@@ -205,11 +220,10 @@ function ProjectsPage() {
                 </div>
             </div>
             {
-                // filteredProjects !== null &&
                 allProjects !== null &&
                 <>
                     <div className="projects_list">
-                        {allProjects.data.houses.map(item => <Project house={item}/>)}
+                        {filteredProjects !== null ? filteredProjects.map(item => <Project house={item}/>) : allProjects.data.houses.map(item => <Project house={item}/>)}
                     </div>
                 </>
             }

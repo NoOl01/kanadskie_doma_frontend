@@ -1,27 +1,19 @@
 import React from "react";
-import './HouseProject.css'
+import '../HousePage/HouseProject.css'
 import 'swiper/css'
 import {useState} from 'react'
 import {Autoplay, Pagination, Thumbs} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Link, useLocation} from "react-router-dom";
-import card from "./HousePageImg/card.svg"
-import finalS from "./HousePageImg/finnalySsvg.svg"
-import startS from "./HousePageImg/startS.svg"
-import bedrooms from "./HousePageImg/bedroom.svg"
-import bathrooms from "./HousePageImg/bathroom.svg"
+import {Link} from "react-router-dom";
 import CSRFTOKEN from "../CSRFComponent";
 
 
-function HousePage({houseInfo}) {
-    console.log(houseInfo);
-
-
+function ReadyHouse({houseInfo}) {
     const [thumbs, setThumbs] = useState(null)
     return (
         <div className="house_main_div">
             <div className="house_title">
-                <Link to="/projects"></Link>
+                <Link to="/ready-houses"></Link>
                 <h1>{houseInfo.name}</h1>
             </div>
 
@@ -59,66 +51,26 @@ function HousePage({houseInfo}) {
                 }
             </Swiper>
 
-            <div className="info_title">
-                <p>Информация по проекту</p>
-            </div>
-            <div className="top_info_div">
-
-                <div className="inf_div">
-                    <img src={card} alt=""/>
-                    <h1>{houseInfo.house_code}</h1>
-                </div>
-
-                <div className="inf_div">
-                    <img src={finalS} alt=""/>
-                    <h1>{houseInfo.area} м² </h1>
-                </div>
-
-                <div className="inf_div">
-                    <img src={startS} alt=""/>
-                    <h1>{houseInfo.building_area} м² </h1>
-                </div>
-
-                <div className="inf_div">
-                    <img src={bedrooms} alt=""/>
-                    <h1>{houseInfo.bedroom}</h1>
-                </div>
-
-                <div className="inf_div">
-                    <img src={bathrooms} alt=""/>
-                    <h1>{houseInfo.bathroom}</h1>
-                </div>
-
-            </div>
-
-
             <div className="main_specifications">
                 <p className="p31">Основные характеристики:</p>
                 <div className="main_specifications_table">
                     <div className="cell">
-                        <p>Код</p>
-                        <p>{houseInfo.house_code}</p>
-                    </div>
-
-                    <div className="partition"></div>
-
-                    <div className="cell">
-                        <p>Название проекта</p>
+                        <p>Дом</p>
                         <p>{houseInfo.name}</p>
                     </div>
 
                     <div className="partition"></div>
 
                     <div className="cell">
-                        <p>Тип проекта</p>
-                        <p>{houseInfo.category}</p>
+                        <p>Фундамент</p>
+                        <p>{houseInfo.foundation}</p>
                     </div>
 
                     <div className="partition"></div>
 
                     <div className="cell">
-                        <p>Тип крыши</p>
-                        <p>{houseInfo.roof}</p>
+                        <p>Стены</p>
+                        <p>{houseInfo.wall}</p>
                     </div>
 
                     <div className="partition"></div>
@@ -131,29 +83,8 @@ function HousePage({houseInfo}) {
                     <div className="partition"></div>
 
                     <div className="cell">
-                        <p>Площадь застройки</p>
-                        <p>{houseInfo.building_area} м² </p>
-                    </div>
-
-                    <div className="partition"></div>
-
-                    <div className="cell">
                         <p>Количество этажей</p>
                         <p>{houseInfo.floors}</p>
-                    </div>
-
-                    <div className="partition"></div>
-
-                    <div className="cell">
-                        <p>Количество спален</p>
-                        <p>{houseInfo.bedroom}</p>
-                    </div>
-
-                    <div className="partition"></div>
-
-                    <div className="cell">
-                        <p>Количество санузлов</p>
-                        <p>{houseInfo.bathroom}</p>
                     </div>
 
                 </div>
@@ -163,7 +94,7 @@ function HousePage({houseInfo}) {
             <p>Напишите нам!</p>
                 <form action="/createRequest/" method="POST">
                     <CSRFTOKEN/>
-                    <input name="Тип запроса" value="Интересен дом" type="hidden"/>
+                    <input name="Тип запроса" value="Интересен дом (Готовые дома)" type="hidden"/>
                     <input name="Код дома" value={houseInfo.house_code} type="hidden"/>
                     <input name="Название дома" value={houseInfo.name} type="hidden"/>
                     <input name='Имя' type="text" placeholder="Ваше имя"/>
@@ -178,4 +109,4 @@ function HousePage({houseInfo}) {
     )
 }
 
-export default HousePage;
+export default ReadyHouse;
