@@ -26,10 +26,11 @@ function App() {
     const menuRef = useRef(null); // Ссылка на меню
     const menuButtonRef = useRef(null); // Ссылка на кнопку
 
-    // Функция для открытия/закрытия меню
     const toggleMenu = () => {
-        setIsOpen(!isOpen);
+        setIsOpen(prevState => !prevState);
     };
+
+
 
     // Закрытие меню, если кликнули вне его
     useEffect(() => {
@@ -66,11 +67,14 @@ function App() {
 
                     <div className="burger-container">
                         <button
-                            className="burger-button"
+                            className={`burger-button ${isOpen ? 'open' : ''}`}
                             ref={menuButtonRef}
                             onClick={toggleMenu}
                         >
-                            ☰ {/* Это иконка бургера */}
+                            {/* Бургер-меню, 3 линии */}
+                            <span className="line"></span>
+                            <span className="line"></span>
+                            <span className="line"></span>
                         </button>
 
                         <div className={`burger-menu ${isOpen ? 'open' : ''}`} ref={menuRef}>
@@ -90,7 +94,7 @@ function App() {
 
                 </header>
                 <Routes>
-                <Route path="/" element={<HomePage/>}/>
+                    <Route path="/" element={<HomePage/>}/>
                     <Route path="/projects" element={<ProjectsPage/>}/>
                     <Route path="/technologies" element={<TechnologiesPage/>}/>
                     <Route path="/services" element={<ServicesPage/>}/>

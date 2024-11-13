@@ -97,7 +97,7 @@ footer {
     justify-content: center;
 }
 
-/* Основные стили для контейнера */
+/* Основные стили для контейнера *//* Контейнер кнопки бургера */
 .burger-container {
     position: relative;
 }
@@ -109,96 +109,85 @@ footer {
     font-size: 30px;
     cursor: pointer;
     position: fixed;
-    top: 20px;
+    top:30px;
     right: 20px;
     z-index: 1000;
+    display: none;
+    user-select: none; /* Отключение выделения текста */
+    transition: transform 0.3s ease;
 }
 
-
-
-.burger-container {
-    position: relative;
+/* Бургер - стили для трех линий */
+.burger-button .line {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #4AB185;
+    margin: 6px auto;
+    transition: all 0.3s ease; /* Анимация для плавности */
 }
 
-/* Стили кнопки бургера */
-.burger-button {
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
+/* Стиль для кнопки бургера в открытом состоянии (когда меню открыто) */
+.burger-button.open .line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg); /* Верхняя линия становится частью крестика */
 }
 
-/* Стили самого меню */
+.burger-button.open .line:nth-child(2) {
+    opacity: 0; /* Средняя линия исчезает */
+}
+
+.burger-button.open .line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg); /* Нижняя линия становится частью крестика */
+}
+
+/* Стили для самого меню */
 .burger-menu {
     position: fixed;
     top: 0;
     right: -250px; /* Меню скрыто за пределами экрана */
     width: 250px;
-    height: 110em;
+    height: 100vh;
     background-color: white;
-
     transition: right 0.3s ease; /* Плавное появление/скрытие */
     z-index: 999;
     padding-top: 100px;
-}
-
-.burger-button {
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: none;
-    /* Отключение выделения текста */
-    user-select: none;
 }
 
 .burger-menu.open {
     right: 0; /* Меню становится видимым */
 }
 
+/* Стили для списка в меню */
 .burger-menu ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-
 }
 
+/* Стили для элементов списка */
 .burger-menu li {
     padding: 15px;
     text-align: center;
+}
 
-}
-.burger-menu li a{
-    color: #4AB185;
-    background-color: white;
-}
+/* Стили для ссылок в меню */
 .burger-menu a {
-    color: white;
+    color: #4AB185;
     text-decoration: none;
     font-size: 20px;
 }
 
+/* Стиль для активных ссылок */
 .burger-menu a:hover {
     background-color: inherit;
 }
-a:active {
-    background-color: transparent;  /* Убираем фон при активном состоянии */
-    outline: none; /* Убираем обводку при фокусе */
+
+/* Убираем фон при активном состоянии и фокусе */
+a:active, a:focus {
+    background-color: transparent;
+    outline: none;
 }
 
-/* Убираем фон при фокусе (например, при переходе с клавиатуры) */
-a:focus {
-    outline: none; /* Убираем стандартную обводку */
-    background-color: transparent; /* Убираем фон при фокусе */
-}
 
 
 
@@ -232,6 +221,7 @@ a:focus {
     }
     footer{
         font-size: 0.8em;
+        height: 30em;
     }
     .social a{
         width:50px ;
@@ -266,5 +256,16 @@ a:focus {
     .burger-button {
         top: 10px;
         display: block;
+    }
+}
+@media (max-width: 900px) {
+    footer{
+        height: 35em;
+    }
+}
+@media (max-width: 400px) {
+    footer{
+        height: 35em;
+        font-size: 0.5em;
     }
 }

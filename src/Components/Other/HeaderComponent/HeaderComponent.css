@@ -35,3 +35,20 @@
         height: 50vh;
     }
 }
+@media (max-width: 1220px) {
+    .subHeader-title {
+    padding: 10px;
+        width: 40%;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 1220px) {
+    .subHeader-title {
+        width: 80%;
+    }
+}
+@media (max-width: 500px) {
+    .subHeader {
+        height: 20em;
+    }
+}

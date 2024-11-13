@@ -1,7 +1,7 @@
 .Project_main_block {
     position: relative;
     width: 40%;
-    height: 38em;
+    height: 32em;
     overflow: hidden; /* Скрыть элементы, выходящие за пределы блока */
 }
 
@@ -56,6 +56,47 @@
     }
     .hover_info{
         height: 30%;
+    }
+
+}
+@media (max-width: 900px){
+    .Project_main_block {
+        width: 90%;
+        height: 29em;
+    }
+}
+@media (max-width: 750px){
+    .Project_main_block {
+        height: 45em;
+        font-size: 0.6em;
+    }
+
+}
+@media (max-width: 600px){
+    .Project_main_block {
+        height: 35em;
+        font-size: 0.6em;
+    }
+
+}
+@media (max-width: 500px){
+    .Project_main_block {
+        height: 30em;
+        font-size: 0.6em;
+    }
+
+}
+@media (max-width: 430px){
+    .Project_main_block {
+        height: 25em;
+        font-size: 0.6em;
+    }
+
+}
+@media (max-width: 370px){
+    .Project_main_block {
+        height: 25em;
+        font-size: 0.5em;
     }
 
 }
