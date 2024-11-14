@@ -2,13 +2,13 @@ import './SliderTechnologyStyle.css'
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import paket from './TechnologyImg/sliderimg1/okno.png'
-import sipplita from './TechnologyImg/sliderimg1/sip.png'
-import brus from './TechnologyImg/sliderimg1/brus.png'
-import vata from './TechnologyImg/sliderimg1/vata.png'
-import gipsa from './TechnologyImg/sliderimg1/carton.png'
-import krovla from './TechnologyImg/sliderimg1/crovlya.png'
-import osb from './TechnologyImg/sliderimg1/osb.png'
+import paket from './TechnologyImg/sliderimg1/okno.webp'
+import sipplita from './TechnologyImg/sliderimg1/sip.webp'
+import brus from './TechnologyImg/sliderimg1/brus.webp'
+import vata from './TechnologyImg/sliderimg1/vata.webp'
+import gipsa from './TechnologyImg/sliderimg1/carton.webp'
+import krovla from './TechnologyImg/sliderimg1/crovlya.webp'
+import osb from './TechnologyImg/sliderimg1/osb.webp'
 
 import {Autoplay, Pagination} from "swiper/modules";
 

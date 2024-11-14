@@ -2,13 +2,13 @@ import './ServicesStairsSlider.css'
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import stairs1 from './Images/stairs1.jpg';
-import stairs2 from './Images/stairs2.jpg';
-import stairs3 from './Images/stairs3.jpg';
-import stairs4 from './Images/stairs4.jpg';
-import stairs5 from './Images/stairs5.jpg';
-import stairs6 from './Images/stairs6.jpg';
-import stairs7 from './Images/stairs7.jpg';
+import stairs1 from './Images/stairs1.webp';
+import stairs2 from './Images/stairs2.webp';
+import stairs3 from './Images/stairs3.webp';
+import stairs4 from './Images/stairs4.webp';
+import stairs5 from './Images/stairs5.webp';
+import stairs6 from './Images/stairs6.webp';
+import stairs7 from './Images/stairs7.webp';
 import {Autoplay} from "swiper/modules";
 
 const StairsSlider = () => {

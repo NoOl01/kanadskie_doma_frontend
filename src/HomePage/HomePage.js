@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import './HomePageStyle.css'
 import Header from '../Components/Other/HeaderComponent/HeaderComponent'
-import TopImg from './homeimages/imagetophome.png'
+import TopImgAVIF from './homeimages/imagetophome.avif'
+import TopImgPNG from './homeimages/imagetophome.png'
 import date from './homeimages/calendar.svg'
 import humans from './homeimages/people.svg'
 import house from './homeimages/house-svgrepo-com.svg'
-import realhouse from './homeimages/realHouse.webp'
+import realHouseAVIF from './homeimages/realhouse.avif'
+import realHouseWebp from './homeimages/realHouse.webp'
 import wallet from './homeimages/WALLET.svg'
 import clock from './homeimages/CLOCK.svg'
 import earth from './homeimages/EARTH.svg'
@@ -26,7 +28,7 @@ function HomePage() {
     const [modalId, setModalId] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/getHouses/`, {
+        fetch(`http://127.0.0.1:8000/getHouses/`, {
             method: "GET"
         })
             .then((response) => response.json())
@@ -48,7 +50,10 @@ function HomePage() {
                         - которые будут построены грамотно, качественно и в кратчайшие сроки!</h1>
                 </div>
                 <div className="about_us_pic">
-                    <img src={TopImg} alt=""/>
+                    <picture>
+                        <source srcSet={TopImgAVIF}/>
+                        <img src={TopImgPNG} alt=""/>
+                    </picture>
                 </div>
             </div>
             <div className="pluses_main_div">
@@ -82,7 +87,10 @@ function HomePage() {
             </div>
             <div className="our_service">
                 <div className="service_img">
-                    <img src={realhouse} alt=""/>
+                    <picture>
+                        <source srcSet={realHouseAVIF}/>
+                        <img src={realHouseWebp} alt=""/>
+                    </picture>
                 </div>
 
                 <div className="service_text">

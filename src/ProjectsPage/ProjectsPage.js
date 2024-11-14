@@ -3,6 +3,8 @@ import './ProjectsPage.css'
 import Project from "./Project";
 import Header from "../Components/Other/HeaderComponent/HeaderComponent";
 import Arrow from "./projetsImage/Arrow.svg";
+import Search from "./projetsImage/search.svg";
+import MediaQuery from "react-responsive";
 
 function ProjectsPage() {
     const [filters, setFilters] = useState({
@@ -20,9 +22,24 @@ function ProjectsPage() {
         setOpenFilter((prevOpenFilter) => {
             const newOpenFilter = [...prevOpenFilter];
             newOpenFilter[index] = !newOpenFilter[index];
+
             return newOpenFilter;
         });
     };
+
+    const getFilterClass = () => {
+        if (window.innerWidth <= 900) {
+            if (openFilter[0] && openFilter[1]) return 'openFilterAll';
+            if (openFilter[1]) return 'openFilter2';
+            if (openFilter[0]) return 'openFilter1';
+            return openSearch ? 'opened' : '';
+        } else {
+            return openFilter[1] ? 'openFilter2' :
+                openFilter[0] ? 'openFilter1' :
+                    openSearch ? 'opened' : '';
+        }
+    };
+
 
     const projectFilter = () => {
         if (allProjects && allProjects.data && allProjects.data.houses) {
@@ -50,7 +67,7 @@ function ProjectsPage() {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:8000/getHouses/`, {
+        fetch(`http://127.0.0.1:8000/getHouses/`, {
             method: "GET"
         })
             .then((response) => response.json())
@@ -59,7 +76,7 @@ function ProjectsPage() {
                 console.log(data)
             })
             .catch((error) => console.log(error));
-    }, []);
+        }, []);
 
 
     return (
@@ -90,7 +107,17 @@ function ProjectsPage() {
                                         } else {
                                             setOpenSearch(!openSearch)
                                         }
-                                    }}/>
+                                    }}>
+                                <MediaQuery maxWidth="900px">
+                                    {!openSearch ?
+                                        <div className="search_btn_media">
+                                            Нажмите для поиска
+                                            <img src={Search} alt=""/>
+                                        </div>
+                                        : ''
+                                    }
+                                </MediaQuery>
+                            </button>
                             {((filters.filterFloors !== '' || filters.filterArea !== '' || filters.filterName !== '') || filteredProjects !== null) && (
                                 <button className="search_clear_button" onClick={() => {
                                     setFilters({
@@ -105,12 +132,8 @@ function ProjectsPage() {
                         </div>
                     </div>
                 </div>
-                <div className={`search_div ${
-                    openFilter[1] ? 'openFilter2'
-                        : openFilter[0] ? 'openFilter1'
-                            : openSearch ? 'opened'
-                                : ''
-                }`}>
+                <div className={`search_div ${getFilterClass()}`}>
+
                     <div className="search_filters">
                         <div className="search_d">
                             <div className="search_filters_div">
@@ -173,7 +196,7 @@ function ProjectsPage() {
                                     <img className={`search_filters_img ${openFilter[1] ? 'opened' : ''}`} src={Arrow}
                                          alt=""/></button>
                             </div>
-                            <div className={`floors_select_div ${openFilter[1] ? 'opened' : ''}`}>
+                            <div className={`area_select_div ${openFilter[1] ? 'opened' : ''}`}>
                                 <button onClick={() => {
                                     setFilters({
                                         ...filters,

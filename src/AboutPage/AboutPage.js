@@ -1,13 +1,16 @@
 import React from 'react';
 import './AboutPage.css'
 import Header from '../Components/Other/HeaderComponent/HeaderComponent'
-import AboutUsImageExample from './Images/AboutUsExample.png'
-import AboutUsPrinciples1 from './Images/AboutUsPrinciples1.png'
-import AboutUsPrinciples2 from './Images/AboutUsPrinciples2.png'
-import AboutUsPrinciples3 from './Images/AboutUsPrinciples3.png'
-import AboutUsPrinciples4 from './Images/AboutUsPrinciples4.png'
-import AboutUsBuildings from './Images/AboutUsBuildings.png'
-import AboutUsPluses from './Images/AboutUsPluses.png'
+import AboutUsImageExampleAVIF from './Images/AboutUsExample.avif'
+import AboutUsImageExamplePNG from './Images/AboutUsExample.png'
+import AboutUsPrinciples1 from './Images/AboutUsPrinciples1.webp'
+import AboutUsPrinciples2 from './Images/AboutUsPrinciples2.webp'
+import AboutUsPrinciples3 from './Images/AboutUsPrinciples3.webp'
+import AboutUsPrinciples4 from './Images/AboutUsPrinciples4.webp'
+import AboutUsBuildingsAVIF from './Images/AboutUsBuildings.avif'
+import AboutUsBuildingsPNG from './Images/AboutUsBuildings.png'
+import AboutUsPlusesAVIF from './Images/AboutUsPluses.avif'
+import AboutUsPlusesPNG from './Images/AboutUsPluses.png'
 
 function AboutPage() {
     return (
@@ -28,7 +31,10 @@ function AboutPage() {
                         документов (включающих в себя работу над проектом дома) для подачи в банк на строительство под
                         ипотеку.</p>
                 </div>
-                <img className="about_us_main_info_image" src={AboutUsImageExample} alt=""/>
+                <picture>
+                    <source srcSet={AboutUsImageExampleAVIF}/>
+                    <img className="about_us_main_info_image" src={AboutUsImageExamplePNG} alt=""/>
+                </picture>
             </div>
             <p className="about_us_title">Наши принципы работы</p>
             <div className="about_us_principles_main_div">
@@ -50,7 +56,10 @@ function AboutPage() {
                 </div>
             </div>
             <div className="about_us_building_info_main_div">
-                <img src={AboutUsBuildings} alt=""/>
+                <picture>
+                    <source srcSet={AboutUsBuildingsAVIF}/>
+                    <img src={AboutUsBuildingsPNG} alt=""/>
+                </picture>
                 <div className="about_us_building_info_text_div">
                     <p className="about_us_building_title">Для кого мы строим?</p>
                     <p>Заказчики строительной фирмы Канадские Дома из Калининграда — это не только калининградцы, но и
@@ -76,7 +85,10 @@ function AboutPage() {
                     <p>Мы знаем, каким должен быть дом: теплым, крепким, красивым. Он должен быть правильно сконструирован и построен. Тогда Вам будет уютно в нем жить, и простоит он до ста лет… и больше.</p>
                     <p>Ведем фотофиксацию всех этапов строительства и скрытых работ.</p>
                 </div>
-                <img src={AboutUsPluses} alt=""/>
+                <picture>
+                    <source srcSet={AboutUsPlusesAVIF}/>
+                    <img src={AboutUsPlusesPNG} alt=""/>
+                </picture>
             </div>
         </div>
     );

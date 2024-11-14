@@ -2,9 +2,11 @@ import React, {useState} from 'react';
 import './ServicesPage.css'
 import StairsSlider from './Sliders/Stairs/ServicesStairsSlider';
 import FoundationSlider from './Sliders/Foundation/ServiceFoundationSlider';
-import AeratedConcreteHouse from './Images/image-27.5a4e2346775d1e37f8bc.webp';
+import AeratedConcreteHouseAVIF from './Images/image-27.5a4e2346775d1e37f8bc.avif';
+import AeratedConcreteHouseWebp from './Images/image-27.5a4e2346775d1e37f8bc.webp';
 import MainFormModal from "../Components/Modal/ModalWindow";
-import ServicesProject from './Images/ServicesProject.png';
+import ServicesProjectAVIF from './Images/ServicesProject.avif';
+import ServicesProjectPNG from './Images/ServicesProject.png';
 import WhatsApp from './Images/whatsap.svg';
 import SmartPhone from './Images/SmartPhone.svg';
 import Phone from './Images/Phone.svg';
@@ -78,7 +80,10 @@ function ServicesPage() {
                     <p>Наша компания производит дома не только из SIP-панелей, но и из газобетона собственного
                         производства</p>
                 </div>
-                <img src={AeratedConcreteHouse} alt=""/>
+                <picture>
+                    <source srcSet={AeratedConcreteHouseAVIF}/>
+                    <img src={AeratedConcreteHouseWebp} alt=""/>
+                </picture>
                 <button id="project" onClick={() => {
                     setIsMainModalOpen(true);
                     setModalId("Заказать дом из газобетона")
@@ -90,7 +95,10 @@ function ServicesPage() {
                     <p>Нужна помощь с проектом?</p>
                 </div>
                 <div className="services_project_description">
-                    <img src={ServicesProject} alt=""/>
+                    <picture>
+                        <source srcSet={ServicesProjectAVIF}/>
+                        <img src={ServicesProjectPNG} alt=""/>
+                    </picture>
                     <ul>
                         <li>Мы готовы оказать вам помощь в разработке проекта вашего дома.</li>
                         <li>Наша команда предоставит помощь в проектировании.</li>

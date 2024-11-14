@@ -136,7 +136,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+}
+@supports (background-image: url('./homeimages/background.avif')) {
+    .consultation {
+        width: 100%;
+        background-size: cover;
+        background: url('./homeimages/background.avif') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .content_consul {

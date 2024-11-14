@@ -6,7 +6,8 @@ import phone from './contactimage/icons8-phone-50 (2).png'
 import mail from './contactimage/icons8-mail-50 (1).png'
 import smartphone from './contactimage/icons8-smartphone-48.png'
 import location from './contactimage/icons8-location-50.png'
-import office from './contactimage/office.png'
+import officeAVIF from './contactimage/office.avif'
+import officePNG from './contactimage/office.png'
 
 function ContactsPage() {
     return (
@@ -60,7 +61,10 @@ function ContactsPage() {
                     </div>
 
                     <div className="contacts_right">
-                        <img src={office} alt=""/>
+                        <picture>
+                            <source srcSet={officeAVIF}/>
+                            <img src={officePNG} alt=""/>
+                        </picture>
                     </div>
                 </div>
             </div>

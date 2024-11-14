@@ -153,6 +153,27 @@ input::-webkit-inner-spin-button{
     height: 250px;
     border-radius: 0;
 }
+.area_select_div{
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.area_select_div button{
+    border: none;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    background: white;
+    padding: 10px;
+    font-size: 1.3em;
+}
+.area_select_div.opened{
+    height: 250px;
+    border-radius: 0;
+}
 #search_input_filter1.opened{
     border-radius: 20px 0 0 0;
 }
@@ -197,4 +218,88 @@ input::-webkit-inner-spin-button{
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
+}
+@media screen {
+    .projects_root, .ready_houses_list_page_root{
+        padding-top: 65px;
+    }
+}
+@media (max-width: 900px) {
+    .search_header{
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        text-align: center;
+        align-items: center;
+    }
+    .search_btn{
+        background-image: none;
+        width: 14em;
+        border-radius: 20px;
+        text-align: left;
+        padding: 10px;
+        color: white;
+        font-size: 1em;
+        transition: background-position 0s;
+    }
+    .search_btn_media{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .search_btn_media img{
+        height: 30px;
+    }
+    .search_btn.opened{
+        background: #4AB185 url('./projetsImage/search.svg') no-repeat center;
+        width: 50px;
+        background-size: 70%    ;
+        border-radius: 0 20px 20px 0;
+        border: 1px solid black;
+        border-left: none;
+    }
+    .search_d{
+        width: 63.5%;
+    }
+    .search_header_div{
+        width: 57.1%;
+        justify-content: center;
+    }
+    .search_div.opened{
+        height: 135px;
+    }
+    .search_div.openFilter1{
+        height: 275px;
+    }
+    .search_div.openFilter2{
+        height: 365px;
+    }
+    .search_div.openFilterAll{
+        height: 505px;
+    }
+    .floors_select_div.opened{
+        height: 140px;
+    }
+    .search_filters{
+        width: 90%;
+    }
+}
+@media (max-width: 600px) {
+    .search_header_div{
+        width: 80%;
+    }
+    .search_filters{
+        width: 100%;
+    }
+    .search_d{
+        width: 80%;
+    }
+    .projects_list{
+        margin-top: 1em;
+    }
+}
+@media (max-width: 450px) {
+    .projects_root, .ready_houses_list_page_root{
+        padding-top: 20px;
+    }
 }

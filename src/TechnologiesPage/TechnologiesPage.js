@@ -1,7 +1,9 @@
 import React from 'react';
 import './TechnologiesPage.css'
-import sip from './TechnologyImg/SIP.png'
-import house_info_img from './TechnologyImg/house_info_img.png'
+import sipAVIF from './TechnologyImg/SIP.avif'
+import sipPNG from './TechnologyImg/SIP.png'
+import house_info_imgAVIF from './TechnologyImg/house_info_img.avif'
+import house_info_imgPNG from './TechnologyImg/house_info_img.png'
 import SimpleSlider from "./SliderTechnology";
 import Header from '../Components/Other/HeaderComponent/HeaderComponent'
 
@@ -20,7 +22,10 @@ function TechnologiesPage() {
                             Они используются для строительства стен, кровель и полов.</h2>
                     </div>
                     <div className="first_sip_img">
-                        <img src={sip} alt=""/>
+                        <picture>
+                            <source srcSet={sipAVIF}/>
+                            <img src={sipPNG} alt=""/>
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -38,7 +43,10 @@ function TechnologiesPage() {
                     В результате получается уютный и теплый дом,
                     готовый к использованию.
                 </p>
-                <img src={house_info_img} alt=""/>
+                <picture>
+                    <source srcSet={house_info_imgAVIF}/>
+                    <img src={house_info_imgPNG} alt=""/>
+                </picture>
             </div>
 
             <div className="what_we_build">

@@ -2,7 +2,7 @@ import './ServiceFoundationSlider.css'
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import foundation1 from './Images/foundation1.jpg';
+import foundation1 from './Images/foundation1.webp';
 import foundation2 from './Images/foundation2.webp';
 import foundation3 from './Images/foundation3.webp';
 import foundation4 from './Images/foundation4.webp';
