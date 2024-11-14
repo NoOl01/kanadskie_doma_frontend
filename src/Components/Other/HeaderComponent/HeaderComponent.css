@@ -64,3 +64,8 @@
         height: 20em;
     }
 }
+@media (max-width: 400px) {
+    .subHeader {
+        font-size: 0.8em;
+    }
+}

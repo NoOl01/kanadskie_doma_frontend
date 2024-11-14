@@ -36,6 +36,12 @@
     height: 60vh;
 }
 
+.about_us_pic picture img {
+    border-radius: 50px;
+    width: 100%;
+    height: 60vh;
+}
+
 .pluses_main_div {
     width: 90%;
     margin: 0 auto;
@@ -137,6 +143,7 @@
     justify-content: center;
     align-items: center;
 }
+
 @supports (background-image: url('./homeimages/background.avif')) {
     .consultation {
         width: 100%;
@@ -306,7 +313,7 @@
 
 @media (max-width: 1620px) {
     .about_us_main_div {
-        height: 50vh;
+        height: 40rem;
         margin-top: 3vh;
     }
 
@@ -316,11 +323,12 @@
 
     }
 
-    .about_us_pic {
-        height: 100%;
+    .about_us_pic picture {
+        height: 40rem;
+
     }
 
-    .about_us_pic img {
+    .about_us_pic picture img {
         width: 100%;
         height: 100%;
     }
@@ -434,7 +442,7 @@
 
 @media (max-width: 1470px) {
     .about_us_main_div {
-        height: 30em;
+        height: 30rem;
         font-size: 1em;
         margin-top: 3vh;
     }
@@ -445,35 +453,45 @@
 
     }
 
-    .about_us_pic {
-        height: 100%;
+    .about_us_pic picture {
+        height: 30rem;
+
     }
 
-    .about_us_pic img {
-        width: 100%;
-        height: 100%;
-    }
+
 }
 
 @media (max-width: 1300px) {
     .about_us_main_div {
-        height: 40em;
-        margin-top: 3vh;
+
+        height: 50rem;
         flex-direction: column-reverse;
         gap: 0;
+        width: 100%;
+        margin-top: 3vh;
     }
 
     .about_us {
-        width: 70%;
-        height: 100%;
+        width: 80%;
+        height: 30rem;
         font-size: 0.85em;
-        padding: 0 2%;
         border-radius: 0 0 2em 2em;
+
+    }
+
+    .about_us h1 {
+        margin: 10px;
     }
 
     .about_us_pic {
+        width: 84%;
+        gap: 0;
+        padding: 0;
+    }
+
+    .about_us_pic picture {
         border-radius: 0;
-        height: 20em;
+        height: 32rem;
         object-fit: cover;
         padding: 0;
         margin: 0;
@@ -481,9 +499,9 @@
         width: 100%;
     }
 
-    .about_us_pic img {
+    .about_us_pic picture img {
 
-        width: 74%;
+        width: 100%;
         border-radius: 2em 2em 0 0;
         height: 100%;
         object-fit: cover;
@@ -499,19 +517,26 @@
     }
 
     .service_img {
+
+        width: 70%;
+        height: 30em;
+    }
+
+    .service_img picture {
         margin-top: 1em;
         border-radius: 2em;
         width: 70%;
         height: 30em;
     }
 
-    .service_img img {
+    .service_img picture img {
         width: 100%;
         height: 100%;
         border-radius: 2em;
     }
 
     .service_text {
+        margin-top: 1rem;
         gap: 1.4em;
         display: flex;
         text-align: center;
@@ -551,7 +576,15 @@
         height: 50em;
         margin-top: 1vh;
     }
-
+    .service_img{
+        height: 18rem;
+    }
+    .service_img picture{
+        height: 18rem;
+    }
+    .service_img picture img{
+        height: 18rem;
+    }
     .member {
 
         height: 15em;
@@ -564,6 +597,11 @@
 
     .best_project_footer a {
         width: 40%;
+    }
+
+    .service_img picture {
+        height: 28rem;
+        width: 100%;
     }
 
     .plus_container img {
@@ -582,21 +620,31 @@
     .cons_button button {
         width: 60%;
     }
+
 }
 
 @media (max-width: 900px) {
+
+    .about_us_main_div {
+        height: 40rem;
+    }
+
+    .about_us_pic picture {
+        height: 25rem;
+    }
+
     .service_text {
-        margin-top: 1em;
-        font-size: 0.9em;
+        margin-top: 1rem;
+        font-size: 1.1em;
     }
-
-    .service_img {
-        width: 85%;
+    .our_service{
+        height: 45rem;
     }
-
-    .our_service {
-
-        height: 60em;
+    .service_img picture {
+        height: 20rem;
+    }
+    .service_img{
+        height: 20rem;
     }
 
     .best_project_footer a {
@@ -606,20 +654,14 @@
     .about_us {
         font-size: 0.6em;
         text-align: center;
-        height: 20em;
+        height: 25rem;
     }
 
-    .about_us_main_div {
-        height: 32em;
-    }
 
     .service_point {
         font-size: 1em;
     }
 
-    .our_service {
-        height: 55em;
-    }
 }
 
 @media (max-width: 900px) {
@@ -634,16 +676,38 @@
     .Name_text {
         font-size: 1em;
     }
+
+    .about_us {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 790px) {
+    .our_team {
+        height: 110em;
+
+    }
+
+    .team_members {
+        width: 70%;
+        gap: 12rem;
+    }
+
+    .member {
+        width: 100%;
+        height: 20em;
+    }
 }
 
 @media (max-width: 750px) {
     .our_team {
         height: 110em;
+
     }
 
     .team_members {
         width: 70%;
-        gap: 10em;
+        gap: 150px;
     }
 
     .member {
@@ -652,7 +716,7 @@
     }
 
     .about_us_main_div {
-        height: 30em;
+        height: 40rem;
     }
 
     .about_us_pic {
@@ -660,8 +724,8 @@
     }
 
     .about_us {
-        height: 14em;
-        font-size: 0.5em;
+        height: 15rem;
+        font-size: 0.7em;
         padding: 2%;
     }
 
@@ -694,125 +758,210 @@
         width: 20%;
     }
 }
+
 @media (max-width: 600px) {
     .plus_container img {
         height: 80px;
         width: 80px;
     }
-    .about_us{
-        height: 20em;
-        font-size: 0.4em;
+
+    .about_us {
+        height: 10rem;
+        font-size: 0.5rem;
         line-height: 2.8em;
     }
+
     .about_us_main_div {
-        height: 25em;
+        height: 30rem;
     }
-    .about_us_pic {
-        height: 15em;
+
+    .about_us_pic picture {
+        height: 20em;
     }
+
     .our_service {
-        height: 50em;
+        height: 50rem;
     }
-    .service_img{
-        height: 25em;
+
+    .service_img picture {
+        height: 19rem;
     }
-    .our_team_name{
+
+    .our_team_name {
         font-size: 2em;
     }
 }
+
 @media (max-width: 500px) {
     .about_us {
-        font-size: 0.35em;
-    }
-    .pluses_main_div{
-        font-size: 0.6em;
-    }
-}
-@media (max-width: 430px) {
-    .about_us {
-        font-size: 0.25em;
-    }
-    .service_img {
-        height: 20em;
-    }
-    .our_service {
-        height: 45em;
-    }
-    .consultation{
-        font-size: 0.6em;
-    }
-    .best_project_name{
-        font-size: 0.8em;
-    }
-    .team_members {
-        gap: 3em;
-        width: 100%;
-    }
-    .our_team {
-        height: 87em;
-        width: 100%;
+        font-size: 0.45em;
     }
 
+    .pluses_main_div {
+        font-size: 0.6em;
+    }
+
+
+
+    .team_members {
+        gap: 80px;
+    }
+    .pluses_main_div{
+        height: 120px;
+        align-items: center;
+        margin-top:40px;
+    }
+}
+
+@media (max-width: 430px) {
+
+
+    .service_text {
+        font-size: 0.8em;
+        height: 20rem;
+        margin-top: 3rem;
+    }
+    .consultation {
+        font-size: 0.6em;
+        height: 15rem;
+    }
+    .service_img picture {
+        height: 12rem;
+    }
+    .service_img picture img{
+        height: 12rem;
+    }
+    .our_service {
+        height: 37rem;
+    }
+
+    .service_img {
+        height: 12rem;
+    }
+
+
+
+    .best_project_name {
+        font-size: 0.8em;
+    }
+
+    .team_members {
+        gap: 90px;
+        width: 100%;
+
+    }
+
+    .our_team {
+        height: 90rem;
+        width: 100%;
+    }
+    .our_service{
+        height: 35rem;
+    }
 
     .member {
         font-size: 0.7em;
         width: 100%;
         height: 34em;
     }
-    .member img{
+
+    .member img {
         height: 85%;
     }
-    .our_team_name{
+
+    .our_team_name {
         width: 95%;
 
     }
-    .plus_container img{
+
+    .plus_container img {
         width: 60px;
     }
-    .service_text{
-        font-size: 0.8em;
+
+
+
+    .about_us_main_div {
+        height: 28rem;
     }
-    .about_us_main_div{
-        height: 20em;
+
+    .about_us_pic picture {
+        height: 13rem;
     }
-    .about_us_pic  {
-        height: 10em;
-    }
-    .about_us{
-        height:23em ;
-        font-size: 0.3em;
-    line-height: 4em;
+
+    .about_us {
+        height: 25rem;
+        font-size: 0.4em;
+        line-height: 4em;
     }
 }
+
 @media (max-width: 370px) {
-    .member img{
+    .member img {
         height: 84%;
 
     }
+
     .our_team {
         height: 70em;
         width: 100%;
     }
-    .best_project_footer{
+
+    .best_project_footer {
         margin: 4em auto;
         width: 100%;
     }
-    .best_project_div{
+
+    .best_project_div {
         height: 60em;
     }
-    .best_project_footer a{
+
+    .best_project_footer a {
         width: 60%;
         margin: 0 auto;
     }
-    .member{
+
+    .member {
         height: 27em;
     }
-    .about_us{
+
+    .about_us {
         height: 25em;
     }
-    @media (max-width: 370px){
-        .about_us{
-            height: 30em;
+
+    @media (max-width: 370px) {
+
+        .about_us {
+            height: 30rem;
+            font-size: 0.4em;
         }
+        .about_us_main_div {
+            height: 30rem;
+        }
+        .our_service{
+            height: 30rem;
+        }
+        .service_img  {
+            height: 10rem;
+        }
+        .service_img picture{
+            height: 10rem;
+        }
+        .best_project_name{
+            font-size: 0.6em;
+        }
+        .best_project_footer a{
+            font-size: 0.78em;
+        }
+        .pluses_main_div{
+            height: 150px;
+            margin-top: 0;
+        }
+    }
+}
+@media (max-width: 370px) {
+
+    .our_team {
+        height: 76rem;
+        width: 100%;
     }
 }
