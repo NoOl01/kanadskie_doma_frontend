@@ -36,7 +36,7 @@ function ContactsPage() {
                         </div>
                         <div className="info">
                             <img src={mail} alt=""/>
-                            <h1>Email:kanadskiedoma39@gmail.com</h1>
+                            <h1>Email: kanadskiedoma39@gmail.com</h1>
                         </div>
                         <div className="info">
                             <img src={location} alt=""/>
@@ -44,6 +44,14 @@ function ContactsPage() {
                                 г. Гурьевск, пос. Константиновка,
                                 ул. Западная, 5</h1>
                         </div>
+                    </div>
+                    <div className="contacts_right">
+                        <picture>
+                            <source srcSet={officeAVIF}/>
+                            <img src={officePNG} alt=""/>
+                        </picture>
+                    </div>
+                    <div className="contacts_place">
                         <div className="chart_div">
                             <h4>Расписание работы офиса</h4>
                             <p>пн-пт. - с 9:00 до 18:00</p>
@@ -58,13 +66,6 @@ function ContactsPage() {
                                 Калининград-Гурьевск-Полесск Остановка
                                 “Гурьевский Новый”</p>
                         </div>
-                    </div>
-
-                    <div className="contacts_right">
-                        <picture>
-                            <source srcSet={officeAVIF}/>
-                            <img src={officePNG} alt=""/>
-                        </picture>
                     </div>
                 </div>
             </div>
