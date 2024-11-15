@@ -34,3 +34,49 @@
 .custom-bullet.swiper-pagination-bullet-active{
     background-color: #4AB185;
 }
+@media (max-width: 1300px) {
+    .mySwiper1 {
+        height: 25rem !important;
+    }
+
+
+}
+@media (max-width: 1280px) {
+    .mySwiper1 {
+        height: 20rem !important;
+    }
+}
+@media (max-width: 860px) {
+    .mySwiper1{
+        height: 13rem !important;
+    }
+    .slide1 {
+        height: 10rem;
+    }
+
+}
+@media (max-width: 620px) {
+    .mySwiper1{
+        height: 14rem !important;
+    }
+    .slide1 {
+
+        height: 10rem !important;
+    }
+    .slide1  img {
+        width: 50% !important;
+    }
+
+}
+@media (max-width: 440px) {
+    .mySwiper1{
+        height: 12rem !important;
+    }
+    .slide1 {
+
+        height: 10rem !important;
+    }
+    .slide1  img {
+        width: 50% !important;
+    }
+}
