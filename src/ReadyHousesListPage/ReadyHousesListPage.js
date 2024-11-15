@@ -17,6 +17,8 @@ function ReadyHousesListPage() {
     const [openSearch, setOpenSearch] = useState(false);
     const [openFilter, setOpenFilter] = useState([false, false]);
     const [filteredProjects, setFilteredProjects] = useState(null);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const toggleFilter = (index) => {
         setOpenFilter((prevOpenFilter) => {
@@ -43,7 +45,7 @@ function ReadyHousesListPage() {
     const projectFilter = () => {
         if (allProjects && allProjects.data && allProjects.data.houses) {
             let areaValues = [0, 10000]
-            if(filters.filterArea !== null){
+            if (filters.filterArea !== null) {
                 areaValues = filters.filterArea.split('-')
             }
             const filtered = allProjects.data.houses.filter((item) => {
@@ -66,7 +68,7 @@ function ReadyHousesListPage() {
     };
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8080/getAlreadyBuiltHouses/`, {
+        fetch(`http://127.0.0.1:8000/getAlreadyBuiltHouses/`, {
             method: "GET"
         })
             .then((response) => response.json())
@@ -75,9 +77,27 @@ function ReadyHousesListPage() {
                 console.log(data)
             })
             .catch((error) => console.log(error));
+
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 600)
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
-    return(
+    function searchBtnClassName() {
+        if (isMobile && openSearch && ((filters.filterName !== '' || filters.filterFloors !== '' || filters.filterArea !== '') || filteredProjects !== null)) {
+            return `clear_opened`
+        } else if (openSearch) {
+            return `opened`
+        }
+    }
+
+    return (
         <div className="ready_houses_list_page_root">
             <Header/>
             <div className='projects_search'>
@@ -96,22 +116,17 @@ function ReadyHousesListPage() {
                                        });
                                    }
                                }
-                               onKeyDown={(e) => {
-                                   if(e.key === 'Enter') {
-                                       e.preventDefault();
-                                       if (openSearch && (filters.filterName !== '' || filters.filterFloors !== '' || filters.filterArea !== '')) {
-                                           projectFilter()
-                                       } else {
-                                           setOpenSearch(!openSearch)
-                                       }
-                                   }
-                               }}/>
+                        />
                         <div className="search_btn_div">
-                            <button
-                                className={`search_btn ${openSearch ? 'opened' : ''}`}
+                            <button className={`search_btn ${searchBtnClassName()}`}
                                     onClick={() => {
                                         if (openSearch && (filters.filterName !== '' || filters.filterFloors !== '' || filters.filterArea !== '')) {
                                             projectFilter()
+                                        } else if (filteredProjects !== null) {
+                                            setErrorMessage('Сначала очистите фильтры')
+                                        } else if (openFilter[0] || openFilter[1]) {
+                                            setOpenFilter([false, false])
+                                            setOpenSearch(!openSearch)
                                         } else {
                                             setOpenSearch(!openSearch)
                                         }
@@ -133,7 +148,8 @@ function ReadyHousesListPage() {
                                         filterFloors: '',
                                         filterArea: ''
                                     });
-                                    setFilteredProjects(null)
+                                    setFilteredProjects(null);
+                                    setErrorMessage('');
                                 }}
                                 />
                             )}
@@ -141,6 +157,7 @@ function ReadyHousesListPage() {
                     </div>
                 </div>
                 <div className={`search_div ${getFilterClass()}`}>
+
                     <div className="search_filters">
                         <div className="search_d">
                             <div className="search_filters_div">
@@ -153,16 +170,6 @@ function ReadyHousesListPage() {
                                                ...filters,
                                                filterFloors: e.target.value
                                            });
-                                       }}
-                                       onKeyDown={(e) => {
-                                           if (e.key === 'Enter') {
-                                               e.preventDefault();
-                                               if (openSearch && (filters.filterName !== '' || filters.filterFloors !== '' || filters.filterArea !== '')) {
-                                                   projectFilter()
-                                               } else {
-                                                   setOpenSearch(!openSearch)
-                                               }
-                                           }
                                        }}/>
                                 <button className={`search_filters_button ${openFilter[0] ? 'opened' : ''}`}
                                         onClick={() => toggleFilter(0)}>
@@ -207,23 +214,13 @@ function ReadyHousesListPage() {
                                                ...filters,
                                                filterArea: e.target.value
                                            });
-                                       }}
-                                       onKeyDown={(e) => {
-                                           if (e.key === 'Enter') {
-                                               e.preventDefault();
-                                               if (openSearch && (filters.filterName !== '' || filters.filterFloors !== '' || filters.filterArea !== '')) {
-                                                   projectFilter()
-                                               } else {
-                                                   setOpenSearch(!openSearch)
-                                               }
-                                           }
                                        }}/>
                                 <button className={`search_filters_button ${openFilter[1] ? 'opened' : ''}`}
                                         onClick={() => toggleFilter(1)}>
                                     <img className={`search_filters_img ${openFilter[1] ? 'opened' : ''}`} src={Arrow}
                                          alt=""/></button>
                             </div>
-                            <div className={`floors_select_div ${openFilter[1] ? 'opened' : ''}`}>
+                            <div className={`area_select_div ${openFilter[1] ? 'opened' : ''}`}>
                                 <button onClick={() => {
                                     setFilters({
                                         ...filters,
@@ -268,16 +265,23 @@ function ReadyHousesListPage() {
                         </div>
                     </div>
                 </div>
+                {errorMessage !== '' &&
+                    <p className="error_message">
+                        {errorMessage}
+                    </p>
+                }
             </div>
             {
                 allProjects !== null &&
                 <>
                     <div className="projects_list">
-                        {filteredProjects !== null ? filteredProjects.map(item => <ReadyHouses house={item}/>) : allProjects.data.houses.map(item => <ReadyHouses house={item}/>)}
+                        {filteredProjects !== null ? filteredProjects.map(item => <ReadyHouses
+                            house={item}/>) : allProjects.data.houses.map(item => <ReadyHouses house={item}/>)}
                     </div>
                 </>
             }
         </div>
     )
 }
+
 export default ReadyHousesListPage;

@@ -200,7 +200,8 @@
     .questions_question p{
         font-size: 1.2rem;
     }
-    .questions_answer p{
+    .questions_answer p,
+    .questions_answer ul{
         font-size: 1rem;
     }
 }
