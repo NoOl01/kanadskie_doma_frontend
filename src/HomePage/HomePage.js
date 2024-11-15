@@ -28,7 +28,7 @@ function HomePage() {
     const [modalId, setModalId] = useState(null);
 
     useEffect(() => {
-        fetch(`https://helped-swift-indirectly.ngrok-free.app/getHouses/`, {
+        fetch(`http://127.0.0.1:8080/getHouses/`, {
             method: "GET"
         })
             .then((response) => response.json())

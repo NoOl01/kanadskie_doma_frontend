@@ -9,7 +9,7 @@ function HousePage() {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`https://helped-swift-indirectly.ngrok-free.app/getHouseInfo?id=${id}`, {
+        fetch(`http://127.0.0.1:8080/getHouseInfo?id=${id}`, {
             method: "GET"
         })
             .then((response) => response.json())
