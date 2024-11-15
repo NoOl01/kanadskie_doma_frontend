@@ -1,135 +1,495 @@
-.about_root{
-    padding-top: 90px;
+picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+picture img {
+    width: 100%;
+    height: 100%;
+}
+
+.about_root {
+    padding-top: 50px;
     color: white;
 }
-.about_root h1, .about_us_title{
-    font-size: clamp(1em, 3em, 3em);
+
+.about_root h1, .about_us_title {
+    font-size: 3em;
     font-weight: bolder;
     width: 100%;
     text-align: center;
     color: #4AB185;
     margin-top: 5vh;
 }
-.about_us_title{
+
+.about_us_title {
     margin-top: 10vh;
 }
-.about_container_main_info_div{
+
+.about_container_main_info_div {
     display: flex;
     justify-content: center;
     gap: 10em;
     margin-top: 5vh;
 }
-.about_us_main_info_text{
+
+.about_us_main_info_text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 3em;
-    width: 30%;
+    width: 40em;
     background-color: #4AB185;
     padding: 20px;
     border-radius: 20px;
 }
-.about_us_main_info_text h3{
-    font-size: clamp(1em, 3em, 1.5em);
+
+.about_us_main_info_text h3 {
+    font-size: 1.5em;
 }
-.about_us_main_info_text p{
-    font-size: clamp(1em, 3em, 1.3em);
+
+.about_us_main_info_text p {
+    font-size: 1.3rem;
 }
-.about_us_main_info_image{
+
+.about_us_main_info_image {
     border-radius: 20px;
     height: 65vh;
 }
-.about_us_principles_main_div{
-    display: flex;
-    flex-wrap: wrap;
+
+.about_us_principles_main_div {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    padding: 3rem;
+    row-gap: 2rem;
+    column-gap: 6rem;
     justify-content: center;
-    gap: 6em;
-    width: 78%;
-    margin: 5vh auto 0;
 }
-.about_us_principles{
+
+.about_us_principles {
+    place-self: center;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1em;
-    width: 35%;
+    width: 33em;
+    height: 20vh;
     padding-left: 1.5em;
     border-radius: 20px;
-    -webkit-box-shadow: 0px 5px 5px 4px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0px 5px 5px 4px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 5px 5px 4px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 5px 5px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 5px 5px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 5px 4px rgba(0, 0, 0, 0.3);
 }
-.about_us_principles p{
+
+.about_us_principles p {
     width: 18em;
     font-size: clamp(1em, 3em, 1.3em);
     color: black;
 }
-.about_us_principles img{
-    height: 20vh;
+
+.about_us_principles img {
+    height: 100%;
     border-radius: 0 20px 20px 0;
 }
-.about_us_principles_spec_img{
+
+.about_us_principles_spec_img {
     margin: 0 4em 0 2em;
 }
-.about_us_building_info_main_div{
+
+.about_us_building_info_main_div {
     margin-top: 10vh;
     display: flex;
     justify-content: center;
     gap: 10em;
 }
-.about_us_building_info_main_div img{
+
+.about_us_building_info_main_div img {
     height: 60vh;
     border-radius: 20px;
 }
-.about_us_building_info_text_div{
+
+.about_us_building_info_text_div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 3em;
-    width: 30%;
+    width: 40em;
     background-color: #4AB185;
     padding: 20px;
     border-radius: 20px;
 }
-.about_us_building_title{
+
+.about_us_building_title {
     font-size: clamp(1em, 3em, 2em) !important;
     font-weight: bolder;
 }
-.about_us_building_info_text_div p{
-    font-size: clamp(1em, 2em, 1.3em);
+
+.about_us_building_info_text_div p {
+    font-size: 1.4rem;
 }
-.about_us_building_info_text_div ul{
+
+.about_us_building_info_text_div ul {
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
-.about_us_building_info_text_div ul li{
-    font-size: clamp(1em, 2em, 1.3em);
+
+.about_us_building_info_text_div ul li {
+    font-size: 1.3rem;
     margin-left: 3em;
 }
-.about_us_pluses_info_main_div{
+
+.about_us_pluses_info_main_div {
     margin-top: 10vh;
     display: flex;
     justify-content: center;
     gap: 10em;
 }
-.about_us_pluses_info_main_div img{
+
+.about_us_pluses_info_main_div img {
     height: 60vh;
     border-radius: 20px;
 }
-.about_us_pluses_info_text_div{
+
+.about_us_pluses_info_text_div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1em;
-    width: 30%;
+    width: 40em;
     background-color: #4AB185;
     padding: 20px;
     border-radius: 20px;
 }
-.about_us_pluses_title{
+
+.about_us_pluses_title {
     font-size: clamp(1em, 3em, 2em) !important;
     font-weight: bolder;
 }
-.about_us_pluses_info_text_div p{
+
+.about_us_pluses_info_text_div p {
     font-size: clamp(1em, 2em, 1.3em);
+}
+
+@media (max-width: 1300px) {
+    .about_container_main_info_div {
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .about_us_building_info_main_div {
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .about_us_pluses_info_main_div {
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .about_us_principles_main_div {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(4, 1fr);
+        width: calc(100% - 6rem);
+    }
+
+    .about_us_principles {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1140px) {
+
+    .about_root h1 {
+        font-size: 2em;
+    }
+
+    .about_us_main_info_text {
+        width: 25em;
+    }
+
+    .about_us_building_info_text_div {
+        width: 25em;
+    }
+
+    .about_us_pluses_info_text_div {
+        width: 25em;
+    }
+
+    .about_us_main_info_text p {
+        font-size: 1rem;
+    }
+
+    .about_us_building_info_text_div p {
+        font-size: 1rem;
+    }
+
+    .about_us_building_info_text_div ul li {
+        font-size: 1rem;
+    }
+
+    .about_us_pluses_info_text_div p {
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 910px) {
+    .about_container_main_info_div {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+
+    }
+
+    .about_us_building_info_main_div {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+    }
+
+    .about_us_pluses_info_main_div {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .about_us_main_info_text {
+        width: 35em;
+    }
+
+    .about_us_building_info_text_div {
+        width: 35em;
+    }
+
+    .about_us_pluses_info_text_div {
+        width: 35em;
+    }
+
+    .about_container_main_info_div picture {
+        width: calc(35rem + 40px);
+
+    }
+
+    .about_us_building_info_main_div picture {
+        width: calc(35rem + 40px);
+    }
+
+    .about_us_pluses_info_main_div picture {
+        width: calc(35rem + 40px);
+    }
+
+    .about_container_main_info_div img {
+        height: 45rem;
+
+    }
+
+    .about_us_building_info_main_div img {
+        height: 45rem;
+    }
+
+    .about_us_pluses_info_main_div img {
+        height: 45rem;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .about_us_principles {
+        width: calc(35rem + 40px - 1.5em);
+    }
+}
+
+@media (max-width: 650px) {
+    .about_us_main_info_text {
+        width: 25em;
+        gap: 1rem;
+    }
+
+    .about_us_building_info_text_div {
+        width: 25em;
+        gap: 1rem;
+    }
+
+    .about_us_pluses_info_text_div {
+        width: 25em;
+        gap: 1rem;
+    }
+
+    .about_container_main_info_div picture {
+        width: calc(25rem + 40px);
+
+    }
+
+    .about_us_building_info_main_div picture {
+        width: calc(25rem + 40px);
+    }
+
+    .about_us_pluses_info_main_div picture {
+        width: calc(25rem + 40px);
+    }
+
+    .about_container_main_info_div img {
+        height: 35rem;
+
+    }
+
+    .about_us_building_info_main_div img {
+        height: 35rem;
+    }
+
+    .about_us_pluses_info_main_div img {
+        height: 35rem;
+    }
+
+    .about_us_main_info_text h3 {
+        font-size: 1.3rem;
+    }
+
+    .about_us_building_title {
+        font-size: 1.3rem !important;
+    }
+
+    .about_us_pluses_title {
+        font-size: 1.3rem !important;
+    }
+
+    .about_us_title {
+        font-size: 2rem;
+    }
+
+    .about_us_principles {
+        height: 15vh;
+        width: 80%;
+    }
+
+    .about_us_principles p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .about_us_main_info_text {
+        width: 20em;
+    }
+
+    .about_us_building_info_text_div {
+        width: 20em;
+    }
+
+    .about_us_pluses_info_text_div {
+        width: 20em;
+    }
+
+    .about_container_main_info_div picture {
+        width: calc(20rem + 40px);
+
+    }
+
+    .about_us_building_info_main_div picture {
+        width: calc(20rem + 40px);
+    }
+
+    .about_us_pluses_info_main_div picture {
+        width: calc(20rem + 40px);
+    }
+
+    .about_container_main_info_div img {
+        height: 30rem;
+
+    }
+
+    .about_us_building_info_main_div img {
+        height: 30rem;
+    }
+
+    .about_us_pluses_info_main_div img {
+        height: 30rem;
+    }
+
+    .about_us_principles {
+        height: 13vh;
+        width: 70%;
+    }
+
+    .about_us_principles p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .about_us_main_info_text p {
+        font-size: 0.8rem;
+    }
+
+    .about_us_building_info_text_div p {
+        font-size: 0.8rem;
+    }
+
+    .about_us_building_info_text_div ul li {
+        font-size: 0.8rem;
+    }
+
+    .about_us_pluses_info_text_div p {
+        font-size: 0.8rem;
+    }
+
+    .about_us_main_info_text {
+        width: 17em;
+    }
+
+    .about_us_building_info_text_div {
+        width: 17em;
+    }
+
+    .about_us_pluses_info_text_div {
+        width: 17em;
+    }
+
+    .about_container_main_info_div picture {
+        width: calc(17rem + 40px);
+
+    }
+
+    .about_us_building_info_main_div picture {
+        width: calc(17rem + 40px);
+    }
+
+    .about_us_pluses_info_main_div picture {
+        width: calc(17rem + 40px);
+    }
+
+    .about_container_main_info_div img {
+        height: 25rem;
+
+    }
+
+    .about_us_building_info_main_div img {
+        height: 25rem;
+    }
+
+    .about_us_pluses_info_main_div img {
+        height: 25rem;
+    }
+
+    .about_us_principles {
+        height: 10vh;
+        width: 70%;
+    }
+
+    .about_us_principles p {
+        font-size: 0.7rem;
+    }
+
+    .about_us_title  {
+        font-size: 1.5rem;
+    }
+
+    .about_root h1 {
+        font-size: 1.5rem;
+    }
 }
