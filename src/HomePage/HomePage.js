@@ -150,7 +150,11 @@ function HomePage() {
                         <p>Хотите заказать консультацию?</p>
                     </div>
                     <div className="cons_button">
-                        <button onClick={() => {setIsMainModalOpen(true); setModalId("Заявка на консультацию")}}>Оставить заявку</button>
+                        <button onClick={() => {
+                            setIsMainModalOpen(true);
+                            setModalId("Заявка на консультацию")
+                        }}>Оставить заявку
+                        </button>
                     </div>
                 </div>
             </div>
@@ -163,7 +167,7 @@ function HomePage() {
                         allProjects !== null &&
                         <>
                             {allProjects.data.houses.slice(-4).map(item => (
-                                <Project key={item.id} house={item} />
+                                <Project key={item.id} house={item}/>
                             ))}
                         </>
                     }
