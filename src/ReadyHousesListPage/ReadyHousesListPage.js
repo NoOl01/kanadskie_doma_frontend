@@ -5,8 +5,11 @@ import Header from "../Components/Other/HeaderComponent/HeaderComponent";
 import ReadyHouses from "./ReadyHouses";
 import Search from "../ProjectsPage/projetsImage/search.svg";
 import MediaQuery from "react-responsive";
+import {useNavigate} from "react-router-dom";
 
 function ReadyHousesListPage() {
+    const navigate = useNavigate();
+
     const [filters, setFilters] = useState({
         filterName: '',
         filterFloors: '',
@@ -74,9 +77,11 @@ function ReadyHousesListPage() {
             .then((response) => response.json())
             .then((data) => {
                 setAllProjects(data)
-                console.log(data)
             })
-            .catch((error) => console.log(error));
+            .catch((error) => {
+                console.log(error)
+                navigate('/500')
+            });
 
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 600)

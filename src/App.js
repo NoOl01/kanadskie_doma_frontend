@@ -105,7 +105,7 @@ function App() {
                     <Route path="/house/:id" element={<HousePage/>}/>
                     <Route path="/ready-houses" element={<ReadyHousesListPage/>}/>
                     <Route path="/ready-house/:id" element={<ReadyHousePage/>}/>
-                    <Route path="/ready-house/:id" element={<Error500/>}/>
+                    <Route path="/500" element={<Error500/>}/>
                     <Route path="*" element={<Error404/>}/>
                 </Routes>
                 <footer>
