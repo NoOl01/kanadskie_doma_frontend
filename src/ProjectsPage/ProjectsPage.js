@@ -17,6 +17,8 @@ function ProjectsPage() {
     const [openSearch, setOpenSearch] = useState(false);
     const [openFilter, setOpenFilter] = useState([false, false]);
     const [filteredProjects, setFilteredProjects] = useState(null);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const toggleFilter = (index) => {
         setOpenFilter((prevOpenFilter) => {
@@ -76,8 +78,25 @@ function ProjectsPage() {
                 console.log(data)
             })
             .catch((error) => console.log(error));
+
+        const handleResize = () =>{
+            setIsMobile(window.innerWidth <= 600)
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
         }, []);
 
+    function searchBtnClassName(){
+        if (isMobile && openSearch && ((filters.filterName !== '' || filters.filterFloors !== '' || filters.filterArea !== '') || filteredProjects !== null)){
+            return `clear_opened`
+        } else if (openSearch){
+            return `opened`
+        }
+    }
 
     return (
         <div className='projects_root'>
@@ -100,11 +119,17 @@ function ProjectsPage() {
                                }
                         />
                         <div className="search_btn_div">
-                            <button className={`search_btn ${openSearch ? 'opened' : ''}`}
+                            <button className={`search_btn ${searchBtnClassName()}`}
                                     onClick={() => {
                                         if (openSearch && (filters.filterName !== '' || filters.filterFloors !== '' || filters.filterArea !== '')) {
                                             projectFilter()
-                                        } else {
+                                        } else if(filteredProjects !== null){
+                                            setErrorMessage('Сначала очистите фильтры')
+                                        } else if(openFilter[0] || openFilter[1]) {
+                                            setOpenFilter([false, false])
+                                            setOpenSearch(!openSearch)
+                                        }
+                                        else {
                                             setOpenSearch(!openSearch)
                                         }
                                     }}>
@@ -125,7 +150,8 @@ function ProjectsPage() {
                                         filterFloors: '',
                                         filterArea: ''
                                     });
-                                    setFilteredProjects(null)
+                                    setFilteredProjects(null);
+                                    setErrorMessage('');
                                 }}
                                 />
                             )}
@@ -241,6 +267,11 @@ function ProjectsPage() {
                         </div>
                     </div>
                 </div>
+                { errorMessage !== '' &&
+                    <p className="error_message">
+                        {errorMessage}
+                    </p>
+                }
             </div>
             {
                 allProjects !== null &&

@@ -1,3 +1,20 @@
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance:none;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
 .projects_root{
     padding-top: 90px;
 }
@@ -12,6 +29,7 @@
 .search_header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 60%;
     margin: 0 auto;
 }
@@ -219,6 +237,11 @@ input::-webkit-inner-spin-button{
     flex-wrap: wrap;
     gap: 2em;
 }
+.error_message{
+    text-align: center;
+    color: red !important;
+    font-size: 18px !important;
+}
 @media screen {
     .projects_root, .ready_houses_list_page_root{
         padding-top: 65px;
@@ -296,6 +319,30 @@ input::-webkit-inner-spin-button{
     }
     .projects_list{
         margin-top: 1em;
+    }
+    .search_btn_div {
+        display: flex;
+        gap: 0;
+    }
+    .search_btn.clear_opened {
+        background: #4ab185 url('./projetsImage/search.svg') no-repeat 50%;
+        background-size: 70%;
+        border: 1px solid #000;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+        width: 50px;
+    }
+    .search_clear_button {
+        background: #4ab185 url('./projetsImage/X.svg') no-repeat 50%;
+        background-size: 50%;
+        border: 1px solid #000;
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        height: 50px;
+        position: static;
+        transition: .3s;
+        width: 50px;
     }
 }
 @media (max-width: 450px) {
