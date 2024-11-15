@@ -8,10 +8,10 @@ button{
     padding-top: 90px;
 }
 .service_content_title{
-    font-size: clamp(1em, 3em, 3em);
+    font-size: 2.5em;
     color: #4AB185;
     text-align: center;
-    margin-top: 5vh;
+    margin-top: 30px;
 }
 .service_content_list{
     width: 60%;
@@ -19,7 +19,7 @@ button{
     display: flex;
     flex-direction: column;
     gap: 1em;
-    font-size: clamp(1em, 3em, 1.3em);
+    font-size: 1.3em;
     color: #4AB185;
 }
 .service_content_list a{
@@ -43,20 +43,20 @@ button{
     display: flex;
     flex-direction: column;
     gap: 1em;
-    font-size: clamp(1em, 3em, 1.4em);
+    font-size: 1.2rem;
 }
 .services_foundation_title h2{
     text-align: center;
     font-size: clamp(1em, 3em, 2em);
 }
 .services_foundation_description{
-    margin-top: 4vh;
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
 .services_foundation_description p{
-    font-size: clamp(1em, 3em, 1.4em);
+    font-size: 1.6rem;
     text-align: center;
 }
 .services_foundation_description ul{
@@ -74,7 +74,7 @@ button{
     border: none;
     padding: 0.6em;
     border-radius: 40px;
-    margin-top: 5vh;
+    margin-top: 30px;
 }
 .services_stairs_main_div{
     width: 60%;
@@ -91,6 +91,7 @@ button{
     width: 85%;
     margin: 0 auto;
     text-align: center;
+    font-size: 1.5rem;
 }
 .services_stairs_main_div button{
     font-size: clamp(1em, 3em, 1.3em);
@@ -98,7 +99,7 @@ button{
     border: none;
     padding: 0.6em;
     border-radius: 40px;
-    margin-top: 5vh;
+    margin-top: 30px;
 }
 .services_aer_main_div{
     width: 60%;
@@ -112,10 +113,11 @@ button{
     align-items: center;
 }
 .services_aer_title{
+    text-align: center;
     display: flex;
     flex-direction: column;
     gap: 1em;
-    font-size: clamp(1em, 3em, 1.4em);
+    font-size: 1.2rem;
 }
 .services_aer_title p{
     width: 85%;
@@ -131,11 +133,11 @@ button{
     border: none;
     padding: 0.6em;
     border-radius: 40px;
-    margin-top: 5vh;
+    margin-top: 30px;
 }
 .services_aer_main_div img{
     border-radius: 20px;
-    margin-top: 3vh;
+    margin-top: 20px;
 }
 .services_project_main_div{
     width: 60%;
@@ -149,7 +151,7 @@ button{
     align-items: center;
 }
 .services_project_title{
-    font-size: clamp(1em, 3em, 1.4em);
+    font-size: 1.2rem;
 }
 .services_project_main_div p{
     text-align: center;
@@ -159,11 +161,12 @@ button{
 .services_project_description{
     display: flex;
     font-size: clamp(1em, 3em, 1.5em);
-    margin-top: 5vh;
+    margin-top: 30px;
 }
 .services_project_description img{
-    height: 50vh;
+    height: 450px;
     border-radius: 20px;
+    width: 18rem;
 }
 .services_project_description ul{
     display: flex;
@@ -178,7 +181,7 @@ button{
     border: none;
     padding: 0.6em;
     border-radius: 40px;
-    margin-top: 5vh;
+    margin-top: 30px;
 }
 .services_excursion_main_div{
     width: 60%;
@@ -196,7 +199,7 @@ button{
     display: flex;
     flex-direction: column;
     gap: 1em;
-    font-size: clamp(1em, 3em, 1.4em);
+    font-size: 1.2rem;
 }
 .services_excursion_title p{
     width: 70%; margin: 0 auto;
@@ -208,19 +211,19 @@ button{
     flex-direction: column;
     font-size: clamp(1em, 3em, 1.5em);
     gap: 1em;
-    margin-top: 4vh;
+    margin-top: 25px;
     margin-left: 40px;
 }
 .services_excursion_p{
     font-size: clamp(1em, 3em, 1.5em);
-    margin-top: 5vh;
+    margin-top: 30px;
 }
 .services_excursion_description{
     display: flex;
     align-items: center;
     font-size: clamp(1em, 3em, 1.3em);
     gap: 1em;
-    margin-top: 3vh;
+    margin-top: 20px;
 }
 .services_excursion_description img{
     height: 50px;
@@ -231,7 +234,7 @@ button{
     border: none;
     padding: 0.6em;
     border-radius: 40px;
-    margin-top: 3vh;
+    margin-top: 20px;
 }
 .services_main_div{
     width: 60%;
@@ -249,7 +252,7 @@ button{
     display: flex;
     flex-direction: column;
     gap: 1em;
-    font-size: clamp(1em, 3em, 1.4em);
+    font-size: 1.2rem;
 }
 .services_title p{
     width: 100%; margin: 0 auto;
@@ -257,15 +260,15 @@ button{
     font-weight: bolder;
 }
 .services_p{
-    margin-top: 3vh;
-    font-size: clamp(1em, 3em, 1.4em);
+    margin-top: 20px;
+    font-size: 1.6rem;
 }
 .services_main_div ul{
     display: flex;
     flex-direction: column;
     font-size: clamp(1em, 3em, 1.5em);
     gap: 1em;
-    margin-top: 4vh;
+    margin-top: 25px;
     margin-left: 40px;
 }
 .services_main_div button{
@@ -274,12 +277,12 @@ button{
     border: none;
     padding: 0.6em;
     border-radius: 40px;
-    margin-top: 5vh;
+    margin-top: 30px;
 }
 .services_ndfl_description{
     width: 70%;
     font-size: clamp(1em, 3em, 1.2em);
-    margin-top: 2vh;
+    margin-top: 15px;
 }
 .services_ndfl_contacts_div{
     display: flex;
@@ -288,9 +291,107 @@ button{
 .services_ndfl_contacts{
     display: flex;
     align-items: center;
-    margin-top: 3vh;
+    margin-top: 20px;
     font-size: clamp(1em, 3em, 1.2em);
 }
 .services_ndfl_contacts img{
     height: 40px;
+}
+@media (max-width: 1000px) {
+    .services_project_description{
+        font-size: 1rem;
+    }
+    .services_excursion_main_div ul, .services_excursion_p {
+        font-size: 1rem;
+    }
+    .services_excursion_p, .services_p{
+        text-align: center;
+    }
+    .services_p, .services_main_div ul{
+        font-size: 1.3rem;
+    }
+    .services_ndfl_description{
+        font-size: 1rem;
+    }
+    .services_foundation_title h2,
+    .services_aer_title h2,
+    .services_project_main_div p,
+    .services_excursion_title p,
+    .services_title p{
+        font-size: 1.5em;
+    }
+    .services_foundation_title p{
+        font-size: 1.2rem;
+    }
+    .services_excursion_title p{
+        width: 90%;
+    }
+}
+@media (max-width: 800px) {
+    .services_ndfl_contacts_div{
+        flex-direction: column;
+        gap: 1em;
+    }
+    .service_content_title{
+        font-size: 1.7em;
+    }
+    .services_foundation_description p{
+        font-size: 1.4rem;
+    }
+    .services_foundation_description li{
+        font-size: 1em;
+    }
+}
+@media (max-width: 650px) {
+    .services_main_div,
+    .services_excursion_main_div,
+    .services_project_main_div,
+    .services_aer_main_div,
+    .services_stairs_main_div,
+    .services_foundation_main_div,
+    .service_content_list{
+        width: 80%;
+    }
+}
+@media (max-width: 500px) {
+    .services_foundation_title h2,
+    .services_aer_title h2,
+    .services_project_main_div p,
+    .services_excursion_title p,
+    .services_title p{
+        font-size: 1.1em;
+    }
+    .services_foundation_title p,
+    .services_aer_title p,
+    .services_project_description ul,
+    .services_excursion_main_div ul,
+    .services_p, .services_main_div ul,
+    .services_ndfl_description{
+        font-size: 0.9em;
+    }
+    .services_ndfl_description{
+        width: 100%;
+        text-align: center;
+    }
+    .services_project_main_div button,
+    .services_excursion_main_div button,
+    .services_main_div button,
+    .services_aer_main_div button,
+    .services_stairs_main_div button,
+    .services_foundation_main_div button{
+        font-size: 1rem;
+    }
+    .service_content_list{
+        font-size: 1rem;
+    }
+    .services_foundation_title p
+    {
+        width: 100%;
+    }
+    .services_foundation_description p{
+        width: 110%;
+    }
+    .services_foundation_description ul{
+        margin-left: 1em;
+    }
 }

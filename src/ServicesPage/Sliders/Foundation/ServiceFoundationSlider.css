@@ -19,3 +19,18 @@
     height: 70% !important;
     border-radius: 20px !important;
 }
+@media (max-width: 1400px) {
+    .fund{
+        width: 70%;
+    }
+}
+@media (max-width: 1000px) {
+    .fund{
+        width: 90%;
+    }
+}
+@media (max-width: 500px) {
+    .fund{
+        width: 100%;
+    }
+}

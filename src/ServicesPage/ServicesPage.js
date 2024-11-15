@@ -10,7 +10,10 @@ import ServicesProjectPNG from './Images/ServicesProject.png';
 import WhatsApp from './Images/whatsap.svg';
 import SmartPhone from './Images/SmartPhone.svg';
 import Phone from './Images/Phone.svg';
+import zayavlenieRtf from '../DownloadFiles/zayavlenie-na-vozvrat.rtf';
+import zayavleniePdf from '../DownloadFiles/zayavlenie-v-nalogovuyu.pdf';
 import CSRFTOKEN from "../CSRFComponent";
+import MediaQuery from "react-responsive";
 
 function ServicesPage() {
     const [isFoundationModalOpen, setIsFoundationModalOpen] = useState(false);
@@ -95,10 +98,12 @@ function ServicesPage() {
                     <p>Нужна помощь с проектом?</p>
                 </div>
                 <div className="services_project_description">
-                    <picture>
-                        <source srcSet={ServicesProjectAVIF}/>
-                        <img src={ServicesProjectPNG} alt=""/>
-                    </picture>
+                    <MediaQuery minWidth={1200}>
+                        <picture>
+                            <source srcSet={ServicesProjectAVIF}/>
+                            <img src={ServicesProjectPNG} alt=""/>
+                        </picture>
+                    </MediaQuery>
                     <ul>
                         <li>Мы готовы оказать вам помощь в разработке проекта вашего дома.</li>
                         <li>Наша команда предоставит помощь в проектировании.</li>
@@ -158,8 +163,8 @@ function ServicesPage() {
                     <p>Поможем вернуть 13% НДФЛ</p>
                 </div>
                 <p className="services_p">Форма заполнения документов:</p>
-                <a href="">Заявление о возврате 13%</a>
-                <a href="">Заявление в налоговую</a>
+                <a href={zayavlenieRtf} download>Заявление о возврате 13%</a>
+                <a href={zayavleniePdf} download>Заявление в налоговую</a>
                 <p className="services_p">Финансовый консультант Екатерина Бородкова</p>
                 <p className="services_ndfl_description">Для консультаций по вопросам ипотеки, оформлению налогового
                     вычета, работе с материнским капиталом, программой молодая семья, сертификатами на приобретение

@@ -66,7 +66,7 @@ function ReadyHousesListPage() {
     };
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/getAlreadyBuiltHouses/`, {
+        fetch(`https://helped-swift-indirectly.ngrok-free.app/getAlreadyBuiltHouses/`, {
             method: "GET"
         })
             .then((response) => response.json())

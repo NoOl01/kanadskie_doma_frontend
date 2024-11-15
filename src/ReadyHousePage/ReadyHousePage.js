@@ -9,7 +9,7 @@ function ReadyHousePage() {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/getAlreadyBuiltHouseInfo?id=${id}`, {
+        fetch(`https://helped-swift-indirectly.ngrok-free.app/getAlreadyBuiltHouseInfo?id=${id}`, {
             method: "GET"
         })
             .then((response) => response.json())
