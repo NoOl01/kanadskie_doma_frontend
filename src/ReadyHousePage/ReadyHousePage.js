@@ -1,9 +1,10 @@
 import '../HousePage/HousePage.css'
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import ReadyHouse from "./ReadyHouse";
 
 function ReadyHousePage() {
+    const navigate = useNavigate();
 
     const [project, setProject] = useState(null);
     const { id } = useParams();
@@ -15,9 +16,11 @@ function ReadyHousePage() {
             .then((response) => response.json())
             .then((data) => {
                 setProject(data)
-                console.log(data)
             })
-            .catch((error) => console.log(error));
+            .catch((error) => {
+                console.error(error);
+                navigate('/500');
+            });
     }, []);
 
     return(

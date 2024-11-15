@@ -66,7 +66,6 @@ function ReadyHousesListPage() {
             });
 
             setFilteredProjects(filtered);
-            console.log(filtered);
         }
     };
 
@@ -76,11 +75,11 @@ function ReadyHousesListPage() {
         })
             .then((response) => response.json())
             .then((data) => {
-                setAllProjects(data)
+                setAllProjects(data);
             })
             .catch((error) => {
-                console.log(error)
-                navigate('/500')
+                console.error(error);
+                navigate('/500');
             });
 
         const handleResize = () => {

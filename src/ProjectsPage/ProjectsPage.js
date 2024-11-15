@@ -5,8 +5,11 @@ import Header from "../Components/Other/HeaderComponent/HeaderComponent";
 import Arrow from "./projetsImage/Arrow.svg";
 import Search from "./projetsImage/search.svg";
 import MediaQuery from "react-responsive";
+import {useNavigate} from "react-router-dom";
 
 function ProjectsPage() {
+    const navigate = useNavigate();
+
     const [filters, setFilters] = useState({
         filterName: '',
         filterFloors: '',
@@ -64,7 +67,6 @@ function ProjectsPage() {
             });
 
             setFilteredProjects(filtered);
-            console.log(filtered);
         }
     };
 
@@ -75,9 +77,11 @@ function ProjectsPage() {
             .then((response) => response.json())
             .then((data) => {
                 setAllProjects(data)
-                console.log(data)
             })
-            .catch((error) => console.log(error));
+            .catch((error) => {
+                console.error(error);
+                navigate('/500');
+            });
 
         const handleResize = () =>{
             setIsMobile(window.innerWidth <= 600)

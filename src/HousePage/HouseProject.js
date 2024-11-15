@@ -14,8 +14,6 @@ import CSRFTOKEN from "../CSRFComponent";
 
 
 function HousePage({houseInfo}) {
-    console.log(houseInfo);
-
 
     const [thumbs, setThumbs] = useState(null)
     return (

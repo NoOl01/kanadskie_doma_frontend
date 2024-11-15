@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from "react";
 import './HousePage.css'
 import HouseProject from "./HouseProject";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 function HousePage() {
+    const navigate = useNavigate();
 
     const [project, setProject] = useState(null);
-    const { id } = useParams();
+    const {id} = useParams();
 
     useEffect(() => {
         fetch(`http://127.0.0.1:8000/getHouseInfo?id=${id}`, {
@@ -15,19 +16,21 @@ function HousePage() {
             .then((response) => response.json())
             .then((data) => {
                 setProject(data)
-                console.log(data)
             })
-            .catch((error) => console.log(error));
+            .catch((error) => {
+                console.error(error);
+                navigate('/500');
+            });
     }, []);
 
-    return(
+    return (
         <div className="house_page_root">
             {
 
                 project !== null &&
                 <>
                     <div>
-                        <HouseProject houseInfo={project.data} />
+                        <HouseProject houseInfo={project.data}/>
                     </div>
                 </>
             }

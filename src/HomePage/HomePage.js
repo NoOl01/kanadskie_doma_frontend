@@ -11,7 +11,7 @@ import realHouseWebp from './homeimages/realHouse.webp'
 import wallet from './homeimages/WALLET.svg'
 import clock from './homeimages/CLOCK.svg'
 import earth from './homeimages/EARTH.svg'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import arrow from './homeimages/Fra2аme копия 1.png'
 import anastasa from './homeimages/izobrazhenie_viber_2020-08-17_10-30-55_cr_cr-210x210 1.png'
 import ilya from './homeimages/ilya-sip-konstruktor-kanadskiedoma39_cr-210x210 1.png'
@@ -22,6 +22,7 @@ import CSRFTOKEN from "../CSRFComponent";
 
 
 function HomePage() {
+    const navigate = useNavigate();
 
     const [allProjects, setAllProjects] = useState(null);
     const [isMainModalOpen, setIsMainModalOpen] = useState(false);
@@ -34,20 +35,18 @@ function HomePage() {
             .then((response) => response.json())
             .then((data) => {
                 setAllProjects(data)
-                console.log(data)
             })
-            .catch((error) => console.log(error));
+            .catch((error) => {
+                console.error(error);
+                navigate('/500');
+            });
     }, []);
 
     return (<div className="HomePage">
             <Header/>
             <div className="about_us_main_div">
                 <div className="about_us">
-                    <h1>Мы компания “Канадские дома”, мы работает в сегменте малоэтажного строительства в
-                        Калининградской
-                        области с физическими и юридическими лицами.
-                        Наши клиенты могут заказать как маленький садовый домик так и большой, красивый элитный дом,
-                        - которые будут построены грамотно, качественно и в кратчайшие сроки!</h1>
+                    <h1>Мы компания «Канадские дома», мы работаем в сегменте малоэтажного строительства в Калининградской области с физическими и юридическими лицами. Наши клиенты могут заказать как маленький садовый домик, так и большой, красивый элитный дом, которые будут построены грамотно, качественно и в кратчайшие сроки!</h1>
                 </div>
                 <div className="about_us_pic">
                     <picture>
