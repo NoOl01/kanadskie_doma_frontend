@@ -116,12 +116,12 @@ function App() {
                     </div>
                     <div className="right_piece">
                         <div className="social">
-                            <a href=""><img src={youtube} alt=""/></a>
-                            <a href=""><img src={rutube} alt=""/></a>
-                            <a href=""><img src={vk} alt=""/></a>
-                            <a href=""><img src={odn} alt=""/></a>
-                            <a href=""><img src={tg} alt=""/></a>
-                            <a href=""><img src={whatsapp} alt=""/></a>
+                            <a href="https://www.youtube.com/channel/UCJge_x4ANIQjalpM6ekbnow"><img src={youtube} alt=""/></a>
+                            <a href="https://rutube.ru/channel/44570845/"><img src={rutube} alt=""/></a>
+                            <a href="https://vk.com/kanadskiedoma39"><img src={vk} alt=""/></a>
+                            <a href="https://ok.ru/profile/589815703607"><img src={odn} alt=""/></a>
+                            <a href="https://t.me/share/url?url=https%3A%2F%2Fwww.kanadskiedoma39.ru%2Fcontact%2F&text=Контакты%20-%20Канадские%20дома&utm_source=share2"><img src={tg} alt=""/></a>
+                            <a href="https://api.whatsapp.com/send?text=Контакты%20-%20Канадские%20дома%20https%3A%2F%2Fwww.kanadskiedoma39.ru%2Fcontact%2F&utm_source=share2"><img src={whatsapp} alt=""/></a>
                         </div>
                     </div>
                 </footer>
