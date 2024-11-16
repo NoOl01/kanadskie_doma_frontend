@@ -18,7 +18,20 @@ import MediaQuery from "react-responsive";
 function ServicesPage() {
     const [isFoundationModalOpen, setIsFoundationModalOpen] = useState(false);
     const [isMainModalOpen, setIsMainModalOpen] = useState(false);
+    const [foundationType, setFoundationType] = useState("Монолитная плита");
+    const [foundationInput, setFoundationInput] = useState("Толщина фундамента");
     const [modalId, setModalId] = useState(null);
+
+    const handleSelectChange = (event) => {
+        const selectedValue = event.target.value;
+        setFoundationType(selectedValue);
+
+        if (selectedValue === "Монолитная плита"){
+            setFoundationInput("Монолитная плита");
+        } else if(selectedValue === "Монолитно-ленточный фундамент"){
+            setFoundationInput("Монолитно-ленточный фундамент");
+        }
+    }
 
     return (
         <div className='services_root'>
@@ -186,13 +199,13 @@ function ServicesPage() {
                 <form action="/createRequest/" method="POST">
                     <CSRFTOKEN/>
                     <input name="Тип запроса" value={modalId} type="hidden"/>
-                    <select name="Тип основания">
+                    <select name="Тип основания" value={foundationType} onChange={handleSelectChange}>
                         <option value="Монолитная плита">Монолитная плита</option>
                         <option value="Монолитно-ленточный фундамент">Монолитно-ленточный фундамент</option>
                     </select>
-                    <input name="Ширина" type="text" placeholder="Ширина фундамента"/>
-                    <input name="Длина" type="text" placeholder="Длина фундамента"/>
-                    <input name="Толщина" type="text" placeholder="Толщина фундамента"/>
+                    <input name="Ширина" type="number" placeholder="Ширина фундамента"/>
+                    <input name="Длина" type="number" placeholder="Длина фундамента"/>
+                    <input name={foundationType === "Монолитная плита" ? "Толщина" : "Высота"} type="number" placeholder={foundationInput}/>
                     <input name="Имя" type="text" placeholder="Ваше имя"/>
                     <input name="Email" type="email" placeholder="Email"/>
                     <input name="Телефон" type="tel" placeholder="Телефон"/>
