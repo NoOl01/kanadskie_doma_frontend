@@ -11,7 +11,7 @@ import QuestionsPage from './QuestionsPage/QuestionsPage';
 import HousePage from './HousePage/HousePage';
 import ReadyHousesListPage from "./ReadyHousesListPage/ReadyHousesListPage";
 import ReadyHousePage from "./ReadyHousePage/ReadyHousePage";
-import Error404 from "./Errors/Error404/Error404";
+import Error404 from "./Errors/Error404";
 import headerLogo from './Images/HeaderLogo.png';
 import footerlogo from './Images/whitelogo.png';
 import rutube from "./HomePage/homeimages/rutube.png"
@@ -20,32 +20,29 @@ import vk from "./HomePage/homeimages/vk.png"
 import tg from "./HomePage/homeimages/tg.png"
 import whatsapp from "./HomePage/homeimages/whatsap.png"
 import youtube from "./HomePage/homeimages/yuotube.svg"
-import Error500 from "./Errors/Error500/Error500";
+import Error500 from "./Errors/Error500";
+import Error403 from "./Errors/Error403";
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
-    const menuRef = useRef(null); // Ссылка на меню
-    const menuButtonRef = useRef(null); // Ссылка на кнопку
+    const menuRef = useRef(null);
+    const menuButtonRef = useRef(null);
 
     const toggleMenu = () => {
         setIsOpen(prevState => !prevState);
     };
 
-
-
-    // Закрытие меню, если кликнули вне его
     useEffect(() => {
         const handleClickOutside = (event) => {
-            // Если клик был вне меню или кнопки бургер-меню
             if (menuRef.current && !menuRef.current.contains(event.target) &&
                 menuButtonRef.current && !menuButtonRef.current.contains(event.target)) {
                 setIsOpen(false); // Закрыть меню
             }
         };
 
-        document.addEventListener('mousedown', handleClickOutside); // Отслеживание кликов
+        document.addEventListener('mousedown', handleClickOutside);
         return () => {
-            document.removeEventListener('mousedown', handleClickOutside); // Очистка
+            document.removeEventListener('mousedown', handleClickOutside);
         };
     }, []);
     return (
@@ -72,7 +69,6 @@ function App() {
                             ref={menuButtonRef}
                             onClick={toggleMenu}
                         >
-                            {/* Бургер-меню, 3 линии */}
                             <span className="line"></span>
                             <span className="line"></span>
                             <span className="line"></span>
@@ -106,6 +102,7 @@ function App() {
                     <Route path="/ready-houses" element={<ReadyHousesListPage/>}/>
                     <Route path="/ready-house/:id" element={<ReadyHousePage/>}/>
                     <Route path="/500" element={<Error500/>}/>
+                    <Route path="/403" element={<Error403/>}/>
                     <Route path="*" element={<Error404/>}/>
                 </Routes>
                 <footer>

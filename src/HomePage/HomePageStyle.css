@@ -720,7 +720,7 @@
     }
 
     .member {
-        width: 100%;
+        width: 70%;
         height: 20em;
     }
 }
@@ -734,11 +734,6 @@
     .team_members {
         width: 70%;
         gap: 150px;
-    }
-
-    .member {
-        width: 100%;
-        height: 20em;
     }
 
     .about_us_main_div {
@@ -834,6 +829,11 @@
         font-size: 2em;
     }
 }
+@media (max-width: 570px) {
+    .member{
+        width: 90%;
+    }
+}
 
 @media (max-width: 500px) {
     .about_us {
@@ -918,7 +918,7 @@
 
     .member {
         font-size: 0.7em;
-        width: 100%;
+        width: 77%;
         height: 34em;
     }
 

@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './HouseProject.css'
 import 'swiper/css'
 import {useState} from 'react'
 import {Autoplay, Pagination, Thumbs} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import card from "./HousePageImg/card.svg"
 import finalS from "./HousePageImg/finnalySsvg.svg"
 import startS from "./HousePageImg/startS.svg"
@@ -16,6 +16,18 @@ import CSRFTOKEN from "../CSRFComponent";
 function HousePage({houseInfo}) {
 
     const [thumbs, setThumbs] = useState(null)
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (houseInfo == null){
+            navigate('*');
+        }
+    }, [houseInfo, navigate]);
+
+    if (houseInfo == null){
+        return null;
+    }
+
     return (
         <div className="house_main_div">
             <div className="house_title">
