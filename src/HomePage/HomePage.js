@@ -19,6 +19,7 @@ import alan from './homeimages/alan-kanadskie-doma-ooo_cr-210x210 1.png'
 import Project from "../ProjectsPage/Project";
 import MainFormModal from "../Components/Modal/ModalWindow";
 import CSRFTOKEN from "../CSRFComponent";
+import {url} from "../domain";
 
 
 function HomePage() {
@@ -29,7 +30,7 @@ function HomePage() {
     const [modalId, setModalId] = useState(null);
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/getHouses/`, {
+        fetch(`${url}/getHouses/`, {
             method: "GET"
         })
             .then((response) => response.json())

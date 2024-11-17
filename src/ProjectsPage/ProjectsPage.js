@@ -6,6 +6,7 @@ import Arrow from "./projetsImage/Arrow.svg";
 import Search from "./projetsImage/search.svg";
 import MediaQuery from "react-responsive";
 import {useNavigate} from "react-router-dom";
+import {url} from "../domain";
 
 function ProjectsPage() {
     const navigate = useNavigate();
@@ -71,7 +72,7 @@ function ProjectsPage() {
     };
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/getHouses/`, {
+        fetch(`${url}/getHouses/`, {
             method: "GET"
         })
             .then((response) => response.json())

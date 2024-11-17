@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import './HousePage.css'
 import HouseProject from "./HouseProject";
 import {useNavigate, useParams} from "react-router-dom";
+import {url} from "../domain";
 
 function HousePage() {
     const navigate = useNavigate();
@@ -10,7 +11,7 @@ function HousePage() {
     const {id} = useParams();
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/getHouseInfo?id=${id}`, {
+        fetch(`${url}/getHouseInfo?id=${id}`, {
             method: "GET",
             headers: {
                 'Cache-Control': 'no-cache',

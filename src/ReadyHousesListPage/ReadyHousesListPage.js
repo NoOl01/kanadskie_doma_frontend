@@ -6,6 +6,7 @@ import ReadyHouses from "./ReadyHouses";
 import Search from "../ProjectsPage/projetsImage/search.svg";
 import MediaQuery from "react-responsive";
 import {useNavigate} from "react-router-dom";
+import { url } from '../domain';
 
 function ReadyHousesListPage() {
     const navigate = useNavigate();
@@ -70,7 +71,7 @@ function ReadyHousesListPage() {
     };
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/getAlreadyBuiltHouses/`, {
+        fetch(`${url}/getAlreadyBuiltHouses/`, {
             method: "GET"
         })
             .then((response) => response.json())

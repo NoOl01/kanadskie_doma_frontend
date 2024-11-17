@@ -2,6 +2,7 @@ import '../HousePage/HousePage.css'
 import React, {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import ReadyHouse from "./ReadyHouse";
+import {url} from "../domain";
 
 
 
@@ -13,7 +14,7 @@ function ReadyHousePage() {
     const {id} = useParams();
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/getAlreadyBuiltHouseInfo?id=${id}`, {
+        fetch(`${url}/getAlreadyBuiltHouseInfo?id=${id}`, {
             method: "GET",
             headers: {
                 'Cache-Control': 'no-cache',
