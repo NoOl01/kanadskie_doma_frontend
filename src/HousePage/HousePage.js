@@ -11,7 +11,10 @@ function HousePage() {
 
     useEffect(() => {
         fetch(`http://127.0.0.1:8000/getHouseInfo?id=${id}`, {
-            method: "GET"
+            method: "GET",
+            headers: {
+                'Cache-Control': 'no-cache',
+            }
         })
             .then((response) => response.json())
             .then((data) => {

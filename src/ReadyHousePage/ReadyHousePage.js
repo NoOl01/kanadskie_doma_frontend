@@ -3,15 +3,21 @@ import React, {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import ReadyHouse from "./ReadyHouse";
 
+
+
+
 function ReadyHousePage() {
     const navigate = useNavigate();
 
     const [project, setProject] = useState(null);
-    const { id } = useParams();
+    const {id} = useParams();
 
     useEffect(() => {
         fetch(`http://127.0.0.1:8000/getAlreadyBuiltHouseInfo?id=${id}`, {
-            method: "GET"
+            method: "GET",
+            headers: {
+                'Cache-Control': 'no-cache',
+            }
         })
             .then((response) => response.json())
             .then((data) => {
@@ -23,7 +29,7 @@ function ReadyHousePage() {
             });
     }, []);
 
-    return(
+    return (
         <div className="house_page_root">
             {
                 project !== null &&

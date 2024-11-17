@@ -33,6 +33,7 @@
     border: none;
     font-size: 35px;
     cursor: pointer;
+    color: white;
 }
 
 .modal-content input[type="text"],
