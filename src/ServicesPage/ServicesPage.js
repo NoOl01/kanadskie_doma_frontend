@@ -196,7 +196,6 @@ function ServicesPage() {
             </div>
             <MainFormModal isOpen={isFoundationModalOpen} onClose={() => setIsFoundationModalOpen(false)}>
                 <form action="/createRequest/" method="POST">
-                    <CSRFTOKEN/>
                     <input name="Тип запроса" value={modalId} type="hidden"/>
                     <select name="Тип основания" value={foundationType} onChange={handleSelectChange}>
                         <option value="Монолитная плита">Монолитная плита</option>
