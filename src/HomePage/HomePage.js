@@ -18,7 +18,6 @@ import ilya from './homeimages/ilya-sip-konstruktor-kanadskiedoma39_cr-210x210 1
 import alan from './homeimages/alan-kanadskie-doma-ooo_cr-210x210 1.png'
 import Project from "../ProjectsPage/Project";
 import MainFormModal from "../Components/Modal/ModalWindow";
-import CSRFTOKEN from "../CSRFComponent";
 import {url} from "../domain";
 
 
@@ -227,7 +226,6 @@ function HomePage() {
 
             <MainFormModal isOpen={isMainModalOpen} onClose={() => setIsMainModalOpen(false)}>
                 <form action="/createRequest/" method="POST">
-                    <CSRFTOKEN/>
                     <input name="Тип запроса" value={modalId} type="hidden"/>
                     <input name='Имя' type="text" placeholder="Ваше имя"/>
                     <input name='Email' type="email" placeholder="Email"/>

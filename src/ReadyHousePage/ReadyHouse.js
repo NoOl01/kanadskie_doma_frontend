@@ -5,7 +5,6 @@ import {useState} from 'react'
 import {Autoplay, Pagination, Thumbs} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Link} from "react-router-dom";
-import CSRFTOKEN from "../CSRFComponent";
 
 
 function ReadyHouse({houseInfo}) {
@@ -93,7 +92,6 @@ function ReadyHouse({houseInfo}) {
             <div className="house_request_form">
             <p>Напишите нам!</p>
                 <form action="/createRequest/" method="POST">
-                    <CSRFTOKEN/>
                     <input name="Тип запроса" value="Интересен дом (Готовые дома)" type="hidden"/>
                     <input name="Код дома" value={houseInfo.house_code} type="hidden"/>
                     <input name="Название дома" value={houseInfo.name} type="hidden"/>

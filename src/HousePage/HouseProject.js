@@ -10,7 +10,6 @@ import finalS from "./HousePageImg/finnalySsvg.svg"
 import startS from "./HousePageImg/startS.svg"
 import bedrooms from "./HousePageImg/bedroom.svg"
 import bathrooms from "./HousePageImg/bathroom.svg"
-import CSRFTOKEN from "../CSRFComponent";
 
 
 function HousePage({houseInfo}) {
@@ -172,7 +171,6 @@ function HousePage({houseInfo}) {
             <div className="house_request_form">
             <p>Напишите нам!</p>
                 <form action="/createRequest/" method="POST">
-                    <CSRFTOKEN/>
                     <input name="Тип запроса" value="Интересен дом" type="hidden"/>
                     <input name="Код дома" value={houseInfo.house_code} type="hidden"/>
                     <input name="Название дома" value={houseInfo.name} type="hidden"/>

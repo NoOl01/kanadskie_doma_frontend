@@ -12,7 +12,6 @@ import SmartPhone from './Images/SmartPhone.svg';
 import Phone from './Images/Phone.svg';
 import zayavlenieRtf from '../DownloadFiles/zayavlenie-na-vozvrat.rtf';
 import zayavleniePdf from '../DownloadFiles/zayavlenie-v-nalogovuyu.pdf';
-import CSRFTOKEN from "../CSRFComponent";
 import MediaQuery from "react-responsive";
 
 function ServicesPage() {
@@ -216,7 +215,6 @@ function ServicesPage() {
             </MainFormModal>
             <MainFormModal isOpen={isMainModalOpen} onClose={() => setIsMainModalOpen(false)}>
                 <form action="/createRequest/" method="POST">
-                    <CSRFTOKEN/>
                     <input name="Тип запроса" value={modalId} type="hidden"/>
                     <input name='Имя' type="text" placeholder="Ваше имя"/>
                     <input name='Email' type="email" placeholder="Email"/>

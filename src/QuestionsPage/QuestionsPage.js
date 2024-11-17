@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './QuestionsPage.css'
 import Header from '../Components/Other/HeaderComponent/HeaderComponent'
 import MainFormModal from "../Components/Modal/ModalWindow";
-import CSRFTOKEN from "../CSRFComponent";
 
 function QuestionsPage() {
 
@@ -342,7 +341,6 @@ function QuestionsPage() {
             </div>
             <MainFormModal isOpen={isMainModalOpen} onClose={() => setIsMainModalOpen(false)}>
                 <form action="/createRequest/" method="POST">
-                    <CSRFTOKEN/>
                     <input name="Тип запроса" value={modalId} type="hidden"/>
                     <input name='Имя' type="text" placeholder="Ваше имя"/>
                     <input name='Email' type="email" placeholder="Email"/>
