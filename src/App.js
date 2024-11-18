@@ -21,7 +21,7 @@ import tg from "./HomePage/homeimages/tg.png"
 import whatsapp from "./HomePage/homeimages/whatsap.png"
 import youtube from "./HomePage/homeimages/yuotube.svg"
 import Error500 from "./Errors/Error500";
-import Error403 from "./Errors/Error403";
+import Error400 from "./Errors/Error400";
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
@@ -102,7 +102,7 @@ function App() {
                     <Route path="/ready-houses" element={<ReadyHousesListPage/>}/>
                     <Route path="/ready-house/:id" element={<ReadyHousePage/>}/>
                     <Route path="/500" element={<Error500/>}/>
-                    <Route path="/403" element={<Error403/>}/>
+                    <Route path="/400" element={<Error400/>}/>
                     <Route path="*" element={<Error404/>}/>
                 </Routes>
                 <footer>
