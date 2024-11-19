@@ -4,7 +4,7 @@ import 'swiper/css'
 import {useState} from 'react'
 import {Autoplay, Pagination, Thumbs} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import card from "./HousePageImg/card.svg"
 import finalS from "./HousePageImg/finnalySsvg.svg"
 import startS from "./HousePageImg/startS.svg"

@@ -93,7 +93,7 @@ function ProjectsPage() {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-        }, []);
+        }, [navigate]);
 
     function searchBtnClassName(){
         if (isMobile && openSearch && ((filters.filterName !== '' || filters.filterFloors !== '' || filters.filterArea !== '') || filteredProjects !== null)){
