@@ -1,1 +1,1 @@
-export const url = 'https://mint-mosquito-gratefully.ngrok-free.app';
+export const url = 'http://127.0.0.1:8000/';
