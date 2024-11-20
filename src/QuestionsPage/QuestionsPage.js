@@ -16,12 +16,8 @@ function QuestionsPage() {
             newOpenQuestions[index] = !newOpenQuestions[index];
             return newOpenQuestions;
         });
-
-        const answerElement = document.getElementById(`answer-${index}`);
-        if (answerElement) {
-            answerElement.style.maxHeight = answerElement.scrollHeight + "px";
-        }
     };
+
 
 
     return (
