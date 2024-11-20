@@ -40,7 +40,7 @@ function HomePage() {
                 console.error(error);
                 navigate('/500');
             });
-    }, []);
+    }, [navigate]);
 
     return (<div className="HomePage">
             <Header/>

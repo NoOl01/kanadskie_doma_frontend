@@ -25,7 +25,7 @@ function HousePage() {
                 console.error(error);
                 navigate('/500');
             });
-    }, []);
+    }, [id, navigate]);
 
     return (
         <div className="house_page_root">

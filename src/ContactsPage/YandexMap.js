@@ -27,6 +27,7 @@ const YandexMap = () => {
                 height="600"
                 allowFullScreen={true}
                 style={{position: 'relative'}}
+                title="yandexMap"
             ></iframe>
         </div>
     );

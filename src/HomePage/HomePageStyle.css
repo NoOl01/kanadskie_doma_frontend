@@ -981,8 +981,11 @@
     }
 
     .about_us {
-        height: 30rem;
+        height: 14rem;
         font-size: 0.4em;
+    }
+    .about_us_pic{
+        height: 13em;
     }
 
     .about_us_main_div {
@@ -1019,5 +1022,9 @@
         height: 76rem;
         width: 100%;
     }
-
+}
+@media (max-width: 340px) {
+    .about_us{
+        font-size: 0.37rem;
+    }
 }
